@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "cc775320-6c20-459c-8aed-c9df0c03ab10",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(floor(ConvertToLocalTime(aggregate_ts, TimeZone)), 'MMM d,YYYY')"
+    ],
+    "qFieldLabels": [
+      ""
+    ],
+    "qLabelExpression": "='Timestamp'",
+    "title": "time_zone_adjsuted_aggregated_ts",
+    "coloring": {
+      "changeHash": "0.06816248510785883",
+      "hasValueColors": false,
+      "colorMapRef": "cc775320-6c20-459c-8aed-c9df0c03ab10"
+    }
+  },
+  "qMetaDef": {
+    "title": "time_zone_adjsuted_aggregated_ts",
+    "description": "",
+    "tags": []
+  }
+}

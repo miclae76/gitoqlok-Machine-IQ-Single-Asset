@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "6980fd63-2c48-4d59-b3e6-31b024de0d49",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Bind_From_Date",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2021-05-09"
+}

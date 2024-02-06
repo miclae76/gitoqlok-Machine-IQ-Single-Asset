@@ -1,0 +1,63 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "019d27cb-bb79-4a6e-95f2-7a11fda5e75e",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Utilization",
+      "description": ""
+    },
+    "rank": 2,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "VPxf",
+        "type": "sn-pivot-table",
+        "col": 0,
+        "row": 0,
+        "colspan": 24,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 100,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "labelExpression": {
+      "qStringExpression": {
+        "qExpr": "='Utilization ('&Date(Floor(Min(sample_ts)))& ' - '&Date(Floor(max(sample_ts))) &')'&' - ESN# ' &only(esn)"
+      }
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "VPxf",
+          "qType": "sn-pivot-table"
+        },
+        "qExtendsId": "9ef1fea6-ad3e-4340-8a70-abe53bfc1bfb",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

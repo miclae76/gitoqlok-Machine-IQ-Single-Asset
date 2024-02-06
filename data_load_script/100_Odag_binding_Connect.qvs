@@ -1,0 +1,61 @@
+///$tab 100_Odag_binding_Connect
+//Static Table to send param to trigger Subroutines in ODAG Template
+OdagSectionTable:
+LOAD * INLINE [
+dataset
+RUN_DATA
+RUN_USAGE_SUMMARY
+PERIODIC_DATA
+FAULT_DATA
+EQ_LOCATIONS
+];
+
+
+
+IF '$(odagActive)'='' THEN
+  trace ODAG variables not inserted! Loading sample data.;
+  SET odag_asset_id = '''aljg30693''';
+  SET odag_TimeZone = '''UTC''';
+  SET odag_TimeScope = '''Last 30 days''';
+  SET odag_dataset = '''FULL''';
+  SET odag_Start_Date = '''2024-01-01''';
+  SET odag_End_Date = '''2024-02-06''';
+END IF;
+
+//Bind Time zone in varibale to convert timestamp
+//Bind Time Zone
+LOAD $(odag_TimeZone) AS TimeZone 
+AutoGenerate 1;
+
+LET v_Bind_TimeZone = $(odag_TimeZone);
+
+
+// Connect to MIQ Database
+LIB CONNECT TO 'Common DATA:Machine IQ';
+
+
+//Perform Micro Query depending of calling parameters
+IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
+	CALL GetPeriodicData 
+ENDIF;
+
+IF $(odag_dataset) = 'EQ_LOCATIONS' THEN  
+	CALL GetLocationData
+ENDIF;
+
+IF $(odag_dataset) = 'RUN_DATA' THEN  
+	CALL GetRunData
+ENDIF;
+
+IF $(odag_dataset) = 'FAULT_DATA' THEN  
+	CALL GetFaultSessions 
+ENDIF;
+
+// Perform full set of queries 
+IF $(odag_dataset) = 'FULL' THEN
+    CALL GetPeriodicData;
+    CALL GetLocationData;
+    CALL GetRunData;
+    CALL GetFaultSessions;
+    CALL GetEngineHoursAggregation;
+ENDIF

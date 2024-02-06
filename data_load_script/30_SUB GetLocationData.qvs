@@ -1,0 +1,79 @@
+///$tab 30_SUB GetLocationData
+SUB GetLocationData
+
+[iot_debounced_location_sessions]:
+LOAD 
+	*, 
+	ConvertToLocalTime(start_ts, $(odag_TimeZone)) 				AS start_ts_loc,
+    ConvertToLocalTime(end_ts, $(odag_TimeZone)) 				AS end_ts_loc,
+    ConvertToLocalTime(last_update_ts, $(odag_TimeZone)) 		AS last_update_ts_loc
+;
+SELECT 
+	"location_id",
+	"asset_id",
+	"start_ts",
+	"start_event_id" ,
+	"start_engine_hours",
+	"iot_debounced_location_sessions".latitude,
+	"iot_debounced_location_sessions".longitude,
+	--"s2_cell_id_12" ,
+	--"s2_cell_id_19",
+	--"s2_cell_id_20",
+	"end_ts",
+	"end_event_id",
+	"end_engine_hours",
+	"session_state",
+	"last_update_ts",
+	"debounce_distance",
+    municipality,
+	region,
+	"sub_region",
+	country
+FROM iotv3."iot_debounced_location_sessions"
+INNER JOIN iotv3."iot_addresses" 
+ON  "address_id" = "s2_cell_id_12"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+
+[iot_location_events]:
+LOAD 
+	*, 
+	ConvertToLocalTime(sample_ts, $(odag_TimeZone)) 			AS sample_ts_loc,
+    ConvertToLocalTime(gps_fix_ts, $(odag_TimeZone)) 			AS gps_fix_ts_loc
+;
+SELECT 
+	"event_id" AS "event_id_loc",
+	"sample_ts",
+	"gps_fix_ts",
+	latitude AS "latitude_loc_event",
+	longitude AS "longitude_loc_event",
+	heading,
+	speed,
+	"number_of_satellites",
+	hdop,
+	"lmdirect_fix_invalid_time",
+	"lmdirect_fix_historic",
+	"lmdirect_fix_2d",
+	"lmdirect_fix_invalid_fix",
+	"lmdirect_fix_differentially_corrected",
+	"lmdirect_fix_predicted",
+	"lmdirect_fix_last_known",
+	--"ingested_ts",
+	--"persisted_ts",
+	"lmdirect_gps_tracking",
+	"lmdirect_gps_selftest_error",
+	"lmdirect_gps_antenna_error",
+	"asset_id",
+	"engine_hours",
+	altitude
+FROM 
+	iotv3."iot_location_events"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND "sample_ts" BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+Drop field sample_ts from [iot_location_events];
+
+ENDSUB

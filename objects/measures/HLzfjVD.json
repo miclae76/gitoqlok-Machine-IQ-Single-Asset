@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "HLzfjVD",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Average Internal Battery Voltage",
+    "qDef": "Avg(internal_battery_voltage)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0.00 V",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Average Internal Battery Voltage",
+    "description": "",
+    "tags": []
+  }
+}

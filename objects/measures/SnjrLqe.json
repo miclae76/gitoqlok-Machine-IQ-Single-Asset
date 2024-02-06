@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "SnjrLqe",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Average Fuel Level",
+    "qDef": "Avg(fuel_level)/100",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Average Fuel Level",
+    "description": "",
+    "tags": []
+  }
+}

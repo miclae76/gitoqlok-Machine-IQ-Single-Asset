@@ -1,0 +1,37 @@
+///$tab 50_SUB GetFaultSessions
+SUB GetFaultSessions
+
+[iot_fault_sessions]:
+SELECT "session_id",
+	--"start_event_id",
+	--"end_event_id",
+	"asset_id",
+	"session_start_ts",
+	"session_end_ts",
+	"start_location_id",
+	"end_location_id",
+	"fault_code_id",
+	--"start_engine_hours",
+	--"end_engine_hours",
+	status,
+	"last_update_event_id",
+	severity,
+	description,
+	controller,
+	"customer_name",
+	"customer_troubleshooting",
+	"customer_description",
+	"customer_impact",
+	--created,
+	--updated,
+	--deleted,
+	--"last_update_ts",
+	"code_name_customer",
+	"fault_category"
+FROM 
+	iotv3."iot_fault_sessions"
+WHERE 
+	asset_id = $(odag_asset_id)  
+AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+ENDSUB

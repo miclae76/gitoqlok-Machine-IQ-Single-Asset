@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "e5f290b7-66aa-4934-8e4a-bd58ce9da058",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "odag_Start_Date",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'2024-01-01'",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,138 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "65e06ec5-644b-44cf-985c-cdf07edbccda",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Locations",
+      "description": ""
+    },
+    "rank": 1,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 36,
+    "rows": 18,
+    "cells": [
+      {
+        "name": "DegkJA",
+        "type": "map",
+        "col": 0,
+        "row": 0,
+        "colspan": 18,
+        "rowspan": 8,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 50,
+          "height": 44.44444444444444
+        }
+      },
+      {
+        "name": "QmrMx",
+        "type": "sn-table",
+        "col": 0,
+        "row": 8,
+        "colspan": 36,
+        "rowspan": 5,
+        "bounds": {
+          "y": 44.44444444444444,
+          "x": 0,
+          "width": 100,
+          "height": 27.77777777777778
+        }
+      },
+      {
+        "name": "JJxz",
+        "type": "sn-table",
+        "col": 0,
+        "row": 13,
+        "colspan": 36,
+        "rowspan": 5,
+        "bounds": {
+          "y": 72.22222222222221,
+          "x": 0,
+          "width": 100,
+          "height": 27.77777777777778
+        }
+      },
+      {
+        "name": "faMaRdN",
+        "type": "sn-layout-container",
+        "col": 18,
+        "row": 0,
+        "colspan": 18,
+        "rowspan": 8,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 50,
+          "height": 44.44444444444444
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "large",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit",
+    "labelExpression": {
+      "qStringExpression": {
+        "qExpr": "='Equipement Locations ('&Date(Floor(Min(sample_ts)))& ' - '&Date(Floor(max(sample_ts))) &')'&' - ESN# ' &only(esn)"
+      }
+    }
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "DegkJA",
+          "qType": "map"
+        },
+        "qExtendsId": "6a940cc5-3865-4ed2-9fcf-6929089abe69",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "QmrMx",
+          "qType": "sn-table"
+        },
+        "qExtendsId": "17dec212-d99c-4bec-afea-60b5fd3083ee",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "JJxz",
+          "qType": "sn-table"
+        },
+        "qExtendsId": "3a0b83b0-8368-44b1-ad02-eafc34fd253e",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "faMaRdN",
+          "qType": "sn-layout-container"
+        },
+        "qExtendsId": "64937c1b-ca96-4b63-89b6-1b080f0b243b",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

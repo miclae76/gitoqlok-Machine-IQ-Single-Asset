@@ -1,0 +1,45 @@
+///$tab 20_SUB GetPeriodicData
+SUB GetPeriodicData
+
+[iot_events]:
+LOAD *, Timestamp(round("sample_ts", 1/24), 'MMM d,YYYY Htt') AS "sample_ts_hour";
+LOAD 
+	"esn",
+	"event_id",
+	"event_type",
+	"asset_id",
+    "event_code",
+    "message_id",
+    "attachment_id",
+    ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') AS "sample_ts" ,
+	"machine_state_of_charge",
+	"machine_battery_voltage",
+	"internal_battery_voltage",
+	rssi,
+	"data_service_status",
+	"fuel_level",
+	"cumulative_fuel_consumption",
+	"cumulative_engine_hours",
+	"def_level";
+SELECT 
+	"esn",
+	"event_id",
+	"event_type",
+	"asset_id",
+    "event_code",
+    "message_id",
+    "attachment_id",
+    "sample_ts",
+	"machine_state_of_charge",
+	"machine_battery_voltage",
+	"internal_battery_voltage",
+	rssi,
+	"data_service_status",
+	"fuel_level",
+	"cumulative_fuel_consumption",
+	"cumulative_engine_hours",
+	"def_level"
+FROM iotv3."iot_events"
+WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
+
+ENDSUB

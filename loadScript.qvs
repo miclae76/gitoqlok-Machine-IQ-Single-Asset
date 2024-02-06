@@ -1,0 +1,439 @@
+///$tab 00_Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$ ###0.00;-$ ###0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+//SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+
+
+
+
+///$tab 20_SUB GetPeriodicData
+SUB GetPeriodicData
+
+[iot_events]:
+LOAD *, Timestamp(round("sample_ts", 1/24), 'MMM d,YYYY Htt') AS "sample_ts_hour";
+LOAD 
+	"esn",
+	"event_id",
+	"event_type",
+	"asset_id",
+    "event_code",
+    "message_id",
+    "attachment_id",
+    ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') AS "sample_ts" ,
+	"machine_state_of_charge",
+	"machine_battery_voltage",
+	"internal_battery_voltage",
+	rssi,
+	"data_service_status",
+	"fuel_level",
+	"cumulative_fuel_consumption",
+	"cumulative_engine_hours",
+	"def_level";
+SELECT 
+	"esn",
+	"event_id",
+	"event_type",
+	"asset_id",
+    "event_code",
+    "message_id",
+    "attachment_id",
+    "sample_ts",
+	"machine_state_of_charge",
+	"machine_battery_voltage",
+	"internal_battery_voltage",
+	rssi,
+	"data_service_status",
+	"fuel_level",
+	"cumulative_fuel_consumption",
+	"cumulative_engine_hours",
+	"def_level"
+FROM iotv3."iot_events"
+WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
+
+ENDSUB
+
+
+
+///$tab 30_SUB GetLocationData
+SUB GetLocationData
+
+[iot_debounced_location_sessions]:
+LOAD 
+	*, 
+	ConvertToLocalTime(start_ts, $(odag_TimeZone)) 				AS start_ts_loc,
+    ConvertToLocalTime(end_ts, $(odag_TimeZone)) 				AS end_ts_loc,
+    ConvertToLocalTime(last_update_ts, $(odag_TimeZone)) 		AS last_update_ts_loc
+;
+SELECT 
+	"location_id",
+	"asset_id",
+	"start_ts",
+	"start_event_id" ,
+	"start_engine_hours",
+	"iot_debounced_location_sessions".latitude,
+	"iot_debounced_location_sessions".longitude,
+	--"s2_cell_id_12" ,
+	--"s2_cell_id_19",
+	--"s2_cell_id_20",
+	"end_ts",
+	"end_event_id",
+	"end_engine_hours",
+	"session_state",
+	"last_update_ts",
+	"debounce_distance",
+    municipality,
+	region,
+	"sub_region",
+	country
+FROM iotv3."iot_debounced_location_sessions"
+INNER JOIN iotv3."iot_addresses" 
+ON  "address_id" = "s2_cell_id_12"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+
+[iot_location_events]:
+LOAD 
+	*, 
+	ConvertToLocalTime(sample_ts, $(odag_TimeZone)) 			AS sample_ts_loc,
+    ConvertToLocalTime(gps_fix_ts, $(odag_TimeZone)) 			AS gps_fix_ts_loc
+;
+SELECT 
+	"event_id" AS "event_id_loc",
+	"sample_ts",
+	"gps_fix_ts",
+	latitude AS "latitude_loc_event",
+	longitude AS "longitude_loc_event",
+	heading,
+	speed,
+	"number_of_satellites",
+	hdop,
+	"lmdirect_fix_invalid_time",
+	"lmdirect_fix_historic",
+	"lmdirect_fix_2d",
+	"lmdirect_fix_invalid_fix",
+	"lmdirect_fix_differentially_corrected",
+	"lmdirect_fix_predicted",
+	"lmdirect_fix_last_known",
+	--"ingested_ts",
+	--"persisted_ts",
+	"lmdirect_gps_tracking",
+	"lmdirect_gps_selftest_error",
+	"lmdirect_gps_antenna_error",
+	"asset_id",
+	"engine_hours",
+	altitude
+FROM 
+	iotv3."iot_location_events"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND "sample_ts" BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+Drop field sample_ts from [iot_location_events];
+
+ENDSUB
+
+
+
+///$tab 40_SUB GetRunData
+SUB GetRunData
+
+[iot_equipment_usage_events]:
+SELECT 
+	"event_id",
+	"asset_id",
+	"sample_ts",
+	"auxiliary_binned",
+	"def_concentration_binned1",
+	"def_concentration_binned10",
+	"def_concentration_binned2",
+	"def_concentration_binned3",
+	"def_concentration_binned4",
+	"def_concentration_binned5",
+	"def_concentration_binned6",
+	"def_concentration_binned7",
+	"def_concentration_binned8",
+	"def_concentration_binned9",
+	"def_temperature_binned1",
+	"def_temperature_binned2",
+	"def_temperature_binned3",
+	"def_temperature_binned4",
+	"def_temperature_binned5",
+	"def_temperature_binned6",
+	"door_open_count",
+	"drive_response_binned1",
+	"drive_response_binned2",
+	"drive_response_binned3",
+	"drive_state_on_count",
+	"engine_coolant_temperature_binned1",
+	"engine_coolant_temperature_binned2",
+	"engine_coolant_temperature_binned3",
+	"engine_coolant_temperature_binned4",
+	"engine_coolant_temperature_binned5",
+	"engine_coolant_temperature_binned6",
+	"engine_coolant_temperature_binned7",
+	"engine_coolant_temperature_binned8",
+	"engine_on_time",
+	"engine_speed_duration_binned1",
+	"engine_speed_duration_binned10",
+	"engine_speed_duration_binned11",
+	"engine_speed_duration_binned12",
+	"engine_speed_duration_binned13",
+	"engine_speed_duration_binned14",
+	"engine_speed_duration_binned15",
+	"engine_speed_duration_binned16",
+	"engine_speed_duration_binned17",
+	"engine_speed_duration_binned18",
+	"engine_speed_duration_binned19",
+	"engine_speed_duration_binned2",
+	"engine_speed_duration_binned3",
+	"engine_speed_duration_binned4",
+	"engine_speed_duration_binned5",
+	"engine_speed_duration_binned6",
+	"engine_speed_duration_binned7",
+	"engine_speed_duration_binned8",
+	"engine_speed_duration_binned9",
+	"engine_state_cranking_count",
+	"engine_state_cranking_duration",
+	"engine_state_cranking_max",
+	"front_base_solenoid_binned",
+	"front_rod_solenoid_binned",
+	"high_flow_binned",
+	"high_flow_solenoid_binned",
+	"hydraulic_oil_temperature_binned1",
+	"hydraulic_oil_temperature_binned10",
+	"hydraulic_oil_temperature_binned2",
+	"hydraulic_oil_temperature_binned3",
+	"hydraulic_oil_temperature_binned4",
+	"hydraulic_oil_temperature_binned5",
+	"hydraulic_oil_temperature_binned6",
+	"hydraulic_oil_temperature_binned7",
+	"hydraulic_oil_temperature_binned8",
+	"hydraulic_oil_temperature_binned9",
+	"load_duration_binned1",
+	"load_duration_binned10",
+	"load_duration_binned2",
+	"load_duration_binned3",
+	"load_duration_binned4",
+	"load_duration_binned5",
+	"load_duration_binned6",
+	"load_duration_binned7",
+	"load_duration_binned8",
+	"load_duration_binned9",
+	"rear_base_solenoid_binned",
+	"rear_rod_solenoid_binned",
+	"seatbar_open_count",
+	"throttle_position_binned1",
+	"throttle_position_binned2",
+	"throttle_position_binned3",
+	"throttle_position_binned4",
+	"two_speed_on_binned",
+	"workgroup_on_count",
+	"def_concentration_average",
+	"def_concentration_max",
+	"def_concentration_min",
+	"def_level_max",
+	"def_level_min",
+	"engine_air_intake_temperature_average",
+	"engine_air_intake_temperature_max",
+	"engine_air_intake_temperature_min",
+	"engine_coolant_temperature_average",
+	"engine_coolant_temperature_max",
+	"engine_coolant_temperature_min",
+	"engine_fuel_temperature_average",
+	"engine_fuel_temperature_max",
+	"engine_fuel_temperature_min",
+	"engine_oil_pressure_average",
+	"engine_oil_pressure_max",
+	"engine_oil_pressure_min",
+	"engine_oil_temperature_average",
+	"engine_oil_temperature_max",
+	"engine_oil_temperature_min",
+	"fuel_consumption_average",
+	"fuel_consumption_max",
+	"fuel_consumption_min",
+	"fuel_rail_pressure_average",
+	"fuel_rail_pressure_max",
+	"fuel_rail_pressure_min",
+	"hydraulic_charge_pressure_average",
+	"hydraulic_charge_pressure_max",
+	"hydraulic_charge_pressure_min",
+	"hydraulic_oil_temperature_average",
+	"hydraulic_oil_temperature_max",
+	"hydraulic_oil_temperature_min",
+	"throttle_position_average",
+	"throttle_position_max",
+	"throttle_position_min",
+	created,
+//	"ingested_ts",
+//	"persisted_ts",
+	"map_version",
+	"map_version_run_usage",
+	"hydraulic_oil_temperature_binned12",
+	"engine_oil_temperature_binned2",
+	"engine_fuel_temperature_binned8",
+	"engine_fuel_temperature_binned7",
+	"hydraulic_oil_temperature_binned13",
+	"engine_oil_temperature_binned4",
+	"engine_fuel_temperature_binned6",
+	"engine_fuel_temperature_binned2",
+	"engine_fuel_temperature_binned13",
+	"engine_oil_temperature_binned3",
+	"engine_fuel_temperature_binned3",
+	"engine_fuel_temperature_binned4",
+	"engine_oil_temperature_binned1",
+	"engine_fuel_temperature_binned9",
+	"engine_fuel_temperature_binned11",
+	"engine_fuel_temperature_binned1",
+	"engine_fuel_temperature_binned5",
+	"load_duration_binned11",
+	"engine_oil_temperature_binned5",
+	"hydraulic_oil_temperature_binned11",
+	"hydraulic_oil_temperature_binned14",
+	"engine_fuel_temperature_binned12",
+	"engine_fuel_temperature_binned10"
+FROM 
+	iotv3."iot_equipment_usage_events"
+WHERE 
+	asset_id = $(odag_asset_id)  
+AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+EndSub
+///$tab 50_SUB GetFaultSessions
+SUB GetFaultSessions
+
+[iot_fault_sessions]:
+SELECT "session_id",
+	--"start_event_id",
+	--"end_event_id",
+	"asset_id",
+	"session_start_ts",
+	"session_end_ts",
+	"start_location_id",
+	"end_location_id",
+	"fault_code_id",
+	--"start_engine_hours",
+	--"end_engine_hours",
+	status,
+	"last_update_event_id",
+	severity,
+	description,
+	controller,
+	"customer_name",
+	"customer_troubleshooting",
+	"customer_description",
+	"customer_impact",
+	--created,
+	--updated,
+	--deleted,
+	--"last_update_ts",
+	"code_name_customer",
+	"fault_category"
+FROM 
+	iotv3."iot_fault_sessions"
+WHERE 
+	asset_id = $(odag_asset_id)  
+AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+ENDSUB
+///$tab 60_SUB GetEngineHoursAggr
+SUB GetEngineHoursAggregation
+
+[iot_engine_hours_aggregation]:
+SELECT 
+    "asset_id",
+	"aggregate_ts",
+	"engine_hours" AS engine_hours_aggr,
+	"invalid_data_detected",
+	"cumulative_engine_hours_final"
+FROM 
+	iotv3."iot_engine_hours_aggregation"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+ENDSUB
+///$tab 100_Odag_binding_Connect
+//Static Table to send param to trigger Subroutines in ODAG Template
+OdagSectionTable:
+LOAD * INLINE [
+dataset
+RUN_DATA
+RUN_USAGE_SUMMARY
+PERIODIC_DATA
+FAULT_DATA
+EQ_LOCATIONS
+];
+
+
+
+IF '$(odagActive)'='' THEN
+  trace ODAG variables not inserted! Loading sample data.;
+  SET odag_asset_id = '''aljg30693''';
+  SET odag_TimeZone = '''UTC''';
+  SET odag_TimeScope = '''Last 30 days''';
+  SET odag_dataset = '''FULL''';
+  SET odag_Start_Date = '''2024-01-01''';
+  SET odag_End_Date = '''2024-02-06''';
+END IF;
+
+//Bind Time zone in varibale to convert timestamp
+//Bind Time Zone
+LOAD $(odag_TimeZone) AS TimeZone 
+AutoGenerate 1;
+
+LET v_Bind_TimeZone = $(odag_TimeZone);
+
+
+// Connect to MIQ Database
+LIB CONNECT TO 'Common DATA:Machine IQ';
+
+
+//Perform Micro Query depending of calling parameters
+IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
+	CALL GetPeriodicData 
+ENDIF;
+
+IF $(odag_dataset) = 'EQ_LOCATIONS' THEN  
+	CALL GetLocationData
+ENDIF;
+
+IF $(odag_dataset) = 'RUN_DATA' THEN  
+	CALL GetRunData
+ENDIF;
+
+IF $(odag_dataset) = 'FAULT_DATA' THEN  
+	CALL GetFaultSessions 
+ENDIF;
+
+// Perform full set of queries 
+IF $(odag_dataset) = 'FULL' THEN
+    CALL GetPeriodicData;
+    CALL GetLocationData;
+    CALL GetRunData;
+    CALL GetFaultSessions;
+    CALL GetEngineHoursAggregation;
+ENDIF
+
+
+///$tab 999_EXIT
+EXIT SCRIPT;

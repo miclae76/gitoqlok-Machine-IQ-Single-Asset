@@ -1,0 +1,113 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "3c1bb768-8bb1-479f-a749-6ee1107afc2e",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "Select Time Zone",
+      "description": "",
+      "tags": []
+    },
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": true,
+    "showDetailsExpression": false,
+    "visualization": "filterpane",
+    "version": "0.17.4",
+    "qChildListDef": {
+      "qData": {}
+    },
+    "components": [
+      {
+        "key": "theme",
+        "background": {
+          "color": {
+            "index": 1,
+            "color": "#ffffff"
+          }
+        },
+        "content": {
+          "fontStyle": {
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "normal": true
+          },
+          "useContrastColor": true
+        }
+      },
+      {
+        "key": "selections"
+      },
+      {
+        "key": "general"
+      }
+    ],
+    "masterVersion": 0.96
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "060d2325-97ea-4ce7-a6dd-f7b00311ade4",
+          "qType": "listbox"
+        },
+        "qMetaDef": {},
+        "qListObjectDef": {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "TimeZone"
+            ],
+            "qFieldLabels": [
+              "TimeZone"
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            }
+          },
+          "qFrequencyMode": "V",
+          "qShowAlternatives": true,
+          "qInitialDataFetch": [],
+          "qExpressions": []
+        },
+        "title": {
+          "qStringExpression": {
+            "qExpr": "'Select Time Zone : '& TimeZone"
+          }
+        },
+        "visualization": "listbox",
+        "checkboxes": true,
+        "layoutOptions": {
+          "dataLayout": "singleColumn",
+          "layoutOrder": "row",
+          "dense": false,
+          "collapseMode": "auto",
+          "maxVisibleColumns": {
+            "auto": true
+          }
+        },
+        "histogram": false,
+        "frequencyMax": null,
+        "searchEnabled": false,
+        "autoConfirm": false,
+        "showTitle": true
+      },
+      "qChildren": []
+    }
+  ]
+}

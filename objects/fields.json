@@ -1,0 +1,2189 @@
+[
+  {
+    "qName": "TimeZone",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "AUTOGENERATE(1)"
+    ]
+  },
+  {
+    "qName": "aggregate_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_engine_hours_aggregation"
+    ]
+  },
+  {
+    "qName": "altitude",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "asset_id",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events",
+      "iot_debounced_location_sessions",
+      "iot_location_events",
+      "iot_equipment_usage_events",
+      "iot_fault_sessions",
+      "iot_engine_hours_aggregation"
+    ]
+  },
+  {
+    "qName": "attachment_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "auxiliary_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "code_name_customer",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "controller",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "country",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "created",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "cumulative_engine_hours",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "cumulative_engine_hours_final",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_engine_hours_aggregation"
+    ]
+  },
+  {
+    "qName": "cumulative_fuel_consumption",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "customer_description",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "customer_impact",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "customer_name",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "customer_troubleshooting",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "data_service_status",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "dataset",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OdagSectionTable"
+    ]
+  },
+  {
+    "qName": "debounce_distance",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "def_concentration_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned10",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned7",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned8",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_binned9",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_concentration_min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_level",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "def_level_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_level_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "def_temperature_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "description",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "door_open_count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "drive_response_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "drive_response_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "drive_response_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "drive_state_on_count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "end_engine_hours",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "end_event_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "end_location_id",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "end_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "end_ts_loc",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "engine_air_intake_temperature_average",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_air_intake_temperature_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_air_intake_temperature_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_average",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned7",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_binned8",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_average",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned1",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned10",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned11",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned12",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned13",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned2",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned3",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned4",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned5",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned6",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned7",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned8",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_binned9",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_hours",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "engine_hours_aggr",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_engine_hours_aggregation"
+    ]
+  },
+  {
+    "qName": "engine_oil_pressure_average",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_pressure_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_pressure_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_binned1",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_binned2",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_binned3",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_binned4",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_binned5",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature_min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_on_time",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned10",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned11",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned12",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned13",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned14",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned15",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned16",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned17",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned18",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned19",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned7",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned8",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_speed_duration_binned9",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_state_cranking_count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_state_cranking_duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_state_cranking_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "esn",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "event_code",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "event_id",
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "iot_events",
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "event_id_loc",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "event_type",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "fault_category",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "fault_code_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "front_base_solenoid_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "front_rod_solenoid_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_consumption_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_consumption_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_consumption_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_level",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "fuel_rail_pressure_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_rail_pressure_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "fuel_rail_pressure_min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "gps_fix_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "gps_fix_ts_loc",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "hdop",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "heading",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "high_flow_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "high_flow_solenoid_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_charge_pressure_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_charge_pressure_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_charge_pressure_min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_average",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned10",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned11",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned12",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned13",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned14",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned7",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned8",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_binned9",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "internal_battery_voltage",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "invalid_data_detected",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_engine_hours_aggregation"
+    ]
+  },
+  {
+    "qName": "last_update_event_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "last_update_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "last_update_ts_loc",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "latitude",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "latitude_loc_event",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_2d",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_differentially_corrected",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_historic",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_invalid_fix",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_invalid_time",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_last_known",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_fix_predicted",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_gps_antenna_error",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_gps_selftest_error",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "lmdirect_gps_tracking",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned10",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned11",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned5",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned6",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned7",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned8",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "load_duration_binned9",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "location_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "longitude",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "longitude_loc_event",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "machine_battery_voltage",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "machine_state_of_charge",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "map_version",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "map_version_run_usage",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "message_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "municipality",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "number_of_satellites",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "rear_base_solenoid_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "rear_rod_solenoid_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "region",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "rssi",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "sample_ts",
+    "qTags": [
+      "$numeric",
+      "$keypart",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_events",
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "sample_ts_hour",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "sample_ts_loc",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "seatbar_open_count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "session_end_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "session_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "session_start_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "session_state",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "severity",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "speed",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_location_events"
+    ]
+  },
+  {
+    "qName": "start_engine_hours",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "start_event_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "start_location_id",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "start_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "start_ts_loc",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "status",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "sub_region",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "throttle_position_average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_binned1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_binned2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_binned3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_binned4",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "throttle_position_min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "two_speed_on_binned",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "workgroup_on_count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  }
+]

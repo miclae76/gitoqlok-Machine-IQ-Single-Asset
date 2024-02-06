@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "caba525a-7568-48fa-a271-f0b24ed537a7",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "odag_TimeZone",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'UTC'",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "LZXjAa",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Average Machine Battery Voltage",
+    "qDef": "Avg(machine_battery_voltage)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0.00 V",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false,
+    "coloring": {},
+    "isCustomFormatted": false
+  },
+  "qMetaDef": {
+    "title": "Average Machine Battery Voltage",
+    "description": "",
+    "tags": []
+  }
+}

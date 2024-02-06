@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "d07f73be-6731-4fce-aef1-e94c5ad0914f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "odag_dataset",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'FULL'",
+  "qIsScriptCreated": true
+}

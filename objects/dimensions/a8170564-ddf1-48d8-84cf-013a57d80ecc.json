@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "a8170564-ddf1-48d8-84cf-013a57d80ecc",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=Hour(ConvertToLocalTime(aggregate_ts, TimeZone))"
+    ],
+    "qFieldLabels": [
+      ""
+    ],
+    "qLabelExpression": "='Hour'",
+    "title": "extract_hours",
+    "coloring": {
+      "changeHash": "0.14637746033479337",
+      "hasValueColors": false,
+      "colorMapRef": "a8170564-ddf1-48d8-84cf-013a57d80ecc"
+    }
+  },
+  "qMetaDef": {
+    "title": "extract_hours",
+    "description": "",
+    "tags": []
+  }
+}

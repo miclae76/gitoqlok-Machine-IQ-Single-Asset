@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "7e33a666-c075-4904-9315-c7c5aee332dd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "odag_asset_id",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'aljg30693'",
+  "qIsScriptCreated": true
+}

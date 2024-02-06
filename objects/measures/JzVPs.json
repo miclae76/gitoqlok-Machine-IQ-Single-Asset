@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "JzVPs",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "count(event_code)",
+    "qDef": "count(event_code)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "count(event_code)",
+    "description": "",
+    "tags": []
+  }
+}

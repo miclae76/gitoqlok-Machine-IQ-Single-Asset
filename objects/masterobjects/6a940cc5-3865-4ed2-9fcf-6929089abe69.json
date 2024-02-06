@@ -1,0 +1,798 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "6a940cc5-3865-4ed2-9fcf-6929089abe69",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "Asset Locations",
+      "description": "",
+      "tags": []
+    },
+    "gaLayers": [
+      {
+        "type": "PointLayer",
+        "locationOrLatitude": {
+          "label": "latitude",
+          "key": "latitude",
+          "type": "expression"
+        },
+        "locationDefault": "=only({<start_ts={\"$(=max(start_ts))}\"}>} start_ts)",
+        "locationNamesAuto": true,
+        "locationType": "",
+        "locationCountry": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "locationAdmin1": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "locationAdmin2": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "maxObjects": 4000,
+        "showLayer": true,
+        "hideCalcCond": false,
+        "exclFromAutozoom": false,
+        "layerSelectionsDisabled": false,
+        "color": {
+          "outline": {
+            "index": -1,
+            "color": "#7b7a78"
+          },
+          "outlineOpacity": 1,
+          "opacity": 1,
+          "auto": false,
+          "mode": "primary",
+          "paletteColor": {
+            "index": -1,
+            "color": "#28ce0f"
+          },
+          "measureScheme": "sg",
+          "dimensionScheme": "12",
+          "colorExpression": "",
+          "expressionIsColor": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "useDimColVal": false,
+          "useMeasureGradient": false
+        },
+        "displayLegend": "auto",
+        "showSizeLegend": true,
+        "showToolTip": true,
+        "showInAllLevels": true,
+        "zoomRange": [
+          0,
+          20
+        ],
+        "showPopUp": true,
+        "displayUnselected": false,
+        "label": {
+          "show": false,
+          "expression": {
+            "key": "=only({<start_ts={\"$(=max(start_ts))}\"}>} start_ts)",
+            "label": "dimension.qDef.qFieldDefs[0]",
+            "type": "expression"
+          },
+          "position": "TOP",
+          "showInAllLevels": true,
+          "visibleRange": [
+            0,
+            20
+          ],
+          "style": {
+            "color": {
+              "index": -1,
+              "color": ""
+            }
+          }
+        },
+        "drillDown": {
+          "auto": true,
+          "showLevel0": true,
+          "showLevel1": true,
+          "showLevel2": true,
+          "showLevel3": true,
+          "showLevel4": true,
+          "showLevel5": true,
+          "showLevel6": true,
+          "showLevel7": true
+        },
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if(start_ts = max(total start_ts), start_ts)\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                ],
+                "qFieldLabels": [
+                  "Latest location"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "LDLKpD"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {},
+                "qOtherLimit": {},
+                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {},
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [
+            0
+          ],
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 1,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "tooltip": {
+          "auto": true
+        },
+        "size": {
+          "radiusMin": 7,
+          "radiusMax": 21,
+          "radiusValueMin": 0,
+          "radiusValueMax": 1,
+          "autoRadiusValueRange": true,
+          "expression": {
+            "key": "",
+            "label": "",
+            "type": "",
+            "qNumFormat": {
+              "qType": "U"
+            }
+          },
+          "label": "",
+          "slider": [
+            8,
+            24
+          ],
+          "sliderSingle": 24,
+          "shape": "points",
+          "formatting": {
+            "qNumFormat": {
+              "qType": "U"
+            }
+          }
+        },
+        "cId": "zcEkR",
+        "id": "zcEkR",
+        "isLatLong": true,
+        "longitude": {
+          "label": "longitude",
+          "key": "longitude",
+          "type": "expression"
+        }
+      },
+      {
+        "type": "PointLayer",
+        "locationOrLatitude": {
+          "label": "start_ts",
+          "key": "=latitude",
+          "type": "expression"
+        },
+        "locationDefault": "[start_ts]",
+        "locationNamesAuto": true,
+        "locationType": "",
+        "locationCountry": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "locationAdmin1": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "locationAdmin2": {
+          "key": "",
+          "label": "",
+          "type": ""
+        },
+        "maxObjects": 4000,
+        "showLayer": true,
+        "hideCalcCond": false,
+        "exclFromAutozoom": true,
+        "layerSelectionsDisabled": false,
+        "color": {
+          "outline": {
+            "index": -1,
+            "color": "#7b7a78"
+          },
+          "outlineOpacity": 1,
+          "opacity": 1,
+          "auto": false,
+          "mode": "primary",
+          "paletteColor": {
+            "index": -1,
+            "color": "#F4562C"
+          },
+          "measureScheme": "sg",
+          "dimensionScheme": "12",
+          "colorExpression": "if(start_ts = max(total start_ts), lightgreen(), '#F4562C')",
+          "expressionIsColor": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "useDimColVal": false,
+          "useMeasureGradient": false
+        },
+        "displayLegend": "auto",
+        "showSizeLegend": true,
+        "showToolTip": true,
+        "showInAllLevels": true,
+        "zoomRange": [
+          0,
+          20
+        ],
+        "showPopUp": true,
+        "displayUnselected": false,
+        "label": {
+          "show": false,
+          "expression": {
+            "key": "[start_ts]",
+            "label": "dimension.qDef.qFieldDefs[0]",
+            "type": "expression"
+          },
+          "position": "TOP",
+          "showInAllLevels": true,
+          "visibleRange": [
+            0,
+            20
+          ],
+          "style": {
+            "color": {
+              "index": -1,
+              "color": ""
+            }
+          }
+        },
+        "drillDown": {
+          "auto": true,
+          "showLevel0": true,
+          "showLevel1": true,
+          "showLevel2": true,
+          "showLevel3": true,
+          "showLevel4": true,
+          "showLevel5": true,
+          "showLevel6": true,
+          "showLevel7": true
+        },
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "start_ts"
+                ],
+                "qFieldLabels": [
+                  "Previous locations"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": -1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": false,
+                "cId": "JgTCns"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {},
+                "qOtherLimit": {},
+                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {},
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [
+            0
+          ],
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 1,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "tooltip": {
+          "auto": true
+        },
+        "size": {
+          "radiusMin": 4,
+          "radiusMax": 12,
+          "radiusValueMin": 0,
+          "radiusValueMax": 1,
+          "autoRadiusValueRange": true,
+          "expression": {
+            "key": "",
+            "label": "",
+            "type": "",
+            "qNumFormat": {
+              "qType": "U"
+            }
+          },
+          "label": "",
+          "slider": [
+            8,
+            24
+          ],
+          "sliderSingle": 16,
+          "shape": "points",
+          "formatting": {
+            "qNumFormat": {
+              "qType": "U"
+            }
+          }
+        },
+        "cId": "VpUz",
+        "id": "VpUz",
+        "qLayoutExclude": {
+          "quarantine": {}
+        },
+        "isLatLong": true,
+        "longitude": {
+          "label": "longitude",
+          "key": "=longitude",
+          "type": "expression"
+        }
+      }
+    ],
+    "mapSettings": {
+      "_layerType": "",
+      "baseMap": "satellite",
+      "projection": "satellite_mercator",
+      "mapLanguage": "auto",
+      "useImperialUnits": false,
+      "selectionType": "lasso",
+      "initialView": {
+        "center": [
+          35.63549608570012,
+          -80.99005151076214
+        ],
+        "resolution": 0.5735165781158447,
+        "bounds": {
+          "min": [
+            35.63428596828216,
+            -80.99352395005283
+          ],
+          "max": [
+            35.63670618479646,
+            -80.98657907147145
+          ]
+        }
+      },
+      "showLegend": false,
+      "sidebarAlignment": "bottom",
+      "showFindLocationButton": false,
+      "showScaleBar": true,
+      "zoomLimitSwitch": true,
+      "zoomLimit": {
+        "range": [
+          7,
+          19
+        ]
+      },
+      "panLimitSwitch": false,
+      "panLimits": null,
+      "showDebugInfo": true,
+      "labelColoring": "auto"
+    },
+    "autoZoomOnSelection": true,
+    "showTitles": true,
+    "title": "Asset Locations",
+    "subtitle": {
+      "qStringExpression": {
+        "qExpr": "'🟩 Latest Location 🟧 Previous locations"
+      }
+    },
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": true,
+    "showDetailsExpression": false,
+    "navigation": true,
+    "visualization": "map",
+    "gaVersion": 2,
+    "layers": [],
+    "qUndoExclude": {
+      "hashCode": -1384005739,
+      "gaLayers": [
+        {
+          "qHyperCubeDef": {
+            "qDimensions": [
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=if(start_ts = max(total start_ts), start_ts)\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                  ],
+                  "qFieldLabels": [
+                    "Latest location"
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": 1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "LDLKpD"
+                },
+                "qNullSuppression": true,
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {},
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [
+                  {
+                    "qExpression": "latitude",
+                    "id": "locationOrLatitude"
+                  },
+                  {
+                    "qExpression": "longitude",
+                    "id": "longitude"
+                  }
+                ],
+                "qAttributeDimensions": [],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                }
+              }
+            ],
+            "qMeasures": [],
+            "qInterColumnSortOrder": [
+              0
+            ],
+            "qInitialDataFetch": [
+              {
+                "qLeft": 0,
+                "qTop": 0,
+                "qWidth": 1,
+                "qHeight": 1000
+              }
+            ],
+            "qReductionMode": "N",
+            "qMode": "S",
+            "qPseudoDimPos": -1,
+            "qNoOfLeftDims": -1,
+            "qMaxStackedCells": 5000,
+            "qCalcCond": {},
+            "qTitle": {},
+            "qCalcCondition": {
+              "qCond": {},
+              "qMsg": {}
+            },
+            "qColumnOrder": [],
+            "qExpansionState": [],
+            "qDynamicScript": [],
+            "qLayoutExclude": {
+              "qHyperCubeDef": {
+                "qDimensions": [],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [],
+                "qInitialDataFetch": [],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": []
+              }
+            }
+          },
+          "color": {
+            "outline": {
+              "index": -1,
+              "color": "#7b7a78"
+            },
+            "outlineOpacity": 1,
+            "opacity": 1,
+            "auto": false,
+            "mode": "primary",
+            "paletteColor": {
+              "index": -1,
+              "color": "#28ce0f"
+            },
+            "measureScheme": "sg",
+            "dimensionScheme": "12",
+            "colorExpression": "",
+            "expressionIsColor": true,
+            "measureMin": 0,
+            "measureMax": 10,
+            "useDimColVal": false,
+            "useMeasureGradient": false
+          }
+        },
+        {
+          "qHyperCubeDef": {
+            "qDimensions": [
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "start_ts"
+                  ],
+                  "qFieldLabels": [
+                    "Previous locations"
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": -1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": false,
+                  "cId": "JgTCns"
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {},
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [
+                  {
+                    "qExpression": "=latitude",
+                    "id": "locationOrLatitude"
+                  },
+                  {
+                    "qExpression": "=longitude",
+                    "id": "longitude"
+                  }
+                ],
+                "qAttributeDimensions": [],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                }
+              }
+            ],
+            "qMeasures": [],
+            "qInterColumnSortOrder": [
+              0
+            ],
+            "qInitialDataFetch": [
+              {
+                "qLeft": 0,
+                "qTop": 0,
+                "qWidth": 1,
+                "qHeight": 1000
+              }
+            ],
+            "qReductionMode": "N",
+            "qMode": "S",
+            "qPseudoDimPos": -1,
+            "qNoOfLeftDims": -1,
+            "qMaxStackedCells": 5000,
+            "qCalcCond": {},
+            "qTitle": {},
+            "qCalcCondition": {
+              "qCond": {},
+              "qMsg": {}
+            },
+            "qColumnOrder": [],
+            "qExpansionState": [],
+            "qDynamicScript": [],
+            "qLayoutExclude": {
+              "qHyperCubeDef": {
+                "qDimensions": [],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [],
+                "qInitialDataFetch": [],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": []
+              }
+            }
+          },
+          "color": {
+            "outline": {
+              "index": -1,
+              "color": "#7b7a78"
+            },
+            "outlineOpacity": 1,
+            "opacity": 1,
+            "auto": false,
+            "mode": "primary",
+            "paletteColor": {
+              "index": -1,
+              "color": "#F4562C"
+            },
+            "measureScheme": "sg",
+            "dimensionScheme": "12",
+            "colorExpression": "if(start_ts = max(total start_ts), lightgreen(), '#F4562C')",
+            "expressionIsColor": true,
+            "measureMin": 0,
+            "measureMax": 10,
+            "useDimColVal": false,
+            "useMeasureGradient": false
+          }
+        }
+      ]
+    },
+    "components": [
+      {
+        "key": "general"
+      }
+    ],
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "61c3d3c7-dc57-4e17-85e9-d92617691ff0",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)), 'MMM d,YYYY')"
+    ],
+    "qFieldLabels": [
+      ""
+    ],
+    "qLabelExpression": "='Day'",
+    "title": "time_zone_adjsuted_sample_ts (1)",
+    "coloring": {
+      "changeHash": "0.03449354432267482",
+      "hasValueColors": false,
+      "colorMapRef": "61c3d3c7-dc57-4e17-85e9-d92617691ff0"
+    }
+  },
+  "qMetaDef": {
+    "title": "time_zone_adjsuted_sample_ts (1)",
+    "description": "",
+    "tags": []
+  }
+}

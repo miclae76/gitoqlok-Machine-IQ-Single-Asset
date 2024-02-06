@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c2a7d3e6-79b7-4503-b7bd-9776b7dde9ba",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "odag_TimeScope",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'Last 30 days'",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "0737e2e2-ce51-40d5-a205-6b1a13838783",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Bind_TimeScope",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "Last 1000 days"
+}

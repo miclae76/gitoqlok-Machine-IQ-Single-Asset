@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "EbDCrPy",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Average DEF Level",
+    "qDef": "Avg(def_level)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.00%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Average DEF Level",
+    "description": "",
+    "tags": []
+  }
+}

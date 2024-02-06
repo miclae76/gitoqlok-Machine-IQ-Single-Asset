@@ -1,0 +1,93 @@
+[
+  {
+    "qProperty": {
+      "qInfo": {
+        "qId": "11d2f92e-1a94-42fd-b0cd-077238c0336b",
+        "qType": "appprops"
+      },
+      "qMetaDef": {},
+      "sheetTitleBgColor": {
+        "color": "#F4562C",
+        "index": -1
+      },
+      "sheetTitleGradientColor": "",
+      "sheetTitleColor": "#ffffff",
+      "sheetLogoThumbnail": {
+        "qStaticContentUrlDef": {
+          "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/bobcat_logo_red.png"
+        }
+      },
+      "sheetLogoPosition": "left",
+      "rtl": false,
+      "theme": "horizon",
+      "disableCellNavMenu": false,
+      "chartAnimations": true,
+      "presets": [
+        {
+          "id": "default"
+        },
+        {
+          "name": "Presets.Untitled",
+          "id": "kATN",
+          "navigationBar": {
+            "components": {
+              "logo": {
+                "show": true,
+                "placement": "left"
+              },
+              "tabsManagerAdvanced": {
+                "show": true,
+                "placement": "left"
+              },
+              "appTitle": {
+                "show": true,
+                "placement": "center"
+              },
+              "insightAdvisor": {
+                "show": true,
+                "placement": "right"
+              },
+              "notificationMenu": {
+                "show": true,
+                "placement": "right"
+              },
+              "appSwitcher": {
+                "show": true,
+                "placement": "right"
+              },
+              "profile": {
+                "show": true,
+                "placement": "right"
+              }
+            }
+          },
+          "toolbar": {
+            "show": true,
+            "components": {
+              "assets": {
+                "show": true,
+                "placement": "left"
+              },
+              "selections": {
+                "show": true,
+                "placement": "left"
+              }
+            }
+          },
+          "sheetHeader": {
+            "show": true,
+            "components": {
+              "sheetTitle": {
+                "show": true,
+                "placement": "left"
+              }
+            }
+          }
+        }
+      ],
+      "activePreset": "kATN",
+      "defaultBookmarkId": null
+    },
+    "qChildren": []
+  }
+]

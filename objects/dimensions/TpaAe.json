@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "TpaAe",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=ConvertToLocalTime(sample_ts, TimeZone)"
+    ],
+    "qFieldLabels": [
+      ""
+    ],
+    "qLabelExpression": "='Timestamp'",
+    "title": "time_zone_adjsuted_sample_ts",
+    "coloring": {
+      "changeHash": "0.604503972339183",
+      "hasValueColors": false,
+      "colorMapRef": "TpaAe"
+    }
+  },
+  "qMetaDef": {
+    "title": "time_zone_adjsuted_sample_ts",
+    "description": "",
+    "tags": []
+  }
+}

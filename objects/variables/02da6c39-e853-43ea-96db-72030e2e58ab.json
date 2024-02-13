@@ -1,15 +1,15 @@
 {
   "qInfo": {
-    "qId": "7c8b5cf3-02b8-49ec-b54d-952b8e518d62",
+    "qId": "02da6c39-e853-43ea-96db-72030e2e58ab",
     "qType": "variable"
   },
   "qMetaDef": {},
-  "qName": "odag_End_Date",
+  "qName": "vEndDate",
   "qNumberPresentation": {
     "qType": "U",
     "qnDec": 10,
     "qUseThou": 0
   },
-  "qDefinition": "'2024-02-12'",
+  "qDefinition": "45332",
   "qIsScriptCreated": true
 }

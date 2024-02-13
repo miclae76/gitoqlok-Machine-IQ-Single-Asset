@@ -15,7 +15,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "sample_ts"
+              "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM d, YYYY h:mmtt')"
             ],
             "qFieldLabels": [
               "sample_ts"

@@ -15,7 +15,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=Date(floor(sample_ts))"
+              "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)))"
             ],
             "qFieldLabels": [
               "sample_ts"
@@ -248,7 +248,7 @@
     },
     "preferContinuousAxis": true,
     "measureAxis": {
-      "show": "all",
+      "show": "labels",
       "dock": "near",
       "spacing": 1,
       "autoMinMax": true,

@@ -40,11 +40,7 @@
     "layoutOptions": {
       "mobileLayout": "LIST"
     },
-    "labelExpression": {
-      "qStringExpression": {
-        "qExpr": "='Utilization ('&Date(Floor(Min(sample_ts)))& ' - '&Date(Floor(max(sample_ts))) &')'&' - ESN# ' &only(esn)"
-      }
-    },
+    "labelExpression": "",
     "gridMode": "edit"
   },
   "qChildren": [

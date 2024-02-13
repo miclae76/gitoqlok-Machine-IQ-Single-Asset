@@ -1,22 +1,27 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "5eca64a0-4e8f-439e-8ee1-8c4a2ccd6cc5",
+      "qId": "770c1121-ef28-4875-bf7b-5091aa5904b7",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Engine Air Intake Temperature Min/Max/Avg",
+      "title": "Def Level Min/Max (%)",
       "description": "",
-      "tags": []
+      "tags": [
+        "RUN"
+      ]
     },
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "61c3d3c7-dc57-4e17-85e9-d92617691ff0",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "sample_ts_run_day"
+            ],
+            "qFieldLabels": [
+              ""
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -28,7 +33,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "MLHukLD",
+            "cId": "puzCDgy",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"
@@ -59,16 +64,16 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "othersLabel": "Others"
         }
       ],
       "qMeasures": [
         {
           "qDef": {
-            "qLabel": "Engine Air Intake Temperature Average",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Median(engine_air_intake_temperature_average)",
+            "qDef": "Min([DEF Level Min])",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -78,7 +83,7 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "HCTRve",
+            "cId": "uZqqPeD",
             "numFormatFromTemplate": true,
             "styling": [],
             "forecast": {
@@ -129,10 +134,9 @@
         },
         {
           "qDef": {
-            "qLabel": "Engine Air Intake Temperature Max",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Max(engine_air_intake_temperature_max)",
+            "qDef": "Max([DEF Level Max])",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -142,71 +146,7 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "bpjWyvT",
-            "numFormatFromTemplate": true,
-            "styling": [],
-            "forecast": {
-              "enabled": false,
-              "method": "ssa_forecast",
-              "paletteColor": {
-                "index": 0,
-                "color": "none"
-              },
-              "lineThickness": 1,
-              "lineType": "dashed",
-              "lineCurve": "linear",
-              "showConfidence": true,
-              "confidence": 0.95
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qDef": {
-            "qLabel": "Engine Air Intake Temperature MIn",
-            "qTags": [],
-            "qGrouping": "N",
-            "qDef": "Min(engine_air_intake_temperature_min)",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "autoSort": true,
-            "cId": "jGp",
+            "cId": "dsptk",
             "numFormatFromTemplate": true,
             "styling": [],
             "forecast": {
@@ -259,8 +199,7 @@
       "qInterColumnSortOrder": [
         0,
         1,
-        2,
-        3
+        2
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [
@@ -286,6 +225,7 @@
       "qColumnOrder": [],
       "qExpansionState": [],
       "qDynamicScript": [],
+      "columnOrder": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -315,7 +255,7 @@
       "dimRefLines": []
     },
     "showTitles": true,
-    "title": "Engine Air Intake Temperature Min/Max/Avg",
+    "title": "Def Level Min/Max (%)",
     "subtitle": "",
     "footnote": "",
     "disableNavMenu": false,
@@ -331,7 +271,9 @@
     "nullMode": "connect",
     "dataPoint": {
       "show": false,
-      "showLabels": false
+      "showLabels": false,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
     },
     "maxNumPoints": 2000,
     "maxNumLines": 12,
@@ -351,7 +293,7 @@
       },
       "useDimColVal": true,
       "useMeasureGradient": true,
-      "persistent": false,
+      "persistent": true,
       "expressionIsColor": true,
       "expressionLabel": "",
       "measureScheme": "sg",
@@ -369,12 +311,12 @@
     "dimensionAxis": {
       "continuousAuto": true,
       "show": "labels",
-      "label": "auto",
+      "label": "tilted",
       "dock": "near",
       "axisDisplayMode": "auto",
       "maxVisibleItems": 10
     },
-    "preferContinuousAxis": true,
+    "preferContinuousAxis": false,
     "measureAxis": {
       "show": "labels",
       "dock": "near",
@@ -386,7 +328,7 @@
       "logarithmic": false
     },
     "tooltip": {
-      "auto": true,
+      "auto": false,
       "hideBasic": false,
       "chart": {
         "style": {
@@ -394,19 +336,30 @@
         }
       },
       "title": "",
-      "description": ""
+      "description": "",
+      "data": {}
     },
     "visualization": "linechart",
-    "version": "1.30.10",
+    "version": "1.34.7",
     "components": [
       {
         "key": "general"
       },
       {
-        "key": "line"
+        "key": "bar",
+        "style": {
+          "strokeWidth": "none"
+        }
       },
       {
-        "key": "axis"
+        "key": "axis",
+        "axis": {
+          "label": {
+            "name": {
+              "fontSize": "10px"
+            }
+          }
+        }
       },
       {
         "key": "label"
@@ -422,8 +375,21 @@
     ],
     "showMiniChartForContinuousAxis": true,
     "qLayoutExclude": {
-      "quarantine": {}
+      "quarantine": {
+        "conditionalShowHide": {
+          "measures": {},
+          "dimensions": {}
+        }
+      },
+      "disabled": {
+        "qExtendsId": "",
+        "barGrouping": {
+          "grouping": "stacked"
+        },
+        "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
+      }
     },
+    "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
     "masterVersion": 0.96
   },
   "qChildren": []

@@ -1,0 +1,69 @@
+///$tab 10_SUB GetEquipmentInfo
+SUB GetEquipmentInfo
+
+TRACE *** Load iot_equipment ***;
+
+[iot_equipment]:
+LOAD 
+	asset_id, 
+	servicing_dealer_id, 
+	product_category, 
+	product_model, 
+	product_fault_category, 
+	product_equipment_type, 
+	test_machine, 
+	inventory_condition, 
+	last_sync_time,
+	inventory_type, 
+	customer_account_id;
+SELECT 
+	"asset_id",
+	name,
+--	"data_partition",
+	"servicing_dealer_id",
+	"product_category",
+	"product_model",
+	"product_fault_category",
+	"product_equipment_type",
+	"test_machine",
+--	created,
+--	updated,
+--	deleted,
+	"inventory_condition",
+	"last_sync_time",
+--	"sync_retry",
+--	"sync_failed",
+	"inventory_type",
+	"customer_account_id"
+FROM iotv3."iot_equipment"
+WHERE asset_id = $(odag_asset_id)  ;
+
+
+TRACE *** Load iot_equipment status ***;
+
+[iot_equipment_status]:
+LOAD 
+	asset_id, 
+	connected_status,
+    health_status,
+    service_status,
+	"Last_updated" as equipment_last_update_ts
+    WHERE Last_updated = updated;
+LOAD 
+	asset_id,
+    connected_status,
+    updated,
+    health_status,
+    service_status,
+    Window(Max(updated),asset_id) AS Last_updated ;
+SELECT "asset_id",
+	"connected_status",
+	--created,
+	 updated,
+	--deleted,
+	"health_status",
+	"service_status"
+FROM iotv3."iot_equipment_status"
+WHERE asset_id = $(odag_asset_id) and updated >= $(odag_Start_Date);
+
+EndSub

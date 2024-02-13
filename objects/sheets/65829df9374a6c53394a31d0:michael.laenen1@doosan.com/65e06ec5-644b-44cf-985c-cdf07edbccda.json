@@ -5,7 +5,7 @@
       "qType": "sheet"
     },
     "qMetaDef": {
-      "title": "Locations",
+      "title": "Equipment Locations",
       "description": ""
     },
     "rank": 1,
@@ -19,11 +19,11 @@
         "name": "DegkJA",
         "type": "map",
         "col": 0,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
         "rowspan": 8,
         "bounds": {
-          "y": 0,
+          "y": 5.555555555555555,
           "x": 0,
           "width": 50,
           "height": 44.44444444444444
@@ -33,11 +33,11 @@
         "name": "QmrMx",
         "type": "sn-table",
         "col": 0,
-        "row": 8,
+        "row": 9,
         "colspan": 36,
         "rowspan": 5,
         "bounds": {
-          "y": 44.44444444444444,
+          "y": 50,
           "x": 0,
           "width": 100,
           "height": 27.77777777777778
@@ -47,25 +47,25 @@
         "name": "JJxz",
         "type": "sn-table",
         "col": 0,
-        "row": 13,
+        "row": 14,
         "colspan": 36,
-        "rowspan": 5,
+        "rowspan": 4,
         "bounds": {
-          "y": 72.22222222222221,
+          "y": 77.77777777777779,
           "x": 0,
           "width": 100,
-          "height": 27.77777777777778
+          "height": 22.22222222222222
         }
       },
       {
         "name": "faMaRdN",
         "type": "sn-layout-container",
         "col": 18,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
         "rowspan": 8,
         "bounds": {
-          "y": 0,
+          "y": 5.555555555555555,
           "x": 50,
           "width": 50,
           "height": 44.44444444444444
@@ -83,11 +83,20 @@
       "mobileLayout": "LIST"
     },
     "gridMode": "edit",
-    "labelExpression": {
-      "qStringExpression": {
-        "qExpr": "='Equipement Locations ('&Date(Floor(Min(sample_ts)))& ' - '&Date(Floor(max(sample_ts))) &')'&' - ESN# ' &only(esn)"
+    "labelExpression": "",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": 2,
+            "color": "#7b7a78",
+            "alpha": 1
+          }
+        }
       }
-    }
+    ]
   },
   "qChildren": [
     {

@@ -10,6 +10,6 @@
     "qnDec": 10,
     "qUseThou": 0
   },
-  "qDefinition": "'Last 30 days'",
+  "qDefinition": "'Last 7 days'",
   "qIsScriptCreated": true
 }

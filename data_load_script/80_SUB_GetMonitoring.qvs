@@ -1,0 +1,37 @@
+///$tab 80_SUB_GetMonitoring
+SUB GetMonitoringSessions
+
+[iot_monitoring_sessions]:
+LOAD asset_id, 
+	sort_key, 
+	session_id		AS session_id_monitor, 
+	start_event_id AS start_event_id_monitor, 
+	//end_event_id, 
+	start_ts AS start_ts_monitor, 
+	end_ts AS end_ts_monitor, 
+	status as status_monitor, 
+	monitor_type, 
+	monitor_id, 
+	created as created_monitor, 
+	updated as updated_monitor
+	//deleted
+;
+SELECT "asset_id",
+	"sort_key",
+	"session_id",
+	"start_event_id",
+	--"end_event_id",
+	"start_ts",
+	"end_ts",
+	status,
+	"monitor_type",
+	"monitor_id",
+	created,
+	updated
+	--deleted
+FROM iotv3."iot_monitoring_sessions" 
+WHERE 
+asset_id = $(odag_asset_id) 
+AND status = 'ACTIVE';
+
+ENDSUB

@@ -1,13 +1,15 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "2e0a2bf6-8666-4e33-a152-f7163698d58b",
+      "qId": "7754983a-92a1-4e7b-ba09-f261d8c88a27",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Fuel Consumption (L)",
+      "title": "Engine Fuel Temperature Min/Max/Avg",
       "description": "",
-      "tags": []
+      "tags": [
+        "RUN"
+      ]
     },
     "qHyperCubeDef": {
       "qDimensions": [
@@ -15,7 +17,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)))"
+              "sample_ts_run_day"
             ],
             "qFieldLabels": [
               ""
@@ -31,7 +33,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "PyCNEm",
+            "cId": "puzCDgy",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"
@@ -62,27 +64,27 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "othersLabel": "Others"
         }
       ],
       "qMeasures": [
         {
           "qDef": {
+            "qLabel": "Engine Fuel Temp. Average",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Median(cumulative_fuel_consumption)",
+            "qDef": "Avg(engine_fuel_temperature_average)",
             "qNumFormat": {
               "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
+              "qnDec": 10,
+              "qUseThou": 0
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "NXRWU",
+            "cId": "pBzV",
             "numFormatFromTemplate": true,
             "styling": [],
             "forecast": {
@@ -97,8 +99,135 @@
               "lineCurve": "linear",
               "showConfidence": true,
               "confidence": 0.95
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
             },
-            "isCustomFormatted": false
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "Engine Fuel Temp. Min",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Min(engine_fuel_temperature_min)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "PegJcaG",
+            "numFormatFromTemplate": true,
+            "styling": [],
+            "forecast": {
+              "enabled": false,
+              "method": "ssa_forecast",
+              "paletteColor": {
+                "index": 0,
+                "color": "none"
+              },
+              "lineThickness": 1,
+              "lineType": "dashed",
+              "lineCurve": "linear",
+              "showConfidence": true,
+              "confidence": 0.95
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "Engine Fuel Temp. Max",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Max(engine_fuel_temperature_max)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "HEKVu",
+            "numFormatFromTemplate": true,
+            "styling": [],
+            "forecast": {
+              "enabled": false,
+              "method": "ssa_forecast",
+              "paletteColor": {
+                "index": 0,
+                "color": "none"
+              },
+              "lineThickness": 1,
+              "lineType": "dashed",
+              "lineCurve": "linear",
+              "showConfidence": true,
+              "confidence": 0.95
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -135,7 +264,9 @@
       ],
       "qInterColumnSortOrder": [
         0,
-        1
+        1,
+        2,
+        3
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [
@@ -161,6 +292,7 @@
       "qColumnOrder": [],
       "qExpansionState": [],
       "qDynamicScript": [],
+      "columnOrder": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -190,14 +322,14 @@
       "dimRefLines": []
     },
     "showTitles": true,
-    "title": "Fuel Consumption (L)",
-    "subtitle": "",
+    "title": "Engine Fuel Temperature Min/Max/Avg",
+    "subtitle": "(°C)",
     "footnote": "",
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
     "showDisclaimer": true,
-    "lineType": "line",
+    "lineType": "area",
     "stackedArea": false,
     "separateStacking": true,
     "orientation": "horizontal",
@@ -206,7 +338,9 @@
     "nullMode": "connect",
     "dataPoint": {
       "show": false,
-      "showLabels": false
+      "showLabels": false,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
     },
     "maxNumPoints": 2000,
     "maxNumLines": 12,
@@ -226,7 +360,7 @@
       },
       "useDimColVal": true,
       "useMeasureGradient": true,
-      "persistent": false,
+      "persistent": true,
       "expressionIsColor": true,
       "expressionLabel": "",
       "measureScheme": "sg",
@@ -238,13 +372,13 @@
     },
     "legend": {
       "show": true,
-      "dock": "auto",
-      "showTitle": true
+      "dock": "bottom",
+      "showTitle": false
     },
     "dimensionAxis": {
-      "continuousAuto": true,
+      "continuousAuto": false,
       "show": "labels",
-      "label": "auto",
+      "label": "tilted",
       "dock": "near",
       "axisDisplayMode": "auto",
       "maxVisibleItems": 10
@@ -255,13 +389,13 @@
       "dock": "near",
       "spacing": 0.5,
       "autoMinMax": true,
-      "minMax": "minMax",
+      "minMax": "min",
       "min": 0,
       "max": 10,
       "logarithmic": false
     },
     "tooltip": {
-      "auto": true,
+      "auto": false,
       "hideBasic": false,
       "chart": {
         "style": {
@@ -269,16 +403,61 @@
         }
       },
       "title": "",
-      "description": ""
+      "description": "",
+      "data": {}
     },
     "visualization": "linechart",
-    "version": "1.30.8",
-    "components": [],
+    "version": "1.34.7",
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "bar",
+        "style": {
+          "strokeWidth": "none"
+        }
+      },
+      {
+        "key": "axis",
+        "axis": {
+          "label": {
+            "name": {
+              "fontSize": "10px"
+            }
+          }
+        }
+      },
+      {
+        "key": "label"
+      },
+      {
+        "key": "legend",
+        "legend": {
+          "label": {
+            "fontSize": "10px"
+          }
+        }
+      }
+    ],
     "showMiniChartForContinuousAxis": true,
-    "masterVersion": 0.96,
     "qLayoutExclude": {
-      "quarantine": {}
-    }
+      "quarantine": {
+        "conditionalShowHide": {
+          "measures": {},
+          "dimensions": {}
+        }
+      },
+      "disabled": {
+        "qExtendsId": "",
+        "barGrouping": {
+          "grouping": "stacked"
+        },
+        "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
+      }
+    },
+    "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

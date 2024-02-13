@@ -70,7 +70,7 @@
           0,
           20
         ],
-        "showPopUp": true,
+        "showPopUp": "custom",
         "displayUnselected": false,
         "label": {
           "show": false,
@@ -109,7 +109,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=if(start_ts = max(total start_ts), start_ts)\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                  "=if(start_ts = max(total start_ts), date(ConvertToLocalTime(start_ts, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                 ],
                 "qFieldLabels": [
                   "Latest location"
@@ -142,7 +142,41 @@
               "qOtherLabel": {},
               "qTotalLabel": {},
               "qCalcCond": {},
-              "qAttributeExpressions": [],
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "Max(latitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "cId": "kXuqgS",
+                  "autoSort": true,
+                  "id": "customTooltipExpression"
+                },
+                {
+                  "qExpression": "Max(longitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "cId": "Wupfujp",
+                  "autoSort": true,
+                  "id": "customTooltipExpression"
+                },
+                {
+                  "qExpression": "MaxString(municipality)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "cId": "ccWHCx",
+                  "autoSort": true,
+                  "id": "customTooltipExpression"
+                }
+              ],
               "qAttributeDimensions": [],
               "qCalcCondition": {
                 "qCond": {},
@@ -200,7 +234,9 @@
           }
         },
         "tooltip": {
-          "auto": true
+          "auto": true,
+          "title": "",
+          "description": ""
         },
         "size": {
           "radiusMin": 7,
@@ -337,7 +373,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "start_ts"
+                  "=date(ConvertToLocalTime(start_ts, TimeZone), 'MMM d, YYYY h:mmtt')"
                 ],
                 "qFieldLabels": [
                   "Previous locations"
@@ -526,7 +562,7 @@
     "gaVersion": 2,
     "layers": [],
     "qUndoExclude": {
-      "hashCode": -1384005739,
+      "hashCode": 1482421334,
       "gaLayers": [
         {
           "qHyperCubeDef": {
@@ -535,7 +571,7 @@
                 "qDef": {
                   "qGrouping": "N",
                   "qFieldDefs": [
-                    "=if(start_ts = max(total start_ts), start_ts)\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                    "=if(start_ts = max(total start_ts), date(ConvertToLocalTime(start_ts, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                   ],
                   "qFieldLabels": [
                     "Latest location"
@@ -569,6 +605,39 @@
                 "qTotalLabel": {},
                 "qCalcCond": {},
                 "qAttributeExpressions": [
+                  {
+                    "qExpression": "Max(latitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 10,
+                      "qUseThou": 0
+                    },
+                    "cId": "kXuqgS",
+                    "autoSort": true,
+                    "id": "customTooltipExpression"
+                  },
+                  {
+                    "qExpression": "Max(longitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 10,
+                      "qUseThou": 0
+                    },
+                    "cId": "Wupfujp",
+                    "autoSort": true,
+                    "id": "customTooltipExpression"
+                  },
+                  {
+                    "qExpression": "MaxString(municipality)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 10,
+                      "qUseThou": 0
+                    },
+                    "cId": "ccWHCx",
+                    "autoSort": true,
+                    "id": "customTooltipExpression"
+                  },
                   {
                     "qExpression": "latitude",
                     "id": "locationOrLatitude"
@@ -664,7 +733,7 @@
                 "qDef": {
                   "qGrouping": "N",
                   "qFieldDefs": [
-                    "start_ts"
+                    "=date(ConvertToLocalTime(start_ts, TimeZone), 'MMM d, YYYY h:mmtt')"
                   ],
                   "qFieldLabels": [
                     "Previous locations"

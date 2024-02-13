@@ -15,7 +15,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "start_ts_loc"
+              "=date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM D, YYYY h:mmtt')"
             ],
             "qFieldLabels": [
               ""
@@ -76,7 +76,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "end_ts_loc"
+              "=date(ConvertToLocalTime(end_ts_loc, TimeZone), 'MMM D, YYYY h:mmtt')"
             ],
             "qFieldLabels": [
               ""
@@ -490,7 +490,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "last_update_ts_loc"
+              "=date(ConvertToLocalTime(last_update_ts_loc, TimeZone), 'MMM D, YYYY h:mmtt')"
             ],
             "qFieldLabels": [
               ""

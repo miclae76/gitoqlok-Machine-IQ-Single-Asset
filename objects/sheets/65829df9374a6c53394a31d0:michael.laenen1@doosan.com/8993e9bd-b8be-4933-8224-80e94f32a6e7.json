@@ -5,7 +5,7 @@
       "qType": "sheet"
     },
     "qMetaDef": {
-      "title": "My new sheet",
+      "title": "Periodic Data",
       "description": ""
     },
     "rank": null,
@@ -19,56 +19,56 @@
         "name": "JSLCN",
         "type": "piechart",
         "col": 0,
-        "row": 0,
+        "row": 1,
         "colspan": 12,
         "rowspan": 6,
         "bounds": {
+          "y": 4,
           "x": 0,
-          "y": 0,
           "width": 33.33333333333333,
-          "height": 23.999999999999996
+          "height": 24
         }
       },
       {
         "name": "ZKjBXZ",
         "type": "linechart",
         "col": 12,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
         "rowspan": 6,
         "bounds": {
+          "y": 4,
           "x": 33.33333333333333,
-          "y": 0,
           "width": 50,
-          "height": 23.999999999999996
+          "height": 24
         }
       },
       {
         "name": "SPrevn",
         "type": "linechart",
         "col": 0,
-        "row": 6,
+        "row": 7,
         "colspan": 12,
         "rowspan": 6,
         "bounds": {
+          "y": 28.000000000000004,
           "x": 0,
-          "y": 23.999999999999996,
           "width": 33.33333333333333,
-          "height": 23.999999999999996
+          "height": 24
         }
       },
       {
         "name": "PURPVhp",
         "type": "linechart",
         "col": 12,
-        "row": 6,
+        "row": 7,
         "colspan": 18,
         "rowspan": 6,
         "bounds": {
+          "y": 28.000000000000004,
           "x": 33.33333333333333,
-          "y": 23.999999999999996,
           "width": 50,
-          "height": 23.999999999999996
+          "height": 24
         }
       },
       {
@@ -89,70 +89,84 @@
         "name": "BjZmDwh",
         "type": "sn-table",
         "col": 0,
-        "row": 12,
+        "row": 13,
         "colspan": 36,
-        "rowspan": 6,
+        "rowspan": 5,
         "bounds": {
+          "y": 52,
           "x": 0,
-          "y": 47.99999999999999,
           "width": 100,
-          "height": 23.999999999999996
+          "height": 20
         }
       },
       {
         "name": "AsPpCH",
         "type": "kpi",
         "col": 30,
-        "row": 0,
+        "row": 1,
         "colspan": 6,
         "rowspan": 3,
         "bounds": {
+          "y": 4,
           "x": 83.33333333333334,
-          "y": 0,
           "width": 16.666666666666664,
-          "height": 11.999999999999998
+          "height": 12
         }
       },
       {
         "name": "UWPyJpa",
         "type": "kpi",
         "col": 30,
-        "row": 3,
+        "row": 4,
         "colspan": 6,
         "rowspan": 3,
         "bounds": {
+          "y": 16,
           "x": 83.33333333333334,
-          "y": 11.999999999999998,
           "width": 16.666666666666664,
-          "height": 11.999999999999998
+          "height": 12
         }
       },
       {
         "name": "sBSuJ",
         "type": "kpi",
         "col": 30,
-        "row": 6,
+        "row": 7,
         "colspan": 6,
         "rowspan": 3,
         "bounds": {
+          "y": 28.000000000000004,
           "x": 83.33333333333334,
-          "y": 23.999999999999996,
           "width": 16.666666666666664,
-          "height": 11.999999999999998
+          "height": 12
         }
       },
       {
         "name": "mqUTt",
         "type": "kpi",
         "col": 30,
-        "row": 9,
+        "row": 10,
         "colspan": 6,
         "rowspan": 3,
         "bounds": {
+          "y": 40,
           "x": 83.33333333333334,
-          "y": 36,
           "width": 16.666666666666664,
-          "height": 11.999999999999998
+          "height": 12
+        }
+      },
+      {
+        "name": "nZTJzV",
+        "type": "filterpane",
+        "col": 30,
+        "row": 0,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
+          "height": 4
         }
       }
     ],
@@ -163,11 +177,7 @@
     },
     "gridMode": "edit",
     "gridResolution": "large",
-    "labelExpression": {
-      "qStringExpression": {
-        "qExpr": "='Periodic Data ('&Date(Floor(Min(sample_ts)))& ' - '&Date(Floor(max(sample_ts))) &')'&' - ESN# ' &only(esn)"
-      }
-    },
+    "labelExpression": "",
     "layoutOptions": {
       "extendable": true,
       "sheetMode": "RESPONSIVE"
@@ -550,6 +560,75 @@
         "qMetaDef": {}
       },
       "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "nZTJzV",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.17.4",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "TCpjhk",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "TimeZone"
+                ],
+                "qFieldLabels": [
+                  "TimeZone"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": false
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": {
+              "qStringExpression": {
+                "qExpr": "'Time Zone : '&If(TimeZone='UTC', 'UTC (Default)', TimeZone)"
+              }
+            },
+            "visualization": "listbox",
+            "showTitle": true,
+            "searchEnabled": false,
+            "autoConfirm": true,
+            "layoutOptions": {
+              "dense": false
+            }
+          },
+          "qChildren": []
+        }
+      ]
     }
   ]
 }

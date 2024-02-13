@@ -18,7 +18,7 @@
               "asset_id"
             ],
             "qFieldLabels": [
-              ""
+              "Asset ID"
             ],
             "qSortCriterias": [
               {
@@ -77,7 +77,7 @@
               "event_type"
             ],
             "qFieldLabels": [
-              ""
+              "Event Type"
             ],
             "qSortCriterias": [
               {
@@ -136,7 +136,7 @@
               "event_code"
             ],
             "qFieldLabels": [
-              ""
+              "Event Code"
             ],
             "qSortCriterias": [
               {
@@ -189,11 +189,14 @@
           }
         },
         {
-          "qLibraryId": "TpaAe",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM D, YYYY h:mmtt')"
+            ],
+            "qFieldLabels": [
+              ""
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": -1,
@@ -203,6 +206,7 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
+            "qLabelExpression": "='Timestamp ('&TimeZone&')'",
             "othersLabel": "Others",
             "autoSort": false,
             "textAlign": {
@@ -250,7 +254,7 @@
               "attachment_id"
             ],
             "qFieldLabels": [
-              ""
+              "Attachment ID"
             ],
             "qSortCriterias": [
               {
@@ -309,7 +313,7 @@
               "cumulative_engine_hours"
             ],
             "qFieldLabels": [
-              ""
+              "Cumulative Engine Hours"
             ],
             "qSortCriterias": [
               {
@@ -368,7 +372,7 @@
               "cumulative_fuel_consumption"
             ],
             "qFieldLabels": [
-              ""
+              "Cumulative Fuel Consumption"
             ],
             "qSortCriterias": [
               {
@@ -427,7 +431,7 @@
               "data_service_status"
             ],
             "qFieldLabels": [
-              ""
+              "Data Service Status"
             ],
             "qSortCriterias": [
               {
@@ -486,7 +490,7 @@
               "def_level"
             ],
             "qFieldLabels": [
-              ""
+              "DEF Level"
             ],
             "qSortCriterias": [
               {
@@ -545,7 +549,7 @@
               "event_id"
             ],
             "qFieldLabels": [
-              ""
+              "Event ID"
             ],
             "qSortCriterias": [
               {
@@ -604,7 +608,7 @@
               "internal_battery_voltage"
             ],
             "qFieldLabels": [
-              ""
+              "Internal Battery Voltage"
             ],
             "qSortCriterias": [
               {
@@ -663,7 +667,7 @@
               "machine_battery_voltage"
             ],
             "qFieldLabels": [
-              ""
+              "Machine Battery Voltage"
             ],
             "qSortCriterias": [
               {
@@ -722,7 +726,7 @@
               "rssi"
             ],
             "qFieldLabels": [
-              ""
+              "RSSI"
             ],
             "qSortCriterias": [
               {

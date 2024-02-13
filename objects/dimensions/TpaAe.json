@@ -6,15 +6,15 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=ConvertToLocalTime(sample_ts, TimeZone)"
+      "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM D, YYYY h:mmtt')"
     ],
     "qFieldLabels": [
-      ""
+      "time_zone_adjsuted_sample_ts"
     ],
     "qLabelExpression": "='Timestamp'",
     "title": "time_zone_adjsuted_sample_ts",
     "coloring": {
-      "changeHash": "0.604503972339183",
+      "changeHash": "0.6563702243672183",
       "hasValueColors": false,
       "colorMapRef": "TpaAe"
     }

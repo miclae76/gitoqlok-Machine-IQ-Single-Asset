@@ -1,12 +1,744 @@
 [
   {
-    "qName": "TimeZone",
+    "qName": "Auxiliary Enable Duration",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
-      "AUTOGENERATE(1)"
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 0-19.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 20-16.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 27-29.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 30-31.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 32-33.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 34-37.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 38-41.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 42-44.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 45-59.75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration 60+%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration Average",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration Max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Concentration Min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Level Max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Level Min",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (-13-15°C / 9-60°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (16-43°C / 61-110°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (44-54°C / 111-130°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (55-65°C / 131-150°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (66+°C / 151+°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "DEF Temperature (<-13°C / <9°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Door Cycle Count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Drive Response - State 1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Drive Response - State 2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Drive Response - State 3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Drive State On Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine On Time",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 0-1099 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1100-1199 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1200-1299 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1300-1399 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1400-1499 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1500-1599 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1600-1699 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1700-1799 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1800-1899 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 1900-1999 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2000-2099 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2100-2199 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2200-2299 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2300-2399 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2400-2499 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2500-2599 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2600-2699 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2700-2799 RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Speed - 2800+ RPM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine State (Cranking) Count",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine State (Cranking) Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine State (Cranking) Max",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Front Base Solenoid Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Front Rod Solenoid Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "High Flow Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "High Flow Solenoid Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 10-14%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 15-19%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 20-24%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 25-29%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 30-34",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 35-39%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 40-50%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 5-9%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - 51%+",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Load (Actual Engine - Pct Torque) - < 5%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "MaxDate",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MinMaxDate"
+    ]
+  },
+  {
+    "qName": "MinDate",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MinMaxDate"
+    ]
+  },
+  {
+    "qName": "Throttle Position - 0-25%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Throttle Position - 26-50%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Throttle Position - 51-75%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Throttle Position - 76-100%",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "TimeZone",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "TimeZoneTable"
+    ],
+    "qAlwaysOneSelected": true
+  },
+  {
+    "qName": "Two Speed on Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Workgroup State on Duration",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "acd_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
     ]
   },
   {
@@ -29,66 +761,133 @@
     ]
   },
   {
+    "qName": "application_software_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
     "qName": "asset_id",
     "qTags": [
       "$key",
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
+      "iot_equipment",
+      "iot_equipment_status",
       "iot_events",
       "iot_debounced_location_sessions",
       "iot_location_events",
       "iot_equipment_usage_events",
       "iot_fault_sessions",
-      "iot_engine_hours_aggregation"
+      "iot_fault_events",
+      "iot_engine_hours_aggregation",
+      "iot_software_sessions",
+      "iot_software_version_run_events",
+      "iot_software_version_soft_events",
+      "iot_monitoring_sessions"
     ]
   },
   {
     "qName": "attachment_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_events"
     ]
   },
   {
-    "qName": "auxiliary_binned",
+    "qName": "aux_mx_secondary_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
+    ]
+  },
+  {
+    "qName": "auxiliary",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "auxiliary_soft",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
+    ]
+  },
+  {
+    "qName": "brake_switch",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
     "qName": "code_name_customer",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "connected_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status"
     ]
   },
   {
     "qName": "controller",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
     ]
   },
   {
+    "qName": "controller_key",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
     "qName": "country",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -102,6 +901,16 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "created_monitor",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
     ]
   },
   {
@@ -132,10 +941,20 @@
     ]
   },
   {
+    "qName": "customer_account_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
     "qName": "customer_description",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -144,8 +963,8 @@
   {
     "qName": "customer_impact",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -154,8 +973,8 @@
   {
     "qName": "customer_name",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -181,13 +1000,33 @@
     ]
   },
   {
+    "qName": "database_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
     "qName": "dataset",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "OdagSectionTable"
+    ]
+  },
+  {
+    "qName": "dcu_soft",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
     ]
   },
   {
@@ -200,130 +1039,12 @@
     ]
   },
   {
-    "qName": "def_concentration_average",
+    "qName": "def_concentration",
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned1",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned10",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned7",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned8",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_binned9",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_max",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_concentration_min",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
@@ -337,143 +1058,103 @@
     ]
   },
   {
-    "qName": "def_level_max",
+    "qName": "def_temperature",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "def_level_min",
+    "qName": "delayed_match",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "def_temperature_binned1",
+    "qName": "deluxe_panel_version",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_temperature_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_temperature_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_temperature_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_temperature_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "def_temperature_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_software_version_run_events"
     ]
   },
   {
     "qName": "description",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
     ]
   },
   {
-    "qName": "door_open_count",
+    "qName": "door_position",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "drive_response_binned1",
+    "qName": "drive_response",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "drive_response_binned2",
+    "qName": "drive_soft",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_software_version_soft_events"
     ]
   },
   {
-    "qName": "drive_response_binned3",
+    "qName": "drive_state",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "drive_state_on_count",
+    "qName": "drive_version",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_software_version_run_events"
+    ]
+  },
+  {
+    "qName": "ecu_soft",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
     ]
   },
   {
@@ -486,10 +1167,19 @@
     ]
   },
   {
+    "qName": "end_engine_hours_fault",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
     "qName": "end_event_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -523,6 +1213,23 @@
     ]
   },
   {
+    "qName": "end_ts_monitor",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
+    ]
+  },
+  {
+    "qName": "end_ts_sw_session",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
     "qName": "engine_air_intake_temperature_average",
     "qTags": [
       "$numeric",
@@ -550,6 +1257,16 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_coolant_temperature",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -660,6 +1377,16 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_fuel_temperature",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -802,6 +1529,16 @@
     ]
   },
   {
+    "qName": "engine_oil_pressure",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "engine_oil_pressure_average",
     "qTags": [
       "$numeric",
@@ -829,6 +1566,15 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "engine_oil_temperature",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -894,240 +1640,30 @@
     ]
   },
   {
-    "qName": "engine_on_time",
+    "qName": "engine_state_cranking_state",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "engine_speed_duration_binned1",
+    "qName": "equipment_last_update_ts",
     "qTags": [
       "$numeric",
-      "$integer"
+      "$timestamp"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned10",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned11",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned12",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned13",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned14",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned15",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned16",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned17",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned18",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned19",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned7",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned8",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_speed_duration_binned9",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_state_cranking_count",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_state_cranking_duration",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_state_cranking_max",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_equipment_status"
     ]
   },
   {
     "qName": "esn",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1136,8 +1672,8 @@
   {
     "qName": "event_code",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1146,20 +1682,21 @@
   {
     "qName": "event_id",
     "qTags": [
-      "$ascii",
       "$text",
+      "$ascii",
       "$keypart"
     ],
     "qSrcTables": [
       "iot_events",
-      "iot_equipment_usage_events"
+      "iot_equipment_usage_events",
+      "iot_software_version_run_events"
     ]
   },
   {
     "qName": "event_id_loc",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_location_events"
@@ -1168,8 +1705,8 @@
   {
     "qName": "event_type",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1178,8 +1715,8 @@
   {
     "qName": "fault_category",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1188,31 +1725,40 @@
   {
     "qName": "fault_code_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
     ]
   },
   {
-    "qName": "front_base_solenoid_binned",
+    "qName": "front_base_solenoid",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "front_rod_solenoid_binned",
+    "qName": "front_rod_solenoid",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "fuel_consumption",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -1253,6 +1799,15 @@
     ]
   },
   {
+    "qName": "fuel_rail_pressure",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "fuel_rail_pressure_average",
     "qTags": [
       "$numeric"
@@ -1277,6 +1832,26 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "gateway_soft",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
+    ]
+  },
+  {
+    "qName": "gateway_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
     ]
   },
   {
@@ -1319,23 +1894,42 @@
     ]
   },
   {
-    "qName": "high_flow_binned",
+    "qName": "health_status",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_equipment_status"
     ]
   },
   {
-    "qName": "high_flow_solenoid_binned",
+    "qName": "high_flow",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "high_flow_solenoid",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_charge_pressure",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -1363,6 +1957,16 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "hydraulic_oil_temperature",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -1524,6 +2128,36 @@
     ]
   },
   {
+    "qName": "ingested_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "ingested_ts_sw_events",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
+    ]
+  },
+  {
+    "qName": "ingested_ts_sw_run",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
+    ]
+  },
+  {
     "qName": "internal_battery_voltage",
     "qTags": [
       "$numeric"
@@ -1543,10 +2177,37 @@
     ]
   },
   {
+    "qName": "inventory_condition",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "inventory_type",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "last_sync_time",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
     "qName": "last_update_event_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1691,23 +2352,13 @@
     ]
   },
   {
-    "qName": "load_duration_binned1",
+    "qName": "load",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned10",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
@@ -1718,90 +2369,10 @@
     ]
   },
   {
-    "qName": "load_duration_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned7",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned8",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "load_duration_binned9",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
     "qName": "location_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -1852,6 +2423,16 @@
     ]
   },
   {
+    "qName": "map_version_instant",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "map_version_run_usage",
     "qTags": [
       "$numeric",
@@ -1864,18 +2445,48 @@
   {
     "qName": "message_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_events"
     ]
   },
   {
+    "qName": "module_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
+    "qName": "monitor_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
+    ]
+  },
+  {
+    "qName": "monitor_type",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
+    ]
+  },
+  {
     "qName": "municipality",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -1892,6 +2503,76 @@
     ]
   },
   {
+    "qName": "option_mask",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
+    "qName": "persisted_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "product_category",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "product_equipment_type",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "product_fault_category",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "product_model",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "rear_base_solenoid",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "rear_base_solenoid_binned",
     "qTags": [
       "$numeric",
@@ -1899,6 +2580,16 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "rear_rod_solenoid",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -1914,8 +2605,8 @@
   {
     "qName": "region",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -1935,12 +2626,20 @@
     "qName": "sample_ts",
     "qTags": [
       "$numeric",
-      "$keypart",
       "$timestamp"
     ],
     "qSrcTables": [
-      "iot_events",
-      "iot_equipment_usage_events"
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "sample_ts_fault",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
     ]
   },
   {
@@ -1964,6 +2663,52 @@
     ]
   },
   {
+    "qName": "sample_ts_run",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "sample_ts_run_day",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events",
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "sample_ts_run_day_fault",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "sample_ts_sw_run",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
+    ]
+  },
+  {
     "qName": "seatbar_open_count",
     "qTags": [
       "$numeric",
@@ -1971,6 +2716,36 @@
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "seatbar_position",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "service_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status"
+    ]
+  },
+  {
+    "qName": "servicing_dealer_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
     ]
   },
   {
@@ -1984,13 +2759,33 @@
     ]
   },
   {
-    "qName": "session_id",
+    "qName": "session_end_ts_fault",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$numeric",
+      "$timestamp"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "session_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "session_id_monitor",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
     ]
   },
   {
@@ -2004,10 +2799,20 @@
     ]
   },
   {
+    "qName": "session_start_ts_fault",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
     "qName": "session_state",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2016,11 +2821,21 @@
   {
     "qName": "severity",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "sort_key",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
     ]
   },
   {
@@ -2033,6 +2848,16 @@
     ]
   },
   {
+    "qName": "standard_panel_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
+    ]
+  },
+  {
     "qName": "start_engine_hours",
     "qTags": [
       "$numeric"
@@ -2042,13 +2867,29 @@
     ]
   },
   {
+    "qName": "start_engine_hours_fault",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
     "qName": "start_event_id",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "start_event_id_monitor",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
     ]
   },
   {
@@ -2079,69 +2920,95 @@
     ]
   },
   {
+    "qName": "start_ts_monitor",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
+    ]
+  },
+  {
+    "qName": "start_ts_sw_session",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
+    ]
+  },
+  {
     "qName": "status",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
     ]
   },
   {
+    "qName": "status_monitor",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_monitoring_sessions"
+    ]
+  },
+  {
+    "qName": "steering_drift_forward",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "steering_drift_reverse",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "sub_region",
     "qTags": [
-      "$ascii",
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
     ]
   },
   {
-    "qName": "throttle_position_average",
+    "qName": "test_machine",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
+    "qName": "throttle_position",
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
     ]
   },
   {
-    "qName": "throttle_position_binned1",
+    "qName": "throttle_position_average",
     "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "throttle_position_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "throttle_position_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "throttle_position_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
+      "$numeric"
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
@@ -2167,23 +3034,43 @@
     ]
   },
   {
-    "qName": "two_speed_on_binned",
+    "qName": "updated_monitor",
     "qTags": [
       "$numeric",
-      "$integer"
+      "$timestamp"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_monitoring_sessions"
     ]
   },
   {
-    "qName": "workgroup_on_count",
+    "qName": "workgroup_soft",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
+    ]
+  },
+  {
+    "qName": "workgroup_state",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "iot_equipment_usage_events"
+      "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "workgroup_throttle_version",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_software_version_run_events"
     ]
   }
 ]

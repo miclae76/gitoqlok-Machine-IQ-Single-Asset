@@ -8,18 +8,31 @@ RUN_USAGE_SUMMARY
 PERIODIC_DATA
 FAULT_DATA
 EQ_LOCATIONS
+FULL
 ];
 
-
+//Static table to enable time zone selection for TS adjsuted 
+TimeZoneTable:
+LOAD * INLINE [
+TimeZone
+CET
+CST
+EET
+EST
+MST
+PST
+UTC
+WET
+];
 
 IF '$(odagActive)'='' THEN
-  trace ODAG variables not inserted! Loading sample data.;
+  trace *** ODAG variables not inserted! Loading sample data.;
   SET odag_asset_id = '''aljg30693''';
   SET odag_TimeZone = '''UTC''';
-  SET odag_TimeScope = '''Last 30 days''';
+  SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-06''';
+  SET odag_End_Date = '''2024-02-12''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp
@@ -36,26 +49,33 @@ LIB CONNECT TO 'Common DATA:Machine IQ';
 
 //Perform Micro Query depending of calling parameters
 IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
-	CALL GetPeriodicData 
+	CALL GetPeriodicData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'EQ_LOCATIONS' THEN  
 	CALL GetLocationData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'RUN_DATA' THEN  
 	CALL GetRunData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'FAULT_DATA' THEN  
-	CALL GetFaultSessions 
+	CALL GetFaultSessions
+    exit Script;
 ENDIF;
 
 // Perform full set of queries 
-IF $(odag_dataset) = 'FULL' THEN
+IF $(odag_dataset) = 'FULL' THEN 
+	CALL GetEquipmentInfo;
     CALL GetPeriodicData;
     CALL GetLocationData;
     CALL GetRunData;
     CALL GetFaultSessions;
     CALL GetEngineHoursAggregation;
+	CALL GetSoftware;
+    CALL GetMonitoringSessions;
 ENDIF

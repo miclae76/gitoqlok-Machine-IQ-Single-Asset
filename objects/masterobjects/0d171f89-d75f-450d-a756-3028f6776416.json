@@ -1,13 +1,15 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "2e0a2bf6-8666-4e33-a152-f7163698d58b",
+      "qId": "0d171f89-d75f-450d-a756-3028f6776416",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Fuel Consumption (L)",
+      "title": "Drive State On Duration",
       "description": "",
-      "tags": []
+      "tags": [
+        "RUN"
+      ]
     },
     "qHyperCubeDef": {
       "qDimensions": [
@@ -15,7 +17,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)))"
+              "sample_ts_run_day"
             ],
             "qFieldLabels": [
               ""
@@ -31,11 +33,8 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "PyCNEm",
-            "othersLabel": "Others",
-            "forecast": {
-              "stepSize": "days"
-            }
+            "cId": "puzCDgy",
+            "othersLabel": "Others"
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -70,35 +69,18 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Median(cumulative_fuel_consumption)",
+            "qDef": "Sum([Drive State On Duration])",
             "qNumFormat": {
               "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
+              "qnDec": 10,
+              "qUseThou": 0
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "NXRWU",
-            "numFormatFromTemplate": true,
-            "styling": [],
-            "forecast": {
-              "enabled": false,
-              "method": "ssa_forecast",
-              "paletteColor": {
-                "index": 0,
-                "color": "none"
-              },
-              "lineThickness": 1,
-              "lineType": "dashed",
-              "lineCurve": "linear",
-              "showConfidence": true,
-              "confidence": 0.95
-            },
-            "isCustomFormatted": false
+            "cId": "JjDbUZJ",
+            "numFormatFromTemplate": true
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -190,29 +172,27 @@
       "dimRefLines": []
     },
     "showTitles": true,
-    "title": "Fuel Consumption (L)",
-    "subtitle": "",
+    "title": "Drive State On Duration",
+    "subtitle": "(Time in Seconds)",
     "footnote": "",
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
     "showDisclaimer": true,
-    "lineType": "line",
-    "stackedArea": false,
-    "separateStacking": true,
-    "orientation": "horizontal",
+    "barGrouping": {
+      "grouping": "stacked"
+    },
+    "orientation": "vertical",
     "scrollbar": "none",
     "scrollStartPos": 0,
-    "nullMode": "connect",
-    "dataPoint": {
-      "show": false,
-      "showLabels": false
-    },
-    "maxNumPoints": 2000,
-    "maxNumLines": 12,
     "gridLine": {
       "auto": true,
       "spacing": 2
+    },
+    "dataPoint": {
+      "showLabels": false,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
     },
     "color": {
       "auto": true,
@@ -226,7 +206,7 @@
       },
       "useDimColVal": true,
       "useMeasureGradient": true,
-      "persistent": false,
+      "persistent": true,
       "expressionIsColor": true,
       "expressionLabel": "",
       "measureScheme": "sg",
@@ -238,47 +218,79 @@
     },
     "legend": {
       "show": true,
-      "dock": "auto",
-      "showTitle": true
+      "dock": "bottom",
+      "showTitle": false
     },
     "dimensionAxis": {
-      "continuousAuto": true,
+      "continuousAuto": false,
       "show": "labels",
-      "label": "auto",
+      "label": "tilted",
       "dock": "near",
       "axisDisplayMode": "auto",
       "maxVisibleItems": 10
     },
-    "preferContinuousAxis": true,
+    "preferContinuousAxis": false,
     "measureAxis": {
       "show": "labels",
       "dock": "near",
       "spacing": 0.5,
       "autoMinMax": true,
-      "minMax": "minMax",
+      "minMax": "min",
       "min": 0,
-      "max": 10,
-      "logarithmic": false
+      "max": 10
     },
     "tooltip": {
-      "auto": true,
+      "auto": false,
       "hideBasic": false,
       "chart": {
         "style": {
           "size": "medium"
         }
       },
+      "data": {},
       "title": "",
       "description": ""
     },
-    "visualization": "linechart",
-    "version": "1.30.8",
-    "components": [],
+    "visualization": "barchart",
+    "version": "1.34.7",
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "bar",
+        "style": {
+          "strokeWidth": "none"
+        }
+      },
+      {
+        "key": "axis",
+        "axis": {
+          "label": {
+            "name": {
+              "fontSize": "10px"
+            }
+          }
+        }
+      },
+      {
+        "key": "label"
+      },
+      {
+        "key": "legend",
+        "legend": {
+          "label": {
+            "fontSize": "10px"
+          }
+        }
+      }
+    ],
     "showMiniChartForContinuousAxis": true,
-    "masterVersion": 0.96,
     "qLayoutExclude": {
       "quarantine": {}
-    }
+    },
+    "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

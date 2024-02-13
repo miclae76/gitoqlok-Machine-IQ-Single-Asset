@@ -2,7 +2,14 @@
 SUB GetFaultSessions
 
 [iot_fault_sessions]:
-SELECT "session_id",
+LOAD
+	*,
+	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
+    ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
+    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault"
+;
+SELECT 
+	"session_id",
 	--"start_event_id",
 	--"end_event_id",
 	"asset_id",
@@ -11,8 +18,8 @@ SELECT "session_id",
 	"start_location_id",
 	"end_location_id",
 	"fault_code_id",
-	--"start_engine_hours",
-	--"end_engine_hours",
+	"start_engine_hours" as start_engine_hours_fault,
+	"end_engine_hours"	as end_engine_hours_fault,
 	status,
 	"last_update_event_id",
 	severity,
@@ -33,5 +40,93 @@ FROM
 WHERE 
 	asset_id = $(odag_asset_id)  
 AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+
+LOAD //event_id, 
+	asset_id, 
+	ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 			AS "sample_ts_fault", 
+	//event_type, 
+	auxiliary, 
+	brake_switch, 
+	def_concentration, 
+	def_temperature, 
+	door_position, 
+	drive_response, 
+	drive_state, 
+	engine_coolant_temperature, 
+	engine_fuel_temperature, 
+	engine_oil_pressure, 
+	engine_oil_temperature, 
+	engine_state_cranking_state, 
+	front_base_solenoid, 
+	front_rod_solenoid, 
+	fuel_consumption, 
+	fuel_rail_pressure, 
+	high_flow, 
+	high_flow_solenoid, 
+	hydraulic_charge_pressure, 
+	hydraulic_oil_temperature, 
+	load, 
+	rear_base_solenoid, 
+	rear_rod_solenoid, 
+	seatbar_position, 
+	steering_drift_forward, 
+	steering_drift_reverse, 
+	throttle_position, 
+	workgroup_state, 
+	//fault_code_id, 
+	ingested_ts, 
+	persisted_ts, 
+	//map_version, 
+	map_version_instant, 
+	delayed_match;
+
+[iot_fault_events]:
+SELECT 
+	"event_id",
+	"asset_id",
+	"sample_ts",
+	"event_type",
+	auxiliary,
+	"brake_switch",
+	"def_concentration",
+	"def_temperature",
+	"door_position",
+	"drive_response",
+	"drive_state",
+	"engine_coolant_temperature",
+	"engine_fuel_temperature",
+	"engine_oil_pressure",
+	"engine_oil_temperature",
+	"engine_state_cranking_state",
+	"front_base_solenoid",
+	"front_rod_solenoid",
+	"fuel_consumption",
+	"fuel_rail_pressure",
+	"high_flow",
+	"high_flow_solenoid",
+	"hydraulic_charge_pressure",
+	"hydraulic_oil_temperature",
+	"load",
+	"rear_base_solenoid",
+	"rear_rod_solenoid",
+	"seatbar_position",
+	"steering_drift_forward",
+	"steering_drift_reverse",
+	"throttle_position",
+	"workgroup_state",
+	"fault_code_id",
+	"ingested_ts",
+	"persisted_ts",
+	"map_version",
+	"map_version_instant",
+	"delayed_match"
+FROM 
+	iotv3."iot_fault_events"
+WHERE 
+	asset_id = $(odag_asset_id)  
+AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+
 
 ENDSUB

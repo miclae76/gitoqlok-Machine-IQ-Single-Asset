@@ -1,0 +1,31 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "TVkgCy",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Service Intervals",
+      "description": ""
+    },
+    "creationDate": "2024-02-12T15:29:37.531Z",
+    "rank": 6,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    }
+  },
+  "qChildren": []
+}

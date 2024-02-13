@@ -9,9 +9,14 @@ Created By miclae76(Michael Laenen) at Tue Feb 06 2024 15:39:25 GMT+0100 (Centra
 Sheet Title | Description
 ------------ | -------------
 Utilization|
-Locations|
-My new sheet|
+Equipment Locations|
+Periodic Data|
+Monitoring Sessions|
+Fault Data|
+Equipment Overview|
+Service Intervals|
 Run Data|
+Equipment Software|
 
 
 

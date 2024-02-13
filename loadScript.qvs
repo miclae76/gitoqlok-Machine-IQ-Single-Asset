@@ -24,6 +24,75 @@ SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;
 
 
 
+///$tab 10_SUB GetEquipmentInfo
+SUB GetEquipmentInfo
+
+TRACE *** Load iot_equipment ***;
+
+[iot_equipment]:
+LOAD 
+	asset_id, 
+	servicing_dealer_id, 
+	product_category, 
+	product_model, 
+	product_fault_category, 
+	product_equipment_type, 
+	test_machine, 
+	inventory_condition, 
+	last_sync_time,
+	inventory_type, 
+	customer_account_id;
+SELECT 
+	"asset_id",
+	name,
+--	"data_partition",
+	"servicing_dealer_id",
+	"product_category",
+	"product_model",
+	"product_fault_category",
+	"product_equipment_type",
+	"test_machine",
+--	created,
+--	updated,
+--	deleted,
+	"inventory_condition",
+	"last_sync_time",
+--	"sync_retry",
+--	"sync_failed",
+	"inventory_type",
+	"customer_account_id"
+FROM iotv3."iot_equipment"
+WHERE asset_id = $(odag_asset_id)  ;
+
+
+TRACE *** Load iot_equipment status ***;
+
+[iot_equipment_status]:
+LOAD 
+	asset_id, 
+	connected_status,
+    health_status,
+    service_status,
+	"Last_updated" as equipment_last_update_ts
+    WHERE Last_updated = updated;
+LOAD 
+	asset_id,
+    connected_status,
+    updated,
+    health_status,
+    service_status,
+    Window(Max(updated),asset_id) AS Last_updated ;
+SELECT "asset_id",
+	"connected_status",
+	--created,
+	 updated,
+	--deleted,
+	"health_status",
+	"service_status"
+FROM iotv3."iot_equipment_status"
+WHERE asset_id = $(odag_asset_id) and updated >= $(odag_Start_Date);
+
+EndSub
 ///$tab 20_SUB GetPeriodicData
 SUB GetPeriodicData
 
@@ -69,7 +138,7 @@ FROM iotv3."iot_events"
 WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
 
 ENDSUB
-
+ 
 
 
 ///$tab 30_SUB GetLocationData
@@ -158,32 +227,43 @@ ENDSUB
 SUB GetRunData
 
 [iot_equipment_usage_events]:
-SELECT 
+LOAD 
 	"event_id",
 	"asset_id",
 	"sample_ts",
-	"auxiliary_binned",
-	"def_concentration_binned1",
-	"def_concentration_binned10",
-	"def_concentration_binned2",
-	"def_concentration_binned3",
-	"def_concentration_binned4",
-	"def_concentration_binned5",
-	"def_concentration_binned6",
-	"def_concentration_binned7",
-	"def_concentration_binned8",
-	"def_concentration_binned9",
-	"def_temperature_binned1",
-	"def_temperature_binned2",
-	"def_temperature_binned3",
-	"def_temperature_binned4",
-	"def_temperature_binned5",
-	"def_temperature_binned6",
-	"door_open_count",
-	"drive_response_binned1",
-	"drive_response_binned2",
-	"drive_response_binned3",
-	"drive_state_on_count",
+	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 
+     Date(Floor(ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day",
+     
+     "auxiliary_binned"				AS "Auxiliary Enable Duration",
+     
+// Def Concentration bins
+	"def_concentration_binned1"		AS "DEF Concentration 0-19.75%",
+    "def_concentration_binned2"		AS "DEF Concentration 20-16.75%",
+	"def_concentration_binned3"		AS "DEF Concentration 27-29.75%",
+	"def_concentration_binned4"		AS "DEF Concentration 30-31.75%",
+	"def_concentration_binned5"		AS "DEF Concentration 32-33.75%",
+	"def_concentration_binned6"		AS "DEF Concentration 34-37.75%",
+	"def_concentration_binned7"		AS "DEF Concentration 38-41.75%",
+	"def_concentration_binned8"		AS "DEF Concentration 42-44.75%",
+	"def_concentration_binned9"		AS "DEF Concentration 45-59.75%",
+	"def_concentration_binned10"	AS "DEF Concentration 60+%",
+    
+// Def Temperature bins
+	"def_temperature_binned1"		AS "DEF Temperature (<-13°C / <9°F)",
+	"def_temperature_binned2"		AS "DEF Temperature (-13-15°C / 9-60°F)",
+	"def_temperature_binned3"		AS "DEF Temperature (16-43°C / 61-110°F)",
+	"def_temperature_binned4"		AS "DEF Temperature (44-54°C / 111-130°F)",
+	"def_temperature_binned5"		AS "DEF Temperature (55-65°C / 131-150°F)",
+	"def_temperature_binned6"		AS "DEF Temperature (66+°C / 151+°F)",
+    
+	"door_open_count"			AS "Door Cycle Count",
+    
+	"drive_response_binned1"	AS "Drive Response - State 1",
+	"drive_response_binned2"	AS "Drive Response - State 2",
+	"drive_response_binned3"	AS "Drive Response - State 3",
+    
+	"drive_state_on_count"		AS "Drive State On Duration",
+    
 	"engine_coolant_temperature_binned1",
 	"engine_coolant_temperature_binned2",
 	"engine_coolant_temperature_binned3",
@@ -192,35 +272,40 @@ SELECT
 	"engine_coolant_temperature_binned6",
 	"engine_coolant_temperature_binned7",
 	"engine_coolant_temperature_binned8",
-	"engine_on_time",
-	"engine_speed_duration_binned1",
-	"engine_speed_duration_binned10",
-	"engine_speed_duration_binned11",
-	"engine_speed_duration_binned12",
-	"engine_speed_duration_binned13",
-	"engine_speed_duration_binned14",
-	"engine_speed_duration_binned15",
-	"engine_speed_duration_binned16",
-	"engine_speed_duration_binned17",
-	"engine_speed_duration_binned18",
-	"engine_speed_duration_binned19",
-	"engine_speed_duration_binned2",
-	"engine_speed_duration_binned3",
-	"engine_speed_duration_binned4",
-	"engine_speed_duration_binned5",
-	"engine_speed_duration_binned6",
-	"engine_speed_duration_binned7",
-	"engine_speed_duration_binned8",
-	"engine_speed_duration_binned9",
-	"engine_state_cranking_count",
-	"engine_state_cranking_duration",
-	"engine_state_cranking_max",
-	"front_base_solenoid_binned",
-	"front_rod_solenoid_binned",
-	"high_flow_binned",
-	"high_flow_solenoid_binned",
+    
+	"engine_on_time"			AS "Engine On Time",
+    
+// Engine Speed bins    
+	"engine_speed_duration_binned1"		AS "Engine Speed - 0-1099 RPM",
+    "engine_speed_duration_binned2"		AS "Engine Speed - 1100-1199 RPM",
+	"engine_speed_duration_binned3"		AS "Engine Speed - 1200-1299 RPM",
+	"engine_speed_duration_binned4"		AS "Engine Speed - 1300-1399 RPM",
+	"engine_speed_duration_binned5"		AS "Engine Speed - 1400-1499 RPM",
+	"engine_speed_duration_binned6"		AS "Engine Speed - 1500-1599 RPM",
+	"engine_speed_duration_binned7"		AS "Engine Speed - 1600-1699 RPM",
+	"engine_speed_duration_binned8"		AS "Engine Speed - 1700-1799 RPM",
+	"engine_speed_duration_binned9"		AS "Engine Speed - 1800-1899 RPM",
+	"engine_speed_duration_binned10"	AS "Engine Speed - 1900-1999 RPM",
+	"engine_speed_duration_binned11"	AS "Engine Speed - 2000-2099 RPM",
+	"engine_speed_duration_binned12"	AS "Engine Speed - 2100-2199 RPM",
+	"engine_speed_duration_binned13"	AS "Engine Speed - 2200-2299 RPM",
+	"engine_speed_duration_binned14"	AS "Engine Speed - 2300-2399 RPM",
+	"engine_speed_duration_binned15"	AS "Engine Speed - 2400-2499 RPM",
+	"engine_speed_duration_binned16"	AS "Engine Speed - 2500-2599 RPM",
+	"engine_speed_duration_binned17"	AS "Engine Speed - 2600-2699 RPM",
+	"engine_speed_duration_binned18"	AS "Engine Speed - 2700-2799 RPM",
+	"engine_speed_duration_binned19"	AS "Engine Speed - 2800+ RPM",
+    
+	"engine_state_cranking_count"		AS "Engine State (Cranking) Count",
+	"engine_state_cranking_duration"	AS "Engine State (Cranking) Duration",
+	"engine_state_cranking_max"			AS "Engine State (Cranking) Max",
+    
+	"front_base_solenoid_binned"		AS "Front Base Solenoid Duration",
+	"front_rod_solenoid_binned"			AS "Front Rod Solenoid Duration",
+	"high_flow_binned"					AS "High Flow Duration",
+	"high_flow_solenoid_binned"			AS "High Flow Solenoid Duration",
+    
 	"hydraulic_oil_temperature_binned1",
-	"hydraulic_oil_temperature_binned10",
 	"hydraulic_oil_temperature_binned2",
 	"hydraulic_oil_temperature_binned3",
 	"hydraulic_oil_temperature_binned4",
@@ -229,39 +314,50 @@ SELECT
 	"hydraulic_oil_temperature_binned7",
 	"hydraulic_oil_temperature_binned8",
 	"hydraulic_oil_temperature_binned9",
-	"load_duration_binned1",
-	"load_duration_binned10",
-	"load_duration_binned2",
-	"load_duration_binned3",
-	"load_duration_binned4",
-	"load_duration_binned5",
-	"load_duration_binned6",
-	"load_duration_binned7",
-	"load_duration_binned8",
-	"load_duration_binned9",
-	"rear_base_solenoid_binned",
+    "hydraulic_oil_temperature_binned10",
+    
+	"load_duration_binned1"		AS "Load (Actual Engine - Pct Torque) - < 5%",
+	"load_duration_binned2"		AS "Load (Actual Engine - Pct Torque) - 5-9%",
+	"load_duration_binned3"		AS "Load (Actual Engine - Pct Torque) - 10-14%",
+	"load_duration_binned4"		AS "Load (Actual Engine - Pct Torque) - 15-19%",
+	"load_duration_binned5"		AS "Load (Actual Engine - Pct Torque) - 20-24%",
+	"load_duration_binned6"		AS "Load (Actual Engine - Pct Torque) - 25-29%",
+	"load_duration_binned7"		AS "Load (Actual Engine - Pct Torque) - 30-34",
+	"load_duration_binned8"		AS "Load (Actual Engine - Pct Torque) - 35-39%",
+	"load_duration_binned9"		AS "Load (Actual Engine - Pct Torque) - 40-50%",
+	"load_duration_binned10"	AS "Load (Actual Engine - Pct Torque) - 51%+",    
+    
+	"rear_base_solenoid_binned" ,
 	"rear_rod_solenoid_binned",
 	"seatbar_open_count",
-	"throttle_position_binned1",
-	"throttle_position_binned2",
-	"throttle_position_binned3",
-	"throttle_position_binned4",
-	"two_speed_on_binned",
-	"workgroup_on_count",
-	"def_concentration_average",
-	"def_concentration_max",
-	"def_concentration_min",
-	"def_level_max",
-	"def_level_min",
-	"engine_air_intake_temperature_average",
-	"engine_air_intake_temperature_max",
-	"engine_air_intake_temperature_min",
+    
+	"throttle_position_binned1"		AS "Throttle Position - 0-25%",
+	"throttle_position_binned2"		AS "Throttle Position - 26-50%",
+	"throttle_position_binned3"		AS "Throttle Position - 51-75%",
+	"throttle_position_binned4"		AS "Throttle Position - 76-100%",
+    
+	"two_speed_on_binned"			AS "Two Speed on Duration",
+	"workgroup_on_count"			AS "Workgroup State on Duration",
+    
+	"def_concentration_average"		AS "DEF Concentration Average",
+	"def_concentration_max"			AS "DEF Concentration Max",
+	"def_concentration_min"			AS "DEF Concentration Min",
+	"def_level_max"					AS "DEF Level Max",
+	"def_level_min"					AS "DEF Level Min",
+    
+    
+	"engine_air_intake_temperature_average", 	
+	"engine_air_intake_temperature_max",			
+	"engine_air_intake_temperature_min",			
+    
 	"engine_coolant_temperature_average",
 	"engine_coolant_temperature_max",
 	"engine_coolant_temperature_min",
+    
 	"engine_fuel_temperature_average",
 	"engine_fuel_temperature_max",
 	"engine_fuel_temperature_min",
+    
 	"engine_oil_pressure_average",
 	"engine_oil_pressure_max",
 	"engine_oil_pressure_min",
@@ -311,18 +407,50 @@ SELECT
 	"hydraulic_oil_temperature_binned14",
 	"engine_fuel_temperature_binned12",
 	"engine_fuel_temperature_binned10"
+;
+SELECT *
 FROM 
 	iotv3."iot_equipment_usage_events"
 WHERE 
 	asset_id = $(odag_asset_id)  
 AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
+Drop field "sample_ts" from [iot_equipment_usage_events];
+
+
+MinMaxDate:
+Load 
+	min(Date) as MinDate,
+    max(Date) as MaxDate;
+Load FieldValue('sample_ts_run_day',IterNo()) as Date
+autogenerate(1)
+while not IsNull(FieldValue('sample_ts_run_day',Iterno()));
+
+LET vStartDate = Peek('MinDate');
+LET vEndDate   = Peek('MaxDate');
+
+MasterCalendar:
+Load 
+ Date(TempDate) AS "sample_ts_run_day",
+;
+LOAD Date($(vStartDate) + IterNo()-1) AS TempDate
+AutoGenerate 1
+While $(vStartDate) + IterNo()-1 <= $(vEndDate);
+;
+
 EndSub
 ///$tab 50_SUB GetFaultSessions
 SUB GetFaultSessions
 
 [iot_fault_sessions]:
-SELECT "session_id",
+LOAD
+	*,
+	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
+    ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
+    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault"
+;
+SELECT 
+	"session_id",
 	--"start_event_id",
 	--"end_event_id",
 	"asset_id",
@@ -331,8 +459,8 @@ SELECT "session_id",
 	"start_location_id",
 	"end_location_id",
 	"fault_code_id",
-	--"start_engine_hours",
-	--"end_engine_hours",
+	"start_engine_hours" as start_engine_hours_fault,
+	"end_engine_hours"	as end_engine_hours_fault,
 	status,
 	"last_update_event_id",
 	severity,
@@ -354,6 +482,94 @@ WHERE
 	asset_id = $(odag_asset_id)  
 AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
+
+LOAD //event_id, 
+	asset_id, 
+	ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 			AS "sample_ts_fault", 
+	//event_type, 
+	auxiliary, 
+	brake_switch, 
+	def_concentration, 
+	def_temperature, 
+	door_position, 
+	drive_response, 
+	drive_state, 
+	engine_coolant_temperature, 
+	engine_fuel_temperature, 
+	engine_oil_pressure, 
+	engine_oil_temperature, 
+	engine_state_cranking_state, 
+	front_base_solenoid, 
+	front_rod_solenoid, 
+	fuel_consumption, 
+	fuel_rail_pressure, 
+	high_flow, 
+	high_flow_solenoid, 
+	hydraulic_charge_pressure, 
+	hydraulic_oil_temperature, 
+	load, 
+	rear_base_solenoid, 
+	rear_rod_solenoid, 
+	seatbar_position, 
+	steering_drift_forward, 
+	steering_drift_reverse, 
+	throttle_position, 
+	workgroup_state, 
+	//fault_code_id, 
+	ingested_ts, 
+	persisted_ts, 
+	//map_version, 
+	map_version_instant, 
+	delayed_match;
+
+[iot_fault_events]:
+SELECT 
+	"event_id",
+	"asset_id",
+	"sample_ts",
+	"event_type",
+	auxiliary,
+	"brake_switch",
+	"def_concentration",
+	"def_temperature",
+	"door_position",
+	"drive_response",
+	"drive_state",
+	"engine_coolant_temperature",
+	"engine_fuel_temperature",
+	"engine_oil_pressure",
+	"engine_oil_temperature",
+	"engine_state_cranking_state",
+	"front_base_solenoid",
+	"front_rod_solenoid",
+	"fuel_consumption",
+	"fuel_rail_pressure",
+	"high_flow",
+	"high_flow_solenoid",
+	"hydraulic_charge_pressure",
+	"hydraulic_oil_temperature",
+	"load",
+	"rear_base_solenoid",
+	"rear_rod_solenoid",
+	"seatbar_position",
+	"steering_drift_forward",
+	"steering_drift_reverse",
+	"throttle_position",
+	"workgroup_state",
+	"fault_code_id",
+	"ingested_ts",
+	"persisted_ts",
+	"map_version",
+	"map_version_instant",
+	"delayed_match"
+FROM 
+	iotv3."iot_fault_events"
+WHERE 
+	asset_id = $(odag_asset_id)  
+AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+
+
+
 ENDSUB
 ///$tab 60_SUB GetEngineHoursAggr
 SUB GetEngineHoursAggregation
@@ -372,6 +588,152 @@ WHERE
 AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
 
 ENDSUB
+///$tab 70_SUB GetSoftware
+SUB GetSoftware
+
+
+[iot_software_sessions]:
+LOAD //software_version_id, 
+	asset_id, 
+	start_ts AS start_ts_sw_session, 
+	end_ts AS end_ts_sw_session, 
+	//last_update_ts, 
+	//start_message_id, 
+	//end_message_id, 
+	controller_key, 
+	module_id, 
+	application_software_version, 
+	database_version, 
+	option_mask; 
+	//created, 
+	//updated, 
+	//deleted;
+SELECT --"software_version_id",
+	"asset_id",
+	"start_ts",
+	"end_ts",
+	--"last_update_ts",
+	--"start_message_id",
+	--"end_message_id",
+	"controller_key",
+	"module_id",
+	"application_software_version",
+	"database_version",
+	"option_mask"
+	--created,
+	--updated,
+	--deleted
+FROM iotv3."iot_software_sessions"
+WHERE 
+asset_id = $(odag_asset_id) 
+;
+//--AND start_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+
+[iot_software_version_run_events]:
+LOAD event_id, 
+	asset_id, 
+	ingested_ts AS ingested_ts_sw_run, 
+	//persisted_ts, 
+	sample_ts AS sample_ts_sw_run, 
+	gateway_version, 
+	aux_mx_secondary_version, 
+	standard_panel_version, 
+	drive_version, 
+	workgroup_throttle_version, 
+	deluxe_panel_version, 
+	acd_version;
+SELECT "event_id",
+	"asset_id",
+	"ingested_ts",
+	--"persisted_ts",
+	"sample_ts",
+	"gateway_version",
+	"aux_mx_secondary_version",
+	"standard_panel_version",
+	"drive_version",
+	"workgroup_throttle_version",
+	"deluxe_panel_version",
+	"acd_version"
+FROM iotv3."iot_software_version_run_events"
+WHERE 
+asset_id = $(odag_asset_id) 
+AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+[iot_software_version_soft_events]:
+LOAD //event_id, 
+	asset_id, 
+	ingested_ts AS ingested_ts_sw_events, 
+	//persisted_ts, 
+	//sample_ts, 
+	ecu_soft, 
+	dcu_soft, 
+	gateway_soft, 
+	auxiliary_soft, 
+	drive_soft, 
+	workgroup_soft;
+
+[iot_software_version_soft_events]:
+SELECT --"event_id",
+	"asset_id",
+	"ingested_ts",
+	--"persisted_ts",
+	--"sample_ts",
+	"ecu_soft",
+	"dcu_soft",
+	"gateway_soft",
+	"auxiliary_soft",
+	"drive_soft",
+	"workgroup_soft"
+FROM iotv3."iot_software_version_soft_events"
+WHERE 
+asset_id = $(odag_asset_id) 
+AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+
+
+
+
+ENDSUB
+
+
+///$tab 80_SUB_GetMonitoring
+SUB GetMonitoringSessions
+
+[iot_monitoring_sessions]:
+LOAD asset_id, 
+	sort_key, 
+	session_id		AS session_id_monitor, 
+	start_event_id AS start_event_id_monitor, 
+	//end_event_id, 
+	start_ts AS start_ts_monitor, 
+	end_ts AS end_ts_monitor, 
+	status as status_monitor, 
+	monitor_type, 
+	monitor_id, 
+	created as created_monitor, 
+	updated as updated_monitor
+	//deleted
+;
+SELECT "asset_id",
+	"sort_key",
+	"session_id",
+	"start_event_id",
+	--"end_event_id",
+	"start_ts",
+	"end_ts",
+	status,
+	"monitor_type",
+	"monitor_id",
+	created,
+	updated
+	--deleted
+FROM iotv3."iot_monitoring_sessions" 
+WHERE 
+asset_id = $(odag_asset_id) 
+AND status = 'ACTIVE';
+
+ENDSUB
 ///$tab 100_Odag_binding_Connect
 //Static Table to send param to trigger Subroutines in ODAG Template
 OdagSectionTable:
@@ -382,18 +744,31 @@ RUN_USAGE_SUMMARY
 PERIODIC_DATA
 FAULT_DATA
 EQ_LOCATIONS
+FULL
 ];
 
-
+//Static table to enable time zone selection for TS adjsuted 
+TimeZoneTable:
+LOAD * INLINE [
+TimeZone
+CET
+CST
+EET
+EST
+MST
+PST
+UTC
+WET
+];
 
 IF '$(odagActive)'='' THEN
-  trace ODAG variables not inserted! Loading sample data.;
+  trace *** ODAG variables not inserted! Loading sample data.;
   SET odag_asset_id = '''aljg30693''';
   SET odag_TimeZone = '''UTC''';
-  SET odag_TimeScope = '''Last 30 days''';
+  SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-06''';
+  SET odag_End_Date = '''2024-02-12''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp
@@ -410,28 +785,35 @@ LIB CONNECT TO 'Common DATA:Machine IQ';
 
 //Perform Micro Query depending of calling parameters
 IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
-	CALL GetPeriodicData 
+	CALL GetPeriodicData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'EQ_LOCATIONS' THEN  
 	CALL GetLocationData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'RUN_DATA' THEN  
 	CALL GetRunData
+     exit Script;
 ENDIF;
 
 IF $(odag_dataset) = 'FAULT_DATA' THEN  
-	CALL GetFaultSessions 
+	CALL GetFaultSessions
+    exit Script;
 ENDIF;
 
 // Perform full set of queries 
-IF $(odag_dataset) = 'FULL' THEN
+IF $(odag_dataset) = 'FULL' THEN 
+	CALL GetEquipmentInfo;
     CALL GetPeriodicData;
     CALL GetLocationData;
     CALL GetRunData;
     CALL GetFaultSessions;
     CALL GetEngineHoursAggregation;
+	CALL GetSoftware;
+    CALL GetMonitoringSessions;
 ENDIF
 
 

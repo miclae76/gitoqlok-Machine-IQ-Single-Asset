@@ -6,15 +6,15 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=Hour(ConvertToLocalTime(aggregate_ts, TimeZone))"
+      "=Hour(ConvertToLocalTime(aggregate_ts, TimeZone))&':00'"
     ],
     "qFieldLabels": [
-      ""
+      "extract_hours"
     ],
     "qLabelExpression": "='Hour'",
     "title": "extract_hours",
     "coloring": {
-      "changeHash": "0.14637746033479337",
+      "changeHash": "0.5060053714412598",
       "hasValueColors": false,
       "colorMapRef": "a8170564-ddf1-48d8-84cf-013a57d80ecc"
     }

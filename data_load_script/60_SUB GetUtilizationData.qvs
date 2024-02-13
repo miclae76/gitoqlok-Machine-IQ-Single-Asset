@@ -1,0 +1,37 @@
+///$tab 60_SUB GetUtilizationData
+SUB GetUtilizationData
+[iot_utilization_aggregation]:
+LOAD *, 
+	hour(aggregate_ts) AS aggregate_ts_hour,
+    date(floor(aggregate_ts)) as aggregate_ts_day;
+SELECT 
+    "asset_id",
+	"aggregate_ts",
+	"engine_hours" AS engine_hours_aggr
+--	"invalid_data_detected",
+--	"cumulative_engine_hours_final"
+FROM 
+	iotv3."iot_engine_hours_aggregation"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+
+
+Concatenate([iot_utilization_aggregation])
+LOAD *, 
+	hour(aggregate_ts) AS aggregate_ts_hour,
+    date(floor(aggregate_ts)) as aggregate_ts_day;
+SELECT "asset_id",
+	"aggregate_ts",
+	"fuel_consumption" AS fuel_consumption_aggr
+--	"invalid_data_detected",
+--	"cumulative_fuel_consumption_final"
+FROM 
+	iotv3."iot_fuel_consumption_aggregation"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+
+ENDSUB

@@ -9,12 +9,12 @@
       "=date(floor(ConvertToLocalTime(aggregate_ts, TimeZone)), 'MMM d,YYYY')"
     ],
     "qFieldLabels": [
-      ""
+      "time_zone_adjsuted_aggregated_ts"
     ],
-    "qLabelExpression": "='Timestamp'",
+    "qLabelExpression": "='Day'",
     "title": "time_zone_adjsuted_aggregated_ts",
     "coloring": {
-      "changeHash": "0.06816248510785883",
+      "changeHash": "0.5497197253640769",
       "hasValueColors": false,
       "colorMapRef": "cc775320-6c20-459c-8aed-c9df0c03ab10"
     }

@@ -6,7 +6,8 @@ LOAD
 	*,
 	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
     ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
-    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault"
+    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 		AS "created_fault_day"
 ;
 SELECT 
 	"session_id",
@@ -29,7 +30,7 @@ SELECT
 	"customer_troubleshooting",
 	"customer_description",
 	"customer_impact",
-	--created,
+	created as created_fault,
 	--updated,
 	--deleted,
 	--"last_update_ts",

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "CvTehk",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(floor(ConvertToLocalTime(sample_ts_run, TimeZone)), 'MMM d, YYYY')"
+    ],
+    "qFieldLabels": [
+      "time_zone_ajusted_sample_ts_run_"
+    ],
+    "qLabelExpression": "='Sample TS (Day)'",
+    "title": "time_zone_ajusted_sample_ts_run_",
+    "coloring": {
+      "changeHash": "0.6690113054410292",
+      "hasValueColors": false,
+      "colorMapRef": "CvTehk"
+    }
+  },
+  "qMetaDef": {
+    "title": "time_zone_ajusted_sample_ts_run_",
+    "description": "Time zone ajsuted sample ts for run data",
+    "tags": []
+  }
+}

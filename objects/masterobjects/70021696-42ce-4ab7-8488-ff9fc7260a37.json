@@ -14,14 +14,11 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
+          "qLibraryId": "CvTehk",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "sample_ts_run_day"
-            ],
-            "qFieldLabels": [
-              ""
-            ],
+            "qFieldDefs": [],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -33,7 +30,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "puzCDgy",
+            "cId": "mnCyPn",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"
@@ -64,8 +61,7 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          },
-          "othersLabel": "Others"
+          }
         }
       ],
       "qMeasures": [

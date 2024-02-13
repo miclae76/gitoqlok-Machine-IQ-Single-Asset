@@ -19,28 +19,28 @@
         "name": "DtpEXWV",
         "type": "barchart",
         "col": 0,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
-        "rowspan": 7,
+        "rowspan": 6,
         "bounds": {
+          "y": 0.7092198581560284,
           "x": 0,
-          "y": 0,
           "width": 50,
-          "height": 4.9645390070922
+          "height": 4.25531914893617
         }
       },
       {
         "name": "aMQYCTp",
         "type": "barchart",
         "col": 18,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
-        "rowspan": 7,
+        "rowspan": 6,
         "bounds": {
+          "y": 0.7092198581560284,
           "x": 50,
-          "y": 0,
           "width": 50,
-          "height": 4.9645390070922
+          "height": 4.25531914893617
         }
       },
       {
@@ -51,10 +51,10 @@
         "colspan": 18,
         "rowspan": 7,
         "bounds": {
+          "y": 4.964539007092199,
           "x": 0,
-          "y": 4.9645390070922,
           "width": 50,
-          "height": 4.9645390070922
+          "height": 4.964539007092199
         }
       },
       {
@@ -121,8 +121,8 @@
         "colspan": 18,
         "rowspan": 8,
         "bounds": {
+          "y": 20.56737588652482,
           "x": 0,
-          "y": 20.567375886524825,
           "width": 50,
           "height": 5.673758865248227
         }
@@ -4166,14 +4166,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [
-                  "sample_ts_run_day"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
+                "qFieldDefs": [],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -4185,7 +4182,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "puzCDgy",
+                "cId": "dKnptj",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -4216,8 +4213,7 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              },
-              "othersLabel": "Others"
+              }
             }
           ],
           "qMeasures": [
@@ -4623,14 +4619,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [
-                  "sample_ts_run_day"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
+                "qFieldDefs": [],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -4642,7 +4635,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "puzCDgy",
+                "cId": "Jxxxs",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -4673,8 +4666,7 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              },
-              "othersLabel": "Others"
+              }
             }
           ],
           "qMeasures": [
@@ -5662,14 +5654,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [
-                  "sample_ts_run_day"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
+                "qFieldDefs": [],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -5681,7 +5670,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "puzCDgy",
+                "cId": "yfwYQPC",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -5712,8 +5701,7 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              },
-              "othersLabel": "Others"
+              }
             }
           ],
           "qMeasures": [
@@ -6119,14 +6107,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [
-                  "sample_ts_run_day"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
+                "qFieldDefs": [],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -6138,7 +6123,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "puzCDgy",
+                "cId": "YfLnUyM",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -6169,8 +6154,7 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              },
-              "othersLabel": "Others"
+              }
             }
           ],
           "qMeasures": [
@@ -7890,14 +7874,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [
-                  "sample_ts_run_day"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
+                "qFieldDefs": [],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -7909,7 +7890,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "puzCDgy",
+                "cId": "wKrDRh",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -7940,8 +7921,7 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              },
-              "othersLabel": "Others"
+              }
             }
           ],
           "qMeasures": [

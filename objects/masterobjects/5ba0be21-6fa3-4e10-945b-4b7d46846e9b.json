@@ -17,7 +17,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "sample_ts_run_day"
+              "=sample_ts_run_day"
             ],
             "qFieldLabels": [
               ""

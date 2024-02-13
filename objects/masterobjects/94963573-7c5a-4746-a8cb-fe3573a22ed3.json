@@ -1,0 +1,127 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "LB TimeZone Transparent",
+      "description": "",
+      "tags": []
+    },
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": true,
+    "showDetails": false,
+    "showDetailsExpression": false,
+    "visualization": "filterpane",
+    "version": "0.17.4",
+    "qChildListDef": {
+      "qData": {}
+    },
+    "components": [
+      {
+        "key": "general",
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595957",
+            "alpha": 1
+          }
+        },
+        "title": {
+          "subTitle": {},
+          "footer": {},
+          "main": {
+            "fontStyle": []
+          }
+        },
+        "borderWidth": "0px"
+      },
+      {
+        "key": "theme",
+        "content": {
+          "fontColor": {
+            "index": 15,
+            "color": "#ffffff",
+            "alpha": 1
+          }
+        },
+        "background": {
+          "color": {
+            "index": -1,
+            "color": "#595959",
+            "alpha": 1
+          }
+        },
+        "header": {
+          "fontColor": {
+            "index": 15,
+            "color": "#ffffff",
+            "alpha": 1
+          },
+          "fontStyle": {
+            "bold": false,
+            "italic": false,
+            "underline": false
+          }
+        }
+      },
+      {
+        "key": "selections"
+      }
+    ],
+    "masterVersion": 0.96
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "0ef94f96-9e82-412e-b90e-4554b0eba2b5",
+          "qType": "listbox"
+        },
+        "qMetaDef": {},
+        "qListObjectDef": {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "TimeZone"
+            ],
+            "qFieldLabels": [
+              "TimeZone"
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false
+          },
+          "qFrequencyMode": "N",
+          "qShowAlternatives": true,
+          "qInitialDataFetch": [],
+          "qExpressions": []
+        },
+        "title": {
+          "qStringExpression": {
+            "qExpr": "'Time Zone : '&TimeZone"
+          }
+        },
+        "visualization": "listbox",
+        "showTitle": false,
+        "searchEnabled": false,
+        "autoConfirm": true,
+        "layoutOptions": {
+          "dense": true
+        },
+        "checkboxes": false
+      },
+      "qChildren": []
+    }
+  ]
+}

@@ -447,7 +447,8 @@ LOAD
 	*,
 	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
     ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
-    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault"
+    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 		AS "created_fault_day"
 ;
 SELECT 
 	"session_id",
@@ -470,7 +471,7 @@ SELECT
 	"customer_troubleshooting",
 	"customer_description",
 	"customer_impact",
-	--created,
+	created as created_fault,
 	--updated,
 	--deleted,
 	--"last_update_ts",
@@ -572,21 +573,41 @@ AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 
 ENDSUB
-///$tab 60_SUB GetEngineHoursAggr
-SUB GetEngineHoursAggregation
-
-[iot_engine_hours_aggregation]:
+///$tab 60_SUB GetUtilizationData
+SUB GetUtilizationData
+[iot_utilization_aggregation]:
+LOAD *, 
+	hour(aggregate_ts) AS aggregate_ts_hour,
+    date(floor(aggregate_ts)) as aggregate_ts_day;
 SELECT 
     "asset_id",
 	"aggregate_ts",
-	"engine_hours" AS engine_hours_aggr,
-	"invalid_data_detected",
-	"cumulative_engine_hours_final"
+	"engine_hours" AS engine_hours_aggr
+--	"invalid_data_detected",
+--	"cumulative_engine_hours_final"
 FROM 
 	iotv3."iot_engine_hours_aggregation"
 WHERE 
 	asset_id = $(odag_asset_id) 
 AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+
+
+Concatenate([iot_utilization_aggregation])
+LOAD *, 
+	hour(aggregate_ts) AS aggregate_ts_hour,
+    date(floor(aggregate_ts)) as aggregate_ts_day;
+SELECT "asset_id",
+	"aggregate_ts",
+	"fuel_consumption" AS fuel_consumption_aggr
+--	"invalid_data_detected",
+--	"cumulative_fuel_consumption_final"
+FROM 
+	iotv3."iot_fuel_consumption_aggregation"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
 
 ENDSUB
 ///$tab 70_SUB GetSoftware
@@ -769,7 +790,7 @@ IF '$(odagActive)'='' THEN
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-12''';
+  SET odag_End_Date = '''2024-02-13''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp
@@ -812,7 +833,7 @@ IF $(odag_dataset) = 'FULL' THEN
     CALL GetLocationData;
     CALL GetRunData;
     CALL GetFaultSessions;
-    CALL GetEngineHoursAggregation;
+    CALL GetUtilizationData;
 	CALL GetSoftware;
     CALL GetMonitoringSessions;
 ENDIF

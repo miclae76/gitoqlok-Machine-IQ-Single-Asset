@@ -748,7 +748,29 @@
       "$timestamp"
     ],
     "qSrcTables": [
-      "iot_engine_hours_aggregation"
+      "iot_utilization_aggregation"
+    ]
+  },
+  {
+    "qName": "aggregate_ts_day",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "iot_utilization_aggregation"
+    ]
+  },
+  {
+    "qName": "aggregate_ts_hour",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_utilization_aggregation"
     ]
   },
   {
@@ -786,7 +808,7 @@
       "iot_equipment_usage_events",
       "iot_fault_sessions",
       "iot_fault_events",
-      "iot_engine_hours_aggregation",
+      "iot_utilization_aggregation",
       "iot_software_sessions",
       "iot_software_version_run_events",
       "iot_software_version_soft_events",
@@ -904,6 +926,28 @@
     ]
   },
   {
+    "qName": "created_fault",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "created_fault_day",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions"
+    ]
+  },
+  {
     "qName": "created_monitor",
     "qTags": [
       "$numeric",
@@ -920,15 +964,6 @@
     ],
     "qSrcTables": [
       "iot_events"
-    ]
-  },
-  {
-    "qName": "cumulative_engine_hours_final",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "iot_engine_hours_aggregation"
     ]
   },
   {
@@ -1525,7 +1560,7 @@
       "$numeric"
     ],
     "qSrcTables": [
-      "iot_engine_hours_aggregation"
+      "iot_utilization_aggregation"
     ]
   },
   {
@@ -1759,6 +1794,15 @@
     ],
     "qSrcTables": [
       "iot_fault_events"
+    ]
+  },
+  {
+    "qName": "fuel_consumption_aggr",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_utilization_aggregation"
     ]
   },
   {
@@ -2164,16 +2208,6 @@
     ],
     "qSrcTables": [
       "iot_events"
-    ]
-  },
-  {
-    "qName": "invalid_data_detected",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_engine_hours_aggregation"
     ]
   },
   {

@@ -75,7 +75,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "FyfuyW",
+            "cId": "PPcnJF",
             "columnWidth": {
               "type": "auto",
               "pixels": 200,
@@ -109,9 +109,10 @@
       "qMeasures": [
         {
           "qDef": {
+            "qLabel": "Total Engine Hours",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Sum(engine_hours)",
+            "qDef": "Sum(engine_hours_aggr)",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -130,12 +131,12 @@
           },
           "qAttributeExpressions": [
             {
-              "qExpression": "=ColorMix1(rangemin(1, sum(engine_hours)), rgb(91,49,6),  rgb(255,181,0))",
+              "qExpression": "=ColorMix1(\r\nsum(engine_hours_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> engine_hours_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
               "qAttribute": true,
               "id": "cellBackgroundColor"
             },
             {
-              "qExpression": "=ColorMix1(rangemin(1, sum(engine_hours)), rgb(91,49,6),  rgb(255,181,0))",
+              "qExpression": "=ColorMix1( sum(engine_hours_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> engine_hours_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
               "qAttribute": true,
               "id": "cellForegroundColor"
             }

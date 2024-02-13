@@ -480,7 +480,8 @@ FROM
 	iotv3."iot_fault_sessions"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date)
+AND created BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 
 LOAD //event_id, 
@@ -665,7 +666,7 @@ LOAD //event_id,
 	asset_id, 
 	ingested_ts AS ingested_ts_sw_events, 
 	//persisted_ts, 
-	//sample_ts, 
+	sample_ts AS sample_ts_sw_events, 
 	ecu_soft, 
 	dcu_soft, 
 	gateway_soft, 
@@ -678,7 +679,7 @@ SELECT --"event_id",
 	"asset_id",
 	"ingested_ts",
 	--"persisted_ts",
-	--"sample_ts",
+	"sample_ts",
 	"ecu_soft",
 	"dcu_soft",
 	"gateway_soft",

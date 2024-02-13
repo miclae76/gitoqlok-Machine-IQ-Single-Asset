@@ -39,7 +39,8 @@ FROM
 	iotv3."iot_fault_sessions"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date)
+AND created BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 
 LOAD //event_id, 

@@ -2699,6 +2699,16 @@
     ]
   },
   {
+    "qName": "sample_ts_sw_events",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_software_version_soft_events"
+    ]
+  },
+  {
     "qName": "sample_ts_sw_run",
     "qTags": [
       "$numeric",

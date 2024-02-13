@@ -19,14 +19,14 @@
         "name": "KJgJaZs",
         "type": "barchart",
         "col": 0,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
-        "rowspan": 8,
+        "rowspan": 7,
         "bounds": {
-          "y": 0,
+          "y": 5.555555555555555,
           "x": 0,
           "width": 50,
-          "height": 44.44444444444444
+          "height": 38.88888888888889
         }
       },
       {
@@ -47,14 +47,14 @@
         "name": "LYkdrj",
         "type": "barchart",
         "col": 18,
-        "row": 0,
+        "row": 1,
         "colspan": 18,
-        "rowspan": 8,
+        "rowspan": 7,
         "bounds": {
-          "y": 0,
+          "y": 5.555555555555555,
           "x": 50,
           "width": 50,
-          "height": 44.44444444444444
+          "height": 38.88888888888889
         }
       }
     ],
@@ -68,7 +68,20 @@
     "layoutOptions": {
       "mobileLayout": "LIST"
     },
-    "gridMode": "edit"
+    "gridMode": "edit",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595957",
+            "alpha": 1
+          }
+        }
+      }
+    ]
   },
   "qChildren": [
     {
@@ -335,14 +348,14 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "session_start_ts_fault"
+                  "=date(ConvertToLocalTime(session_start_ts_fault, TimeZone), 'MMM d,YYYY h:mmtt')"
                 ],
                 "qFieldLabels": [
                   ""
                 ],
                 "qSortCriterias": [
                   {
-                    "qSortByNumeric": 1,
+                    "qSortByNumeric": -1,
                     "qSortByAscii": 1,
                     "qSortByLoadOrder": 1,
                     "qExpression": {}
@@ -352,14 +365,14 @@
                 "qActiveField": 0,
                 "qLabelExpression": "='Session Start ('&TimeZone&')'",
                 "othersLabel": "Others",
-                "autoSort": true,
+                "autoSort": false,
                 "textAlign": {
                   "auto": true,
                   "align": "left"
                 },
                 "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
+                  "type": "pixels",
+                  "pixels": 137.25000000000003,
                   "percentage": 20
                 },
                 "cId": "pdxbVKf"
@@ -395,7 +408,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "session_end_ts_fault"
+                  "=date(ConvertToLocalTime(session_end_ts_fault, TimeZone), 'MMM d,YYYY h:mmtt')"
                 ],
                 "qFieldLabels": [
                   ""
@@ -418,8 +431,8 @@
                   "align": "left"
                 },
                 "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
+                  "type": "pixels",
+                  "pixels": 129.25000000000003,
                   "percentage": 20
                 },
                 "cId": "LsqXEv"
@@ -458,7 +471,7 @@
                   "fault_code_id"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Fault Code ID"
                 ],
                 "qSortCriterias": [
                   {
@@ -478,7 +491,7 @@
                 },
                 "columnWidth": {
                   "type": "pixels",
-                  "pixels": 156.33333333333331,
+                  "pixels": 129.33333333333331,
                   "percentage": 20
                 },
                 "cId": "YRDATF"
@@ -517,7 +530,7 @@
                   "severity"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Severity"
                 ],
                 "qSortCriterias": [
                   {
@@ -537,7 +550,7 @@
                 },
                 "columnWidth": {
                   "type": "pixels",
-                  "pixels": 183.13333333333333,
+                  "pixels": 120,
                   "percentage": 20
                 },
                 "cId": "JgMqNz"
@@ -576,7 +589,7 @@
                   "status"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Status"
                 ],
                 "qSortCriterias": [
                   {
@@ -596,7 +609,7 @@
                 },
                 "columnWidth": {
                   "type": "pixels",
-                  "pixels": 173.38333333333333,
+                  "pixels": 122.38333333333333,
                   "percentage": 20
                 },
                 "cId": "jamyVU"
@@ -635,7 +648,7 @@
                   "controller"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Controller"
                 ],
                 "qSortCriterias": [
                   {
@@ -655,7 +668,7 @@
                 },
                 "columnWidth": {
                   "type": "pixels",
-                  "pixels": 174.05,
+                  "pixels": 133.05,
                   "percentage": 20
                 },
                 "cId": "RmAAjJ"
@@ -694,7 +707,7 @@
                   "code_name_customer"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Fault Name"
                 ],
                 "qSortCriterias": [
                   {
@@ -713,8 +726,8 @@
                   "align": "left"
                 },
                 "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
+                  "type": "pixels",
+                  "pixels": 292.9611111111111,
                   "percentage": 20
                 },
                 "cId": "CfzAAfp"
@@ -753,7 +766,7 @@
                   "session_id"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Session ID"
                 ],
                 "qSortCriterias": [
                   {
@@ -773,7 +786,7 @@
                 },
                 "columnWidth": {
                   "type": "pixels",
-                  "pixels": 298.85,
+                  "pixels": 726.85,
                   "percentage": 20
                 },
                 "cId": "JJkxPp"
@@ -926,6 +939,7 @@
           ],
           "qMeasures": [],
           "qInterColumnSortOrder": [
+            0,
             6,
             5,
             2,
@@ -934,7 +948,6 @@
             4,
             9,
             1,
-            0,
             8
           ],
           "qInitialDataFetch": [

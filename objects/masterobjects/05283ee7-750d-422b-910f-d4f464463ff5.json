@@ -1,11 +1,11 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "9ef1fea6-ad3e-4340-8a70-abe53bfc1bfb",
+      "qId": "05283ee7-750d-422b-910f-d4f464463ff5",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Engine hours data",
+      "title": "Fuel consumption data",
       "description": "",
       "tags": []
     },
@@ -28,7 +28,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": false,
-            "cId": "PYdb",
+            "cId": "KSEZL",
             "columnWidth": {
               "type": "auto",
               "pixels": 200,
@@ -75,7 +75,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "PPcnJF",
+            "cId": "GhdcMq",
             "columnWidth": {
               "type": "auto",
               "pixels": 200,
@@ -109,10 +109,10 @@
       "qMeasures": [
         {
           "qDef": {
-            "qLabel": "Total Engine Hours",
+            "qLabel": "Fuel Consumption",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Sum(engine_hours_aggr)",
+            "qDef": "Sum(fuel_consumption_aggr)",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -131,12 +131,12 @@
           },
           "qAttributeExpressions": [
             {
-              "qExpression": "=ColorMix1(\r\nsum(engine_hours_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> engine_hours_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
+              "qExpression": "=ColorMix1(\r\nsum(fuel_consumption_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> fuel_consumption_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
               "qAttribute": true,
               "id": "cellBackgroundColor"
             },
             {
-              "qExpression": "=ColorMix1( sum(engine_hours_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> engine_hours_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
+              "qExpression": "=ColorMix1( sum(fuel_consumption_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> fuel_consumption_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
               "qAttribute": true,
               "id": "cellForegroundColor"
             }
@@ -224,7 +224,7 @@
       "sorting": "auto"
     },
     "showTitles": true,
-    "title": "Engine hours data",
+    "title": "Fuel consumption data",
     "subtitle": "",
     "footnote": "",
     "disableNavMenu": false,

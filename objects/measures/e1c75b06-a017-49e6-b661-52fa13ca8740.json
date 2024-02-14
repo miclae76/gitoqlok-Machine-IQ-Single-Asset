@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "e1c75b06-a017-49e6-b661-52fa13ca8740",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Work Time (Engine Speed >1299 RPM)",
+    "qDef": "Rangesum(sum([Engine On Time]), -sum([Engine Speed - 0-1099 RPM]), -sum([Engine Speed - 1100-1199 RPM]), -sum([Engine Speed - 1200-1299 RPM]))/3600",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0.00",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "coloring": {
+      "baseColor": {
+        "color": "#FF3600",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Work Time (Engine Speed >1299 RPM)",
+    "description": "",
+    "tags": []
+  }
+}

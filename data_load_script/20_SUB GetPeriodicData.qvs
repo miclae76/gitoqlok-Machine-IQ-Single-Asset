@@ -2,7 +2,7 @@
 SUB GetPeriodicData
 
 [iot_events]:
-LOAD *, Timestamp(round("sample_ts", 1/24), 'MMM d,YYYY Htt') AS "sample_ts_hour";
+LOAD *, Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') AS "sample_ts_hour";
 LOAD 
 	"esn",
 	"event_id",

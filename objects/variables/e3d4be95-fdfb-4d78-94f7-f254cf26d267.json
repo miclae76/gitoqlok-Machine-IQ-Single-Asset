@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "e3d4be95-fdfb-4d78-94f7-f254cf26d267",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s_Subset_Event_Code",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "event_code={\"(ATTACHMENT_NUMBER_CHANGE|EXTERNAL_POWER|INTERNAL_BATTERY|ENTER_KEY|PING|REMOVE_KEY|RESET|START|START_TRAILERING|STOP|STOP_TRAILERING)\"}",
+  "tags": []
+}

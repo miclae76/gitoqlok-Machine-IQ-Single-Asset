@@ -16,20 +16,6 @@
     "rows": 18,
     "cells": [
       {
-        "name": "VPxf",
-        "type": "sn-pivot-table",
-        "col": 0,
-        "row": 1,
-        "colspan": 36,
-        "rowspan": 9,
-        "bounds": {
-          "y": 5.555555555555555,
-          "x": 0,
-          "width": 100,
-          "height": 50
-        }
-      },
-      {
         "name": "vJrffM",
         "type": "filterpane",
         "col": 32,
@@ -44,17 +30,59 @@
         }
       },
       {
-        "name": "KPMPTd",
-        "type": "sn-pivot-table",
+        "name": "mJdyWp",
+        "type": "text-image",
         "col": 0,
-        "row": 10,
-        "colspan": 36,
-        "rowspan": 8,
+        "row": 0,
+        "colspan": 9,
+        "rowspan": 1,
         "bounds": {
-          "y": 55.55555555555556,
+          "y": 0,
+          "x": 0,
+          "width": 25,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "PkJmUhW",
+        "type": "text-image",
+        "col": 18,
+        "row": 0,
+        "colspan": 14,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 38.88888888888889,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "sFveb",
+        "type": "barchart",
+        "col": 0,
+        "row": 1,
+        "colspan": 36,
+        "rowspan": 7,
+        "bounds": {
+          "y": 5.555555555555555,
           "x": 0,
           "width": 100,
-          "height": 44.44444444444444
+          "height": 38.88888888888889
+        }
+      },
+      {
+        "name": "cWFwhF",
+        "type": "container",
+        "col": 0,
+        "row": 8,
+        "colspan": 36,
+        "rowspan": 10,
+        "bounds": {
+          "y": 44.44444444444444,
+          "x": 0,
+          "width": 100,
+          "height": 55.55555555555556
         }
       }
     ],
@@ -88,17 +116,6 @@
     {
       "qProperty": {
         "qInfo": {
-          "qId": "VPxf",
-          "qType": "sn-pivot-table"
-        },
-        "qExtendsId": "9ef1fea6-ad3e-4340-8a70-abe53bfc1bfb",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
           "qId": "vJrffM",
           "qType": "filterpane"
         },
@@ -110,61 +127,36 @@
     {
       "qProperty": {
         "qInfo": {
-          "qId": "KPMPTd",
-          "qType": "sn-pivot-table"
+          "qId": "mJdyWp",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "PkJmUhW",
+          "qType": "text-image"
+        },
+        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "sFveb",
+          "qType": "barchart"
         },
         "qMetaDef": {},
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "a8170564-ddf1-48d8-84cf-013a57d80ecc",
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
-                "qSortCriterias": [
-                  {
-                    "qSortByNumeric": -1,
-                    "qSortByAscii": 1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": false,
-                "cId": "KSEZL",
-                "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
-                  "percentage": 20
-                }
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {},
-                "qOtherLimit": {},
-                "qOtherLimitMode": "OTHER_GT_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_OFF",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {},
-              "qTotalLabel": {
-                "qv": "Totals"
-              },
-              "qCalcCond": {},
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              }
-            },
-            {
-              "qLibraryId": "cc775320-6c20-459c-8aed-c9df0c03ab10",
+              "qLibraryId": "CvTehk",
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [],
@@ -180,28 +172,28 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "GhdcMq",
-                "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
-                  "percentage": 20
-                }
+                "cId": "jsUdm",
+                "othersLabel": "Others"
               },
               "qOtherTotalSpec": {
                 "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {},
-                "qOtherLimit": {},
-                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
                 "qForceBadValueKeeping": true,
                 "qApplyEvenWhenPossiblyWrongResult": true,
                 "qOtherSortMode": "OTHER_SORT_DESCENDING",
                 "qTotalMode": "TOTAL_OFF",
                 "qReferencedExpression": {}
               },
-              "qOtherLabel": {},
-              "qTotalLabel": {
-                "qv": "Totals"
+              "qOtherLabel": {
+                "qv": "Others"
               },
+              "qTotalLabel": {},
               "qCalcCond": {},
               "qAttributeExpressions": [],
               "qAttributeDimensions": [],
@@ -213,39 +205,79 @@
           ],
           "qMeasures": [
             {
+              "qLibraryId": "e1c75b06-a017-49e6-b661-52fa13ca8740",
               "qDef": {
-                "qLabel": "Fuel Consumption",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "Sum(fuel_consumption_aggr)",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
                 "autoSort": true,
-                "cId": "WthJPYH",
-                "columnWidth": {
-                  "type": "auto",
-                  "pixels": 200,
-                  "percentage": 20
-                }
+                "cId": "VGTEQT",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
               },
               "qSortBy": {
                 "qSortByNumeric": -1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
               },
-              "qAttributeExpressions": [
-                {
-                  "qExpression": "=ColorMix1(\r\nsum(fuel_consumption_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> fuel_consumption_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
-                  "qAttribute": true,
-                  "id": "cellBackgroundColor"
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
                 },
-                {
-                  "qExpression": "=ColorMix1( sum(fuel_consumption_aggr)/Max(total aggr(Sum(total <aggregate_ts_hour, aggregate_ts_day> fuel_consumption_aggr),   aggregate_ts_hour, aggregate_ts_day)), white(),  rgb(255,54,0))",
-                  "qAttribute": true,
-                  "id": "cellForegroundColor"
-                }
-              ],
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qLibraryId": "hJEePY",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "HXTCkbD",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
@@ -275,24 +307,23 @@
           ],
           "qInterColumnSortOrder": [
             0,
-            1
+            1,
+            2
           ],
           "qSuppressMissing": true,
           "qInitialDataFetch": [
             {
               "qLeft": 0,
               "qTop": 0,
-              "qWidth": 50,
-              "qHeight": 50
+              "qWidth": 17,
+              "qHeight": 500
             }
           ],
           "qReductionMode": "N",
-          "qMode": "P",
+          "qMode": "S",
           "qPseudoDimPos": -1,
-          "qNoOfLeftDims": 1,
-          "qAlwaysFullyExpanded": true,
+          "qNoOfLeftDims": -1,
           "qMaxStackedCells": 5000,
-          "qShowTotalsAbove": true,
           "qCalcCond": {},
           "qTitle": {},
           "qCalcCondition": {
@@ -325,62 +356,206 @@
             }
           }
         },
-        "search": {
-          "sorting": "auto"
+        "script": "",
+        "refLine": {
+          "refLines": [],
+          "dimRefLines": []
         },
         "showTitles": true,
-        "title": "Fuel consumption data",
+        "title": "Idle/Work time",
+        "subtitle": "Time in Hours (Idle = RPM < 1299)",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "barGrouping": {
+          "grouping": "stacked"
+        },
+        "orientation": "vertical",
+        "scrollbar": "bar",
+        "scrollStartPos": 1,
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "showLabels": false,
+          "showSegmentLabels": false,
+          "showTotalLabels": true
+        },
+        "color": {
+          "auto": true,
+          "mode": "primary",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": 6
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": false,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10
+        },
+        "legend": {
+          "show": true,
+          "dock": "auto",
+          "showTitle": false
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "horizontal",
+          "dock": "near",
+          "axisDisplayMode": "custom",
+          "maxVisibleItems": 14
+        },
+        "preferContinuousAxis": true,
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": true,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "chart": {
+            "style": {
+              "size": "medium"
+            }
+          },
+          "data": {}
+        },
+        "visualization": "barchart",
+        "version": "1.34.7",
+        "components": [
+          {
+            "key": "general"
+          },
+          {
+            "key": "bar"
+          },
+          {
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontSize": "10px"
+                }
+              }
+            }
+          },
+          {
+            "key": "label",
+            "label": {
+              "value": {
+                "fontSize": "10px"
+              }
+            }
+          },
+          {
+            "key": "legend",
+            "legend": {
+              "label": {
+                "fontSize": "10px"
+              }
+            }
+          }
+        ],
+        "showMiniChartForContinuousAxis": true,
+        "qLayoutExclude": {
+          "quarantine": {}
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "cWFwhF",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "9ef1fea6-ad3e-4340-8a70-abe53bfc1bfb",
+            "label": "Engine hours data",
+            "isMaster": true,
+            "cId": "mZtpDNf"
+          },
+          {
+            "refId": "05283ee7-750d-422b-910f-d4f464463ff5",
+            "label": "Fuel consumption data",
+            "isMaster": true,
+            "cId": "PxtWWE"
+          }
+        ],
+        "showTitles": false,
+        "title": "",
         "subtitle": "",
         "footnote": "",
         "disableNavMenu": false,
         "showDetails": true,
         "showDetailsExpression": false,
-        "components": [
-          {
-            "key": "theme",
-            "dimensionValues": {
-              "fontSize": "10px"
-            },
-            "grid": {
-              "lineClamp": 1
-            }
-          },
-          {
-            "key": "general"
+        "borders": "auto",
+        "showTabs": true,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": false,
+        "activeTab": "",
+        "defaultTab": "bee6b33e-6ae9-4d6d-8e58-ad20aff582c7",
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
           }
-        ],
-        "nullValueRepresentation": {
-          "text": ""
         },
-        "visualization": "sn-pivot-table",
-        "version": "2.6.1",
-        "extensionMeta": {
-          "translationKey": "",
-          "icon": "pivot-table",
-          "iconChar": "puzzle",
-          "isLibraryItem": true,
-          "visible": true,
-          "IconDefinition": {},
-          "name": "Pivot table",
-          "description": "Display dimensions and measures as rows and columns in a table. Analyze data by multiple measures and in multiple dimensions at the same time. Use pivoting (rearranging the measures and dimensions) to get different views of the data.",
-          "template": "sn-pivot-table",
-          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
-          "isThirdParty": true,
-          "version": "2.6.1",
-          "author": "QlikTech International AB",
-          "type": "visualization",
-          "supernova": true,
-          "bundle": {
-            "id": "qlik-visualization-bundle",
-            "name": "Qlik Visualization bundle",
-            "description": "This is a set of supported objects that expands the visualization capabilities of Qlik Sense. These can be used in addition to the objects found under 'Charts'. For support conditions and limitations, see the documentation."
-          },
-          "installer": "QlikExtensionBundler",
-          "folder": "_visualization-bundle"
-        },
-        "masterVersion": 0.96
+        "supportRefresh": false,
+        "hasExternalChildren": false
       },
-      "qChildren": []
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "6ea70a50-2011-4a04-b0b2-db647c522fdb",
+              "qType": "sn-pivot-table"
+            },
+            "qExtendsId": "05283ee7-750d-422b-910f-d4f464463ff5",
+            "qMetaDef": {},
+            "visualization": "sn-pivot-table"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "bee6b33e-6ae9-4d6d-8e58-ad20aff582c7",
+              "qType": "sn-pivot-table"
+            },
+            "qExtendsId": "9ef1fea6-ad3e-4340-8a70-abe53bfc1bfb",
+            "qMetaDef": {},
+            "visualization": "sn-pivot-table"
+          },
+          "qChildren": []
+        }
+      ]
     }
   ]
 }

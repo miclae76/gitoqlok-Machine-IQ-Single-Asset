@@ -97,7 +97,7 @@ EndSub
 SUB GetPeriodicData
 
 [iot_events]:
-LOAD *, Timestamp(round("sample_ts", 1/24), 'MMM d,YYYY Htt') AS "sample_ts_hour";
+LOAD *, Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') AS "sample_ts_hour";
 LOAD 
 	"esn",
 	"event_id",
@@ -233,7 +233,7 @@ LOAD
 	"sample_ts",
 	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 
      Date(Floor(ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day",
-     
+
      "auxiliary_binned"				AS "Auxiliary Enable Duration",
      
 // Def Concentration bins

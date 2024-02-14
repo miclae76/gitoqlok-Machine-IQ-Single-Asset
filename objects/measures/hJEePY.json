@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "hJEePY",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Idle Time (Engine Speed < 1300 RPM)",
+    "qDef": "Rangesum(sum([Engine Speed - 0-1099 RPM]), sum([Engine Speed - 1100-1199 RPM]),sum([Engine Speed - 1200-1299 RPM]))/3600",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0.00",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "coloring": {
+      "baseColor": {
+        "color": "#CDCDCD",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Idle Time (Engine Speed < 1300 RPM)",
+    "description": "",
+    "tags": []
+  }
+}

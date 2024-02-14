@@ -32,10 +32,15 @@
           }
         },
         "title": {
-          "subTitle": {},
-          "footer": {},
+          "subTitle": {
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "footer": {
+            "fontFamily": "Roboto, sans-serif"
+          },
           "main": {
-            "fontStyle": []
+            "fontStyle": [],
+            "fontFamily": "Roboto, sans-serif"
           }
         },
         "borderWidth": "0px"
@@ -47,7 +52,8 @@
             "index": 15,
             "color": "#ffffff",
             "alpha": 1
-          }
+          },
+          "fontFamily": "Roboto, sans-serif"
         },
         "background": {
           "color": {
@@ -66,7 +72,8 @@
             "bold": false,
             "italic": false,
             "underline": false
-          }
+          },
+          "fontFamily": "Roboto, sans-serif"
         }
       },
       {

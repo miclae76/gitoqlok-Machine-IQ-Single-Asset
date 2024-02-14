@@ -129,6 +129,17 @@
             "color": "#595957",
             "alpha": 1
           }
+        },
+        "title": {
+          "main": {
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "subTitle": {
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "footer": {
+            "fontFamily": "Roboto, sans-serif"
+          }
         }
       }
     ],

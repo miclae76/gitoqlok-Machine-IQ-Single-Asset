@@ -265,7 +265,7 @@
     "orientation": "horizontal",
     "scrollbar": "none",
     "scrollStartPos": 0,
-    "nullMode": "gap",
+    "nullMode": "connect",
     "dataPoint": {
       "show": true,
       "showLabels": false
@@ -343,7 +343,10 @@
     "version": "1.30.8",
     "components": [
       {
-        "key": "line"
+        "key": "line",
+        "style": {
+          "dataPointSize": 4
+        }
       },
       {
         "key": "axis"

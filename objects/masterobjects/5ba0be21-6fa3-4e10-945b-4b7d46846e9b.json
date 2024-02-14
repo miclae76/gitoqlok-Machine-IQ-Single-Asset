@@ -356,7 +356,20 @@
     "version": "1.34.7",
     "components": [
       {
-        "key": "general"
+        "key": "general",
+        "title": {
+          "main": {
+            "fontSize": "13px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "subTitle": {
+            "fontSize": "11px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "footer": {
+            "fontFamily": "Roboto, sans-serif"
+          }
+        }
       },
       {
         "key": "bar",
@@ -369,19 +382,33 @@
         "axis": {
           "label": {
             "name": {
-              "fontSize": "10px"
+              "fontSize": "10px",
+              "fontFamily": "Roboto, sans-serif"
             }
+          },
+          "title": {
+            "fontSize": "10px"
           }
         }
       },
       {
-        "key": "label"
+        "key": "label",
+        "label": {
+          "value": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "10px"
+          }
+        }
       },
       {
         "key": "legend",
         "legend": {
           "label": {
-            "fontSize": "10px"
+            "fontSize": "10px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "title": {
+            "fontFamily": "Roboto, sans-serif"
           }
         }
       }

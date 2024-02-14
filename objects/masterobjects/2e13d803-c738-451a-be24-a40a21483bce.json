@@ -241,13 +241,31 @@
         }
       },
       {
-        "key": "axis"
+        "key": "axis",
+        "axis": {
+          "title": {
+            "fontSize": "10px"
+          }
+        }
       },
       {
-        "key": "label"
+        "key": "label",
+        "label": {
+          "value": {
+            "fontSize": "10px"
+          },
+          "name": {
+            "fontSize": "10px"
+          }
+        }
       },
       {
-        "key": "legend"
+        "key": "legend",
+        "legend": {
+          "label": {
+            "fontSize": "10px"
+          }
+        }
       }
     ],
     "masterVersion": 0.96

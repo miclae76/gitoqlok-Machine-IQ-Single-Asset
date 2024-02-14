@@ -49,12 +49,12 @@
         "type": "gauge",
         "col": 18,
         "row": 1,
-        "colspan": 7,
+        "colspan": 6,
         "rowspan": 6,
         "bounds": {
           "y": 5.555555555555555,
           "x": 50,
-          "width": 19.444444444444446,
+          "width": 16.666666666666664,
           "height": 33.33333333333333
         }
       },
@@ -75,13 +75,13 @@
       {
         "name": "ePpBERm",
         "type": "kpi",
-        "col": 25,
+        "col": 24,
         "row": 1,
         "colspan": 5,
         "rowspan": 3,
         "bounds": {
           "y": 5.555555555555555,
-          "x": 69.44444444444444,
+          "x": 66.66666666666666,
           "width": 13.88888888888889,
           "height": 16.666666666666664
         }
@@ -89,13 +89,13 @@
       {
         "name": "jUnGLW",
         "type": "kpi",
-        "col": 25,
+        "col": 24,
         "row": 4,
         "colspan": 5,
         "rowspan": 3,
         "bounds": {
           "y": 22.22222222222222,
-          "x": 69.44444444444444,
+          "x": 66.66666666666666,
           "width": 13.88888888888889,
           "height": 16.666666666666664
         }
@@ -117,42 +117,42 @@
       {
         "name": "etEr",
         "type": "kpi",
-        "col": 30,
+        "col": 29,
         "row": 1,
-        "colspan": 6,
+        "colspan": 7,
         "rowspan": 2,
         "bounds": {
           "y": 5.555555555555555,
-          "x": 83.33333333333334,
-          "width": 16.666666666666664,
+          "x": 80.55555555555556,
+          "width": 19.444444444444446,
           "height": 11.11111111111111
         }
       },
       {
         "name": "AbzHpX",
         "type": "kpi",
-        "col": 30,
+        "col": 29,
         "row": 3,
-        "colspan": 6,
+        "colspan": 7,
         "rowspan": 2,
         "bounds": {
           "y": 16.666666666666664,
-          "x": 83.33333333333334,
-          "width": 16.666666666666664,
+          "x": 80.55555555555556,
+          "width": 19.444444444444446,
           "height": 11.11111111111111
         }
       },
       {
         "name": "uJvvK",
         "type": "kpi",
-        "col": 30,
+        "col": 29,
         "row": 5,
-        "colspan": 6,
+        "colspan": 7,
         "rowspan": 2,
         "bounds": {
           "y": 27.77777777777778,
-          "x": 83.33333333333334,
-          "width": 16.666666666666664,
+          "x": 80.55555555555556,
+          "width": 19.444444444444446,
           "height": 11.11111111111111
         }
       },
@@ -239,6 +239,48 @@
           "width": 50,
           "height": 11.11111111111111
         }
+      },
+      {
+        "name": "vuZLS",
+        "type": "text-image",
+        "col": 0,
+        "row": 0,
+        "colspan": 18,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 50,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "wPUFXAr",
+        "type": "text-image",
+        "col": 18,
+        "row": 0,
+        "colspan": 14,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 38.88888888888889,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "AATPpL",
+        "type": "filterpane",
+        "col": 32,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 88.88888888888889,
+          "width": 11.11111111111111,
+          "height": 5.555555555555555
+        }
       }
     ],
     "qChildListDef": {
@@ -251,7 +293,20 @@
     "layoutOptions": {
       "mobileLayout": "LIST"
     },
-    "gridMode": "edit"
+    "gridMode": "edit",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595957",
+            "alpha": 1
+          }
+        }
+      }
+    ]
   },
   "qChildren": [
     {
@@ -269,7 +324,7 @@
                 "qLabel": "Last update from TCU",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "date(Max(sample_ts), 'MMM d, YYYY h:mmtt')",
+                "qDef": "date(ConvertToLocalTime(Max(sample_ts), TimeZone), 'MMM d, YYYY h:mmtt')",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 10,
@@ -411,6 +466,12 @@
         "fontSize": "M",
         "components": [
           {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
             "key": "textAlignment"
           },
           {
@@ -425,16 +486,13 @@
             "key": "simpleSettings"
           },
           {
-            "key": "general"
-          },
-          {
             "key": "firstMeasureTitle",
-            "showTitle": true,
             "label": {
               "name": {
                 "fontSize": {
-                  "fluid": 0.5
-                }
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
@@ -444,7 +502,8 @@
               "value": {
                 "fontSize": {
                   "fluid": 0.5
-                }
+                },
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
@@ -620,6 +679,12 @@
         "fontSize": "M",
         "components": [
           {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
             "key": "textAlignment"
           },
           {
@@ -634,16 +699,13 @@
             "key": "simpleSettings"
           },
           {
-            "key": "general"
-          },
-          {
             "key": "firstMeasureTitle",
-            "showTitle": true,
             "label": {
               "name": {
                 "fontSize": {
-                  "fluid": 0.5
-                }
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
@@ -653,7 +715,8 @@
               "value": {
                 "fontSize": {
                   "fluid": 0.5
-                }
+                },
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
@@ -793,13 +856,34 @@
         "showDetailsExpression": false,
         "components": [
           {
-            "key": "general"
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "13px"
+              }
+            }
           },
           {
-            "key": "axis"
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           },
           {
-            "key": "value"
+            "key": "value",
+            "label": {
+              "value": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           }
         ],
         "measureAxis": {
@@ -985,13 +1069,34 @@
         "showDetailsExpression": false,
         "components": [
           {
-            "key": "general"
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "13px"
+              }
+            }
           },
           {
-            "key": "axis"
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           },
           {
-            "key": "value"
+            "key": "value",
+            "label": {
+              "value": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           }
         ],
         "measureAxis": {
@@ -1197,7 +1302,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": []
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.4
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ]
       },
       "qChildren": []
     },
@@ -1213,7 +1367,7 @@
           "qMeasures": [
             {
               "qDef": {
-                "qLabel": "Machine Battery Voltage",
+                "qLabel": "Internal Battery Voltage",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "avg(if(sample_ts=Max(total sample_ts), internal_battery_voltage))",
@@ -1356,7 +1510,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.4
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -1516,7 +1719,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -1676,7 +1928,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -1836,7 +2137,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -1853,7 +2203,7 @@
           "qMeasures": [
             {
               "qDef": {
-                "qLabel": "Health Status",
+                "qLabel": "Product Equipment Type",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "product_equipment_type",
@@ -1996,7 +2346,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -2013,10 +2412,10 @@
           "qMeasures": [
             {
               "qDef": {
-                "qLabel": "Inventory Type",
+                "qLabel": "Serivicind Dealer ID",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "Sum(servicing_dealer_id)",
+                "qDef": "Only({<servicing_dealer_id={*}>} servicing_dealer_id)",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 10,
@@ -2156,7 +2555,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -2311,7 +2759,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "isRecommended": true,
         "qLayoutExclude": {
           "disabled": {},
@@ -2388,7 +2885,7 @@
           "qMeasures": [
             {
               "qDef": {
-                "qLabel": "Inventory Type",
+                "qLabel": "Product Model",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "Only(product_model)",
@@ -2531,7 +3028,56 @@
         "textAlign": "center",
         "layoutBehavior": "relative",
         "fontSize": "M",
-        "components": [],
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {}
+            }
+          },
+          {
+            "key": "textAlignment"
+          },
+          {
+            "key": "textBehavior",
+            "textBehavior": "relative"
+          },
+          {
+            "key": "useAdvancedMode",
+            "useAdvancedMode": true
+          },
+          {
+            "key": "simpleSettings"
+          },
+          {
+            "key": "firstMeasureTitle",
+            "label": {
+              "name": {
+                "fontSize": {
+                  "fluid": 0.6
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "firstMeasureValue",
+            "label": {
+              "value": {
+                "fontSize": {
+                  "fluid": 0.5
+                },
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "secondMeasureTitle"
+          },
+          {
+            "key": "secondMeasureValue"
+          }
+        ],
         "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875"
       },
       "qChildren": []
@@ -2744,14 +3290,15 @@
           "spacing": 2
         },
         "color": {
-          "auto": true,
+          "auto": false,
           "mode": "primary",
           "formatting": {
             "numFormatFromTemplate": true
           },
           "useBaseColors": "off",
           "paletteColor": {
-            "index": 6
+            "index": -1,
+            "color": "#FF3600"
           },
           "useDimColVal": true,
           "useMeasureGradient": true,
@@ -2808,26 +3355,34 @@
         "version": "1.30.10",
         "components": [
           {
-            "key": "general"
-          },
-          {
-            "key": "line"
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "13px"
+              }
+            }
           },
           {
             "key": "axis",
             "axis": {
               "label": {
                 "name": {
-                  "fontSize": "10px"
+                  "fontFamily": "Roboto, sans-serif"
                 }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
           {
-            "key": "label"
-          },
-          {
-            "key": "legend"
+            "key": "value",
+            "label": {
+              "value": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           }
         ],
         "showMiniChartForContinuousAxis": true,
@@ -3625,7 +4180,37 @@
         },
         "components": [
           {
-            "key": "general"
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "13px"
+              },
+              "subTitle": {
+                "fontSize": "10px"
+              }
+            }
+          },
+          {
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "value",
+            "label": {
+              "value": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           }
         ],
         "masterVersion": 0.96
@@ -4287,6 +4872,39 @@
           },
           "quarantine": {}
         }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "vuZLS",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "wPUFXAr",
+          "qType": "text-image"
+        },
+        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "AATPpL",
+          "qType": "filterpane"
+        },
+        "qExtendsId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+        "qMetaDef": {}
       },
       "qChildren": []
     }

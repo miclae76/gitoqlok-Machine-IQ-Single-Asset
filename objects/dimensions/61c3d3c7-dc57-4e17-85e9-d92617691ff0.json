@@ -6,15 +6,15 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)), 'MMM d,YYYY')"
+      "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)), 'MMM d, YYYY')"
     ],
     "qFieldLabels": [
-      ""
+      "time_zone_adjsuted_sample_ts (1)"
     ],
     "qLabelExpression": "='Day'",
     "title": "time_zone_adjsuted_sample_ts (1)",
     "coloring": {
-      "changeHash": "0.03449354432267482",
+      "changeHash": "0.15678550846986328",
       "hasValueColors": false,
       "colorMapRef": "61c3d3c7-dc57-4e17-85e9-d92617691ff0"
     }

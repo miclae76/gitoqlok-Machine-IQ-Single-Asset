@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "guYBxr",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM d, YYYY h:mmtt')"
+    ],
+    "qFieldLabels": [
+      "sample_ts"
+    ],
+    "qLabelExpression": "='Sample TS (Day)'",
+    "title": "sample_ts",
+    "coloring": {
+      "changeHash": "0.14703562710557638",
+      "hasValueColors": false,
+      "colorMapRef": "guYBxr"
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "kmpr",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=Date(ConvertToLocalTime(sample_ts_hour, TimeZone), 'MMM d, YYYY htt')"
+    ],
+    "qFieldLabels": [
+      "Day Hour"
+    ],
+    "title": "Day Hour",
+    "coloring": {
+      "changeHash": "0.9287806183516969",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Day Hour",
+    "description": "",
+    "tags": []
+  }
+}

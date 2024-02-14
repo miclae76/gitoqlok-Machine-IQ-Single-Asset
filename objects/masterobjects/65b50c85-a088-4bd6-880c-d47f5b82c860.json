@@ -12,11 +12,10 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
+          "qLibraryId": "guYBxr",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM d, YYYY h:mmtt')"
-            ],
+            "qFieldDefs": [],
             "qFieldLabels": [
               "sample_ts"
             ],

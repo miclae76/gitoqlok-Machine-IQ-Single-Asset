@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "bPfmh",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MM-DD-YYYY h:mm:ss TT')"
+    ],
+    "qFieldLabels": [
+      "Sample TS (TZ adjusted)"
+    ],
+    "qLabelExpression": "='Timestamp ('&TimeZone&')'",
+    "title": "Sample TS (TZ adjusted)",
+    "coloring": {
+      "changeHash": "0.2797159800506097",
+      "hasValueColors": false,
+      "colorMapRef": "bPfmh"
+    }
+  },
+  "qMetaDef": {
+    "title": "Sample TS (TZ adjusted)",
+    "description": "",
+    "tags": []
+  }
+}

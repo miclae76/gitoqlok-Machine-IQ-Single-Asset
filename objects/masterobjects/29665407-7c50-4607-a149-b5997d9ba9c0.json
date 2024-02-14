@@ -12,14 +12,11 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
+          "qLibraryId": "kmpr",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)))"
-            ],
-            "qFieldLabels": [
-              "sample_ts"
-            ],
+            "qFieldDefs": [],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -31,7 +28,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "AFpmn",
+            "cId": "YMKgrqW",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"

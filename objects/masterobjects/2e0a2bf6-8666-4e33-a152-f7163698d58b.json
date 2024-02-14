@@ -12,14 +12,11 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
+          "qLibraryId": "guYBxr",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "=Date(floor(ConvertToLocalTime(sample_ts, TimeZone)))"
-            ],
-            "qFieldLabels": [
-              ""
-            ],
+            "qFieldDefs": [],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -31,7 +28,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "PyCNEm",
+            "cId": "dSJpEz",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"

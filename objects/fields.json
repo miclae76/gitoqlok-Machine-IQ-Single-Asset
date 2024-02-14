@@ -1675,6 +1675,15 @@
     ]
   },
   {
+    "qName": "engine_speed",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
     "qName": "engine_state_cranking_state",
     "qTags": [
       "$numeric",

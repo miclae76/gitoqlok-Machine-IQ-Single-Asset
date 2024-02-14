@@ -189,11 +189,10 @@
           }
         },
         {
+          "qLibraryId": "bPfmh",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "=date(ConvertToLocalTime(sample_ts, TimeZone), 'MMM D, YYYY h:mmtt')"
-            ],
+            "qFieldDefs": [],
             "qFieldLabels": [
               ""
             ],
@@ -369,6 +368,66 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
+              "fuel_level"
+            ],
+            "qFieldLabels": [
+              "Fuel Level %"
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "othersLabel": "Others",
+            "autoSort": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "columnWidth": {
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
+            },
+            "cId": "UhafE"
+          },
+          "qNullSuppression": true,
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        },
+        {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
               "cumulative_fuel_consumption"
             ],
             "qFieldLabels": [
@@ -490,7 +549,7 @@
               "def_level"
             ],
             "qFieldLabels": [
-              "DEF Level"
+              "DEF Level %"
             ],
             "qSortCriterias": [
               {
@@ -515,6 +574,7 @@
             },
             "cId": "qmuj"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -546,10 +606,10 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "event_id"
+              "engine_speed"
             ],
             "qFieldLabels": [
-              "Event ID"
+              "Engine Speed RPM"
             ],
             "qSortCriterias": [
               {
@@ -572,7 +632,7 @@
               "pixels": 200,
               "percentage": 20
             },
-            "cId": "aCMsH"
+            "cId": "LMpjdJ"
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -777,6 +837,124 @@
             "qCond": {},
             "qMsg": {}
           }
+        },
+        {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "event_id"
+            ],
+            "qFieldLabels": [
+              "Event ID"
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "othersLabel": "Others",
+            "autoSort": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "columnWidth": {
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
+            },
+            "cId": "aCMsH"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        },
+        {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "message_id"
+            ],
+            "qFieldLabels": [
+              "Message ID"
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "othersLabel": "Others",
+            "autoSort": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "columnWidth": {
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
+            },
+            "cId": "Skdwzj"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
         }
       ],
       "qMeasures": [],
@@ -785,15 +963,18 @@
         0,
         4,
         5,
-        6,
         7,
         8,
-        2,
         9,
+        2,
+        14,
         1,
-        10,
         11,
-        12
+        12,
+        13,
+        6,
+        10,
+        15
       ],
       "qInitialDataFetch": [
         {
@@ -827,7 +1008,10 @@
         9,
         10,
         11,
-        12
+        12,
+        13,
+        14,
+        15
       ],
       "qExpansionState": [],
       "qDynamicScript": [],

@@ -115,7 +115,8 @@ LOAD
 	"fuel_level",
 	"cumulative_fuel_consumption",
 	"cumulative_engine_hours",
-	"def_level";
+	"def_level",
+    "engine_speed";
 SELECT 
 	"esn",
 	"event_id",
@@ -133,7 +134,8 @@ SELECT
 	"fuel_level",
 	"cumulative_fuel_consumption",
 	"cumulative_engine_hours",
-	"def_level"
+	"def_level",
+    "engine_speed"
 FROM iotv3."iot_events"
 WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
 

@@ -234,15 +234,32 @@
       {
         "key": "theme",
         "dimensionValues": {
-          "fontSize": "10px"
+          "fontSize": "10px",
+          "fontFamily": "Roboto, sans-serif"
         },
         "grid": {
           "lineClamp": 1
+        },
+        "header": {
+          "fontFamily": "Roboto, sans-serif"
+        },
+        "measureValues": {
+          "fontFamily": "Roboto, sans-serif"
         }
       },
       {
         "key": "general",
-        "borderWidth": "2px"
+        "borderWidth": "2px",
+        "title": {
+          "main": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "13px"
+          },
+          "subTitle": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "10px"
+          }
+        }
       }
     ],
     "nullValueRepresentation": {

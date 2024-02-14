@@ -41,7 +41,8 @@ asset_id = $(odag_asset_id)
 
 
 [iot_software_version_run_events]:
-LOAD event_id, 
+LOAD 
+	//event_id, 
 	asset_id, 
 	ingested_ts AS ingested_ts_sw_run, 
 	//persisted_ts, 

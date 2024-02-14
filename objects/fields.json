@@ -793,6 +793,63 @@
     ]
   },
   {
+    "qName": "archive_connected_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
+    "qName": "archive_created",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
+    "qName": "archive_deleted",
+    "qTags": [],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
+    "qName": "archive_health_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
+    "qName": "archive_service_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
+    "qName": "archive_updated",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status_archive"
+    ]
+  },
+  {
     "qName": "asset_id",
     "qTags": [
       "$key",
@@ -802,6 +859,7 @@
     "qSrcTables": [
       "iot_equipment",
       "iot_equipment_status",
+      "iot_equipment_status_archive",
       "iot_events",
       "iot_debounced_location_sessions",
       "iot_location_events",
@@ -1694,7 +1752,27 @@
     ]
   },
   {
-    "qName": "equipment_last_update_ts",
+    "qName": "equipment_latest_create_ts",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status"
+    ]
+  },
+  {
+    "qName": "equipment_latest_delete_ts",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment_status"
+    ]
+  },
+  {
+    "qName": "equipment_latest_update_ts",
     "qTags": [
       "$numeric",
       "$timestamp"
@@ -1727,13 +1805,10 @@
     "qName": "event_id",
     "qTags": [
       "$text",
-      "$ascii",
-      "$keypart"
+      "$ascii"
     ],
     "qSrcTables": [
-      "iot_events",
-      "iot_equipment_usage_events",
-      "iot_software_version_run_events"
+      "iot_events"
     ]
   },
   {

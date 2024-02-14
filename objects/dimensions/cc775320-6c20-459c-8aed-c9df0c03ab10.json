@@ -6,7 +6,7 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=date(floor(ConvertToLocalTime(aggregate_ts, TimeZone)), 'MMM d,YYYY')"
+      "=date(floor(ConvertToLocalTime(aggregate_ts, TimeZone)), 'MMM d, YYYY')"
     ],
     "qFieldLabels": [
       "time_zone_adjsuted_aggregated_ts"
@@ -14,7 +14,7 @@
     "qLabelExpression": "='Day'",
     "title": "time_zone_adjsuted_aggregated_ts",
     "coloring": {
-      "changeHash": "0.5497197253640769",
+      "changeHash": "0.10265954066178251",
       "hasValueColors": false,
       "colorMapRef": "cc775320-6c20-459c-8aed-c9df0c03ab10"
     }

@@ -71,26 +71,53 @@ TRACE *** Load iot_equipment status ***;
 LOAD 
 	asset_id, 
 	connected_status,
+    deleted as equipment_latest_delete_ts,
+    created as equipment_latest_create_ts,
     health_status,
     service_status,
-	"Last_updated" as equipment_last_update_ts
+	"Last_updated" as equipment_latest_update_ts
     WHERE Last_updated = updated;
 LOAD 
 	asset_id,
     connected_status,
+    created,
     updated,
+    deleted,
     health_status,
     service_status,
     Window(Max(updated),asset_id) AS Last_updated ;
 SELECT "asset_id",
 	"connected_status",
-	--created,
+	 created,
 	 updated,
-	--deleted,
+	 deleted,
 	"health_status",
 	"service_status"
-FROM iotv3."iot_equipment_status"
-WHERE asset_id = $(odag_asset_id) and updated >= $(odag_Start_Date);
+FROM 
+	iotv3."iot_equipment_status"
+WHERE 
+	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
+
+[iot_equipment_status_archive]:
+LOAD asset_id, 
+	connected_status As archive_connected_status, 
+	created As archive_created, 
+	updated	AS archive_updated,
+	deleted	AS archive_deleted, 
+	health_status AS archive_health_status, 
+	service_status AS archive_service_status;
+SELECT "asset_id",
+	"connected_status",
+	created,
+	updated,
+	deleted,
+	"health_status",
+	"service_status"
+FROM 
+	iotv3."iot_equipment_status_archive"
+WHERE 
+	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
+
 
 EndSub
 ///$tab 20_SUB GetPeriodicData
@@ -106,7 +133,8 @@ LOAD
     "event_code",
     "message_id",
     "attachment_id",
-    ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') AS "sample_ts" ,
+    //ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') AS "sample_ts" ,
+    "sample_ts",
 	"machine_state_of_charge",
 	"machine_battery_voltage",
 	"internal_battery_voltage",
@@ -230,7 +258,7 @@ SUB GetRunData
 
 [iot_equipment_usage_events]:
 LOAD 
-	"event_id",
+	//"event_id",
 	"asset_id",
 	"sample_ts",
 	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 
@@ -655,7 +683,8 @@ asset_id = $(odag_asset_id)
 
 
 [iot_software_version_run_events]:
-LOAD event_id, 
+LOAD 
+	//event_id, 
 	asset_id, 
 	ingested_ts AS ingested_ts_sw_run, 
 	//persisted_ts, 
@@ -792,7 +821,7 @@ IF '$(odagActive)'='' THEN
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-13''';
+  SET odag_End_Date = '''2024-02-14''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp

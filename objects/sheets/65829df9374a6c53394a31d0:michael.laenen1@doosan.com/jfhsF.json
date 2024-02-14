@@ -629,12 +629,55 @@
         "showDetailsExpression": false,
         "components": [
           {
-            "key": "general"
+            "key": "general",
+            "title": {
+              "main": {
+                "fontSize": "13px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
           },
           {
-            "key": "theme",
-            "content": {
-              "hoverEffect": true
+            "key": "bar"
+          },
+          {
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "10px"
+              }
+            }
+          },
+          {
+            "key": "label",
+            "label": {
+              "value": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "legend",
+            "legend": {
+              "label": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
             }
           }
         ],

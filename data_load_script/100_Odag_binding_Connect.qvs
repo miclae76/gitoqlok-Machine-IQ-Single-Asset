@@ -32,7 +32,7 @@ IF '$(odagActive)'='' THEN
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-13''';
+  SET odag_End_Date = '''2024-02-14''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp

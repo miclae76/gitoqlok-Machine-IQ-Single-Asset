@@ -157,7 +157,53 @@
     "textAlign": "center",
     "layoutBehavior": "relative",
     "fontSize": "M",
-    "components": [],
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "textAlignment"
+      },
+      {
+        "key": "textBehavior",
+        "textBehavior": "relative"
+      },
+      {
+        "key": "useAdvancedMode",
+        "useAdvancedMode": true
+      },
+      {
+        "key": "simpleSettings"
+      },
+      {
+        "key": "firstMeasureTitle",
+        "label": {
+          "name": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": {
+              "fluid": 0.5
+            }
+          }
+        }
+      },
+      {
+        "key": "firstMeasureValue",
+        "label": {
+          "value": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": {
+              "fluid": 0.7
+            }
+          }
+        }
+      },
+      {
+        "key": "secondMeasureTitle"
+      },
+      {
+        "key": "secondMeasureValue"
+      }
+    ],
     "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
     "masterVersion": 0.96
   },

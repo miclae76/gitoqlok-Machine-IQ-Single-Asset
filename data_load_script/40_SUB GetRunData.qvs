@@ -3,7 +3,7 @@ SUB GetRunData
 
 [iot_equipment_usage_events]:
 LOAD 
-	"event_id",
+	//"event_id",
 	"asset_id",
 	"sample_ts",
 	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 

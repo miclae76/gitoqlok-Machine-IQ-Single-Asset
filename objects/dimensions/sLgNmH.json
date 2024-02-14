@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "sLgNmH",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM D, YYYY h:mmtt')"
+    ],
+    "qFieldLabels": [
+      "Start TS Location"
+    ],
+    "qLabelExpression": "='Start TS ('&TimeZone&')'",
+    "title": "Start TS Location",
+    "coloring": {
+      "changeHash": "0.12459940117152413",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Start TS Location",
+    "description": "",
+    "tags": []
+  }
+}

@@ -477,7 +477,8 @@
                 }
               },
               "title": {
-                "fontSize": "10px"
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
               }
             }
           },
@@ -487,6 +488,10 @@
               "value": {
                 "fontFamily": "Roboto, sans-serif",
                 "fontSize": "10px"
+              },
+              "name": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "11px"
               }
             }
           },
@@ -499,6 +504,17 @@
               },
               "title": {
                 "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "slices",
+            "style": {
+              "strokeWidth": "small",
+              "strokeColor": {
+                "index": 15,
+                "color": "#ffffff",
+                "alpha": 1
               }
             }
           }
@@ -2198,6 +2214,17 @@
     {
       "qProperty": {
         "qInfo": {
+          "qId": "MKYmH",
+          "qType": "text-image"
+        },
+        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
           "qId": "AsPpCH",
           "qType": "kpi"
         },
@@ -2856,17 +2883,6 @@
           "qType": "text-image"
         },
         "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "MKYmH",
-          "qType": "text-image"
-        },
-        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
         "qMetaDef": {}
       },
       "qChildren": []
@@ -3982,7 +3998,7 @@
           "position": "noTotals",
           "label": "Totals"
         },
-        "usePagination": false,
+        "usePagination": true,
         "enableChartExploration": false,
         "chartExploration": {
           "menuVisibility": "auto"

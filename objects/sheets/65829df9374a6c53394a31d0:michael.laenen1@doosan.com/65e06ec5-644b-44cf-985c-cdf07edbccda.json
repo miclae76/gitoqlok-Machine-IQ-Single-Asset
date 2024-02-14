@@ -20,54 +20,26 @@
         "type": "map",
         "col": 0,
         "row": 1,
-        "colspan": 18,
+        "colspan": 24,
         "rowspan": 8,
         "bounds": {
           "y": 5.555555555555555,
           "x": 0,
-          "width": 50,
+          "width": 66.66666666666666,
           "height": 44.44444444444444
-        }
-      },
-      {
-        "name": "QmrMx",
-        "type": "sn-table",
-        "col": 0,
-        "row": 9,
-        "colspan": 36,
-        "rowspan": 5,
-        "bounds": {
-          "y": 50,
-          "x": 0,
-          "width": 100,
-          "height": 27.77777777777778
-        }
-      },
-      {
-        "name": "JJxz",
-        "type": "sn-table",
-        "col": 0,
-        "row": 14,
-        "colspan": 36,
-        "rowspan": 4,
-        "bounds": {
-          "y": 77.77777777777779,
-          "x": 0,
-          "width": 100,
-          "height": 22.22222222222222
         }
       },
       {
         "name": "faMaRdN",
         "type": "sn-layout-container",
-        "col": 18,
+        "col": 24,
         "row": 1,
-        "colspan": 18,
+        "colspan": 12,
         "rowspan": 8,
         "bounds": {
           "y": 5.555555555555555,
-          "x": 50,
-          "width": 50,
+          "x": 66.66666666666666,
+          "width": 33.33333333333333,
           "height": 44.44444444444444
         }
       },
@@ -112,6 +84,20 @@
           "width": 11.11111111111111,
           "height": 5.555555555555555
         }
+      },
+      {
+        "name": "STbUtkP",
+        "type": "container",
+        "col": 0,
+        "row": 9,
+        "colspan": 36,
+        "rowspan": 9,
+        "bounds": {
+          "y": 50,
+          "x": 0,
+          "width": 100,
+          "height": 50
+        }
       }
     ],
     "qChildListDef": {
@@ -147,29 +133,7 @@
           "qId": "DegkJA",
           "qType": "map"
         },
-        "qExtendsId": "6a940cc5-3865-4ed2-9fcf-6929089abe69",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "QmrMx",
-          "qType": "sn-table"
-        },
-        "qExtendsId": "17dec212-d99c-4bec-afea-60b5fd3083ee",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "JJxz",
-          "qType": "sn-table"
-        },
-        "qExtendsId": "3a0b83b0-8368-44b1-ad02-eafc34fd253e",
+        "qExtendsId": "146986a6-695d-4b3d-9e81-e979887e341d",
         "qMetaDef": {}
       },
       "qChildren": []
@@ -217,6 +181,85 @@
         "qMetaDef": {}
       },
       "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "STbUtkP",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "1de01f66-6757-4dd3-8408-7272d34e9a17",
+            "label": "Debounced Location Data",
+            "isMaster": true,
+            "cId": "gAt"
+          },
+          {
+            "refId": "afac599e-7b94-4c21-a489-dbb5327cb79f",
+            "label": "Location Event Data",
+            "isMaster": true,
+            "cId": "fwXP"
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "borders": "border",
+        "showTabs": true,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": true,
+        "activeTab": "",
+        "defaultTab": "b7189167-5c92-44e9-902b-4bbb6d31ef80",
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "b7189167-5c92-44e9-902b-4bbb6d31ef80",
+              "qType": "sn-table"
+            },
+            "qExtendsId": "1de01f66-6757-4dd3-8408-7272d34e9a17",
+            "qMetaDef": {},
+            "visualization": "sn-table",
+            "enableChartExploration": false,
+            "insideContainer": true
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "c24f4175-f963-4c59-b986-b9bd75c6fead",
+              "qType": "sn-table"
+            },
+            "qExtendsId": "afac599e-7b94-4c21-a489-dbb5327cb79f",
+            "qMetaDef": {},
+            "visualization": "sn-table",
+            "enableChartExploration": false,
+            "insideContainer": true
+          },
+          "qChildren": []
+        }
+      ]
     }
   ]
 }

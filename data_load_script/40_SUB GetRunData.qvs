@@ -6,8 +6,8 @@ LOAD
 	//"event_id",
 	"asset_id",
 	"sample_ts",
-	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 
-     Date(Floor(ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day",
+	 "sample_ts"					AS "sample_ts_run", 
+     Date(Floor("sample_ts")) 		AS "sample_ts_run_day",
 
      "auxiliary_binned"				AS "Auxiliary Enable Duration",
      
@@ -39,14 +39,14 @@ LOAD
     
 	"drive_state_on_count"		AS "Drive State On Duration",
     
-	"engine_coolant_temperature_binned1",
-	"engine_coolant_temperature_binned2",
-	"engine_coolant_temperature_binned3",
-	"engine_coolant_temperature_binned4",
-	"engine_coolant_temperature_binned5",
-	"engine_coolant_temperature_binned6",
-	"engine_coolant_temperature_binned7",
-	"engine_coolant_temperature_binned8",
+	"engine_coolant_temperature_binned1" AS "Engine Coolant Temp. (<83°C / <180°F)",
+	"engine_coolant_temperature_binned2" AS "Engine Coolant Temp. (83-88°C / 180-190°F)",
+	"engine_coolant_temperature_binned3" AS "Engine Coolant Temp. (89-93°C / 190-200°F)",
+	"engine_coolant_temperature_binned4" AS "Engine Coolant Temp. (94-99°C / 200-210°F)",
+	"engine_coolant_temperature_binned5" AS "Engine Coolant Temp. (100-104°C / 210-220°F)",
+	"engine_coolant_temperature_binned6" AS "Engine Coolant Temp. (105-110°C / 220-230°F)",
+	"engine_coolant_temperature_binned7" AS "Engine Coolant Temp. (111-115°C / 230-240°F)",
+	"engine_coolant_temperature_binned8" AS "Engine Coolant Temp. (116+°C / 240+°F)",
     
 	"engine_on_time"			AS "Engine On Time",
     
@@ -80,16 +80,21 @@ LOAD
 	"high_flow_binned"					AS "High Flow Duration",
 	"high_flow_solenoid_binned"			AS "High Flow Solenoid Duration",
     
-	"hydraulic_oil_temperature_binned1",
-	"hydraulic_oil_temperature_binned2",
-	"hydraulic_oil_temperature_binned3",
-	"hydraulic_oil_temperature_binned4",
-	"hydraulic_oil_temperature_binned5",
-	"hydraulic_oil_temperature_binned6",
-	"hydraulic_oil_temperature_binned7",
-	"hydraulic_oil_temperature_binned8",
-	"hydraulic_oil_temperature_binned9",
-    "hydraulic_oil_temperature_binned10",
+	"hydraulic_oil_temperature_binned1" AS "Hydraulic Oil Temp. (<37°C / <100°F)",
+	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
+	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
+	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
+	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
+	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
+	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
+	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
+	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+    "hydraulic_oil_temperature_binned10" AS "Hydraulic Oil Temp. (110+°C / 231+°F)",
+    
+//     "hydraulic_oil_temperature_binned11",
+//     "hydraulic_oil_temperature_binned12",
+//     "hydraulic_oil_temperature_binned13",
+//     "hydraulic_oil_temperature_binned14",
     
 	"load_duration_binned1"		AS "Load (Actual Engine - Pct Torque) - < 5%",
 	"load_duration_binned2"		AS "Load (Actual Engine - Pct Torque) - 5-9%",
@@ -136,38 +141,45 @@ LOAD
 	"engine_oil_pressure_average",
 	"engine_oil_pressure_max",
 	"engine_oil_pressure_min",
+    
 	"engine_oil_temperature_average",
 	"engine_oil_temperature_max",
 	"engine_oil_temperature_min",
+    
 	"fuel_consumption_average",
 	"fuel_consumption_max",
 	"fuel_consumption_min",
+    
 	"fuel_rail_pressure_average",
 	"fuel_rail_pressure_max",
 	"fuel_rail_pressure_min",
+    
 	"hydraulic_charge_pressure_average",
 	"hydraulic_charge_pressure_max",
 	"hydraulic_charge_pressure_min",
+    
 	"hydraulic_oil_temperature_average",
 	"hydraulic_oil_temperature_max",
 	"hydraulic_oil_temperature_min",
+    
 	"throttle_position_average",
 	"throttle_position_max",
 	"throttle_position_min",
+    
 	created,
 //	"ingested_ts",
 //	"persisted_ts",
 	"map_version",
 	"map_version_run_usage",
-	"hydraulic_oil_temperature_binned12",
+	
 	"engine_oil_temperature_binned2",
 	"engine_fuel_temperature_binned8",
 	"engine_fuel_temperature_binned7",
-	"hydraulic_oil_temperature_binned13",
+
 	"engine_oil_temperature_binned4",
 	"engine_fuel_temperature_binned6",
 	"engine_fuel_temperature_binned2",
-	"engine_fuel_temperature_binned13",
+
 	"engine_oil_temperature_binned3",
 	"engine_fuel_temperature_binned3",
 	"engine_fuel_temperature_binned4",
@@ -178,8 +190,7 @@ LOAD
 	"engine_fuel_temperature_binned5",
 	"load_duration_binned11",
 	"engine_oil_temperature_binned5",
-	"hydraulic_oil_temperature_binned11",
-	"hydraulic_oil_temperature_binned14",
+
 	"engine_fuel_temperature_binned12",
 	"engine_fuel_temperature_binned10"
 ;

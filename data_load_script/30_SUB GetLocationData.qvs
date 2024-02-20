@@ -2,16 +2,10 @@
 SUB GetLocationData
 
 [iot_debounced_location_sessions]:
-LOAD 
-	*, 
-	ConvertToLocalTime(start_ts, $(odag_TimeZone)) 				AS start_ts_loc,
-    ConvertToLocalTime(end_ts, $(odag_TimeZone)) 				AS end_ts_loc,
-    ConvertToLocalTime(last_update_ts, $(odag_TimeZone)) 		AS last_update_ts_loc
-;
 SELECT 
 	"location_id",
 	"asset_id",
-	"start_ts",
+	"start_ts" 			AS start_ts_loc,
 	"start_event_id" ,
 	"start_engine_hours",
 	"iot_debounced_location_sessions".latitude,
@@ -19,11 +13,11 @@ SELECT
 	--"s2_cell_id_12" ,
 	--"s2_cell_id_19",
 	--"s2_cell_id_20",
-	"end_ts",
+	"end_ts" 			AS end_ts_loc,
 	"end_event_id",
 	"end_engine_hours",
 	"session_state",
-	"last_update_ts",
+	"last_update_ts" 	AS last_update_ts_loc,
 	"debounce_distance",
     municipality,
 	region,
@@ -38,15 +32,10 @@ AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 
 [iot_location_events]:
-LOAD 
-	*, 
-	ConvertToLocalTime(sample_ts, $(odag_TimeZone)) 			AS sample_ts_loc,
-    ConvertToLocalTime(gps_fix_ts, $(odag_TimeZone)) 			AS gps_fix_ts_loc
-;
 SELECT 
 	"event_id" AS "event_id_loc",
-	"sample_ts",
-	"gps_fix_ts",
+	"sample_ts" AS sample_ts_loc,
+	"gps_fix_ts" AS gps_fix_ts_loc,
 	latitude AS "latitude_loc_event",
 	longitude AS "longitude_loc_event",
 	heading,

@@ -1,0 +1,290 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "3eaa1e68-353d-4dba-96e9-7952ee2775e8",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "KPI Cumulative Engine Hours",
+      "description": "",
+      "tags": []
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [],
+      "qMeasures": [
+        {
+          "qDef": {
+            "qLabel": "Cumulative Engine Hours",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "round(Only({<sample_ts={\"$(=Max(sample_ts))\"}>} cumulative_engine_hours))",
+            "qNumFormat": {
+              "qType": "R",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "#,##0 hrs",
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "QrmuESG",
+            "numFormatFromTemplate": true,
+            "measureAxis": {
+              "min": 0,
+              "max": 100
+            },
+            "conditionalColoring": {
+              "useConditionalColoring": false,
+              "singleColor": 3,
+              "paletteSingleColor": {
+                "index": 3,
+                "color": "#a54343"
+              },
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6
+                  }
+                ]
+              },
+              "useBaseColors": false
+            },
+            "isCustomFormatted": false
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        0
+      ],
+      "qSuppressMissing": true,
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 500,
+          "qHeight": 10
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [],
+      "qExpansionState": [],
+      "qDynamicScript": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
+      }
+    },
+    "script": "",
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": true,
+    "showDetails": true,
+    "showDetailsExpression": false,
+    "visualization": "kpi",
+    "useLink": false,
+    "sheetLink": "",
+    "openUrlInNewTab": true,
+    "tooltip": {
+      "hideBasic": false,
+      "chart": {
+        "style": {
+          "size": "medium"
+        }
+      }
+    },
+    "version": "1.0.0",
+    "showMeasureTitle": true,
+    "showSecondMeasureTitle": true,
+    "textAlign": "center",
+    "layoutBehavior": "relative",
+    "fontSize": "M",
+    "components": [
+      {
+        "key": "general",
+        "title": {
+          "main": {}
+        },
+        "bgColor": {
+          "color": {
+            "index": 0,
+            "color": "none",
+            "alpha": 1
+          }
+        },
+        "borderWidth": "0px"
+      },
+      {
+        "key": "textAlignment"
+      },
+      {
+        "key": "textBehavior",
+        "textBehavior": "responsive"
+      },
+      {
+        "key": "useAdvancedMode",
+        "useAdvancedMode": true
+      },
+      {
+        "key": "simpleSettings"
+      },
+      {
+        "key": "firstMeasureTitle",
+        "label": {
+          "name": {
+            "fontSize": {
+              "fluid": 0.6
+            },
+            "fontFamily": "Roboto, sans-serif"
+          }
+        },
+        "showTitle": false
+      },
+      {
+        "key": "firstMeasureValue",
+        "label": {
+          "value": {
+            "fontSize": {
+              "fluid": 0.7
+            },
+            "fontFamily": "Roboto, sans-serif",
+            "fontStyle": []
+          }
+        }
+      },
+      {
+        "key": "secondMeasureTitle"
+      },
+      {
+        "key": "secondMeasureValue"
+      }
+    ],
+    "isRecommended": true,
+    "qLayoutExclude": {
+      "disabled": {},
+      "quarantine": {}
+    },
+    "recommendation": {
+      "options": {},
+      "analysis": {
+        "analysis": "fact",
+        "analysisGroup": "fact",
+        "description": {
+          "short": "Calculated measure (KPI)",
+          "long": "Show calculated measure."
+        },
+        "title": "Sum cumulative_engine_hours",
+        "titleTemplate": [
+          {
+            "msgId": "cao.chart.fact.title",
+            "msgParams": {
+              "$$1": 0
+            }
+          }
+        ],
+        "msrs": [
+          {
+            "expr": "=Sum([cumulative_engine_hours])",
+            "cType": "eField",
+            "field": "cumulative_engine_hours",
+            "fieldStats": {
+              "dataType": "double",
+              "valueRange": {
+                "min": 1502794.7000000002,
+                "max": 1502794.7000000002
+              },
+              "classification": [
+                "measure"
+              ]
+            }
+          }
+        ]
+      },
+      "isExtendedAnalysis": false,
+      "matchRecord": {
+        "analysisPrecedentId": "Msr-Aggr",
+        "matches": [
+          {
+            "slot": "$$1",
+            "slotRole": "measure",
+            "field": "cumulative_engine_hours",
+            "aggr": "Sum",
+            "overallAggr": "Sum"
+          }
+        ],
+        "precedentStats": {
+          "matchedFields": 0,
+          "uniquePrecedents": 0
+        }
+      },
+      "relevance": 1,
+      "analysisIntentRelevance": 0.09000000000000001
+    },
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

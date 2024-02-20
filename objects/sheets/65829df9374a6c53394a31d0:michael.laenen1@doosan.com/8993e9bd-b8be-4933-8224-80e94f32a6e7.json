@@ -1768,12 +1768,12 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "colormix1(count(event_code)/max(total aggr(count(total <sample_ts_hour,event_code> event_code), sample_ts_hour, event_code)), white(),  rgb(255,54,0))",
+                  "qExpression": "colormix1(count(event_code)/max(total aggr(count(total <sample_ts_hour,event_code> event_code), sample_ts_hour, event_code)), rgb(244,214,206),  rgb(201,50, 10))",
                   "qAttribute": true,
                   "id": "cellBackgroundColor"
                 },
                 {
-                  "qExpression": "colormix1(count(event_code)/max(total aggr(count(total <sample_ts_hour,event_code> event_code), sample_ts_hour, event_code)), white(),  rgb(255,54,0))",
+                  "qExpression": "colormix1(count(event_code)/max(total aggr(count(total <sample_ts_hour,event_code> event_code), sample_ts_hour, event_code)), rgb(244,214,206),  rgb(201,50, 10))",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -2025,7 +2025,8 @@
                   "useConditionalColoring": false,
                   "singleColor": 3,
                   "paletteSingleColor": {
-                    "index": 6
+                    "index": 12,
+                    "color": "#26a0a7"
                   },
                   "segments": {
                     "limits": [],
@@ -2034,7 +2035,8 @@
                         "index": 6
                       }
                     ]
-                  }
+                  },
+                  "useBaseColors": false
                 },
                 "quarantine": {
                   "qNumFormat": {
@@ -2251,16 +2253,19 @@
                   "useConditionalColoring": false,
                   "singleColor": 3,
                   "paletteSingleColor": {
-                    "index": 6
+                    "index": 12,
+                    "color": "#26a0a7"
                   },
                   "segments": {
                     "limits": [],
                     "paletteColors": [
                       {
-                        "index": 6
+                        "index": -1,
+                        "color": "#ecc43d"
                       }
                     ]
-                  }
+                  },
+                  "useBaseColors": false
                 },
                 "quarantine": {
                   "qNumFormat": {
@@ -2465,7 +2470,8 @@
                   "useConditionalColoring": false,
                   "singleColor": 3,
                   "paletteSingleColor": {
-                    "index": 6
+                    "index": 12,
+                    "color": "#26a0a7"
                   },
                   "segments": {
                     "limits": [],
@@ -2474,7 +2480,8 @@
                         "index": 6
                       }
                     ]
-                  }
+                  },
+                  "useBaseColors": false
                 },
                 "quarantine": {
                   "qNumFormat": {
@@ -2680,7 +2687,8 @@
                   "useConditionalColoring": false,
                   "singleColor": 3,
                   "paletteSingleColor": {
-                    "index": 6
+                    "index": 12,
+                    "color": "#26a0a7"
                   },
                   "segments": {
                     "limits": [],
@@ -2689,7 +2697,8 @@
                         "index": 6
                       }
                     ]
-                  }
+                  },
+                  "useBaseColors": false
                 },
                 "quarantine": {
                   "qNumFormat": {

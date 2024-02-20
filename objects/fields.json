@@ -267,6 +267,86 @@
     ]
   },
   {
+    "qName": "Engine Coolant Temp. (100-104°C / 210-220°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (105-110°C / 220-230°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (111-115°C / 230-240°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (116+°C / 240+°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (83-88°C / 180-190°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (89-93°C / 190-200°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (94-99°C / 200-210°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Engine Coolant Temp. (<83°C / <180°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
     "qName": "Engine On Time",
     "qTags": [
       "$numeric",
@@ -537,6 +617,106 @@
     ]
   },
   {
+    "qName": "Hydraulic Oil Temp. (110+°C / 231+°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<37°C / <100°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
     "qName": "Load (Actual Engine - Pct Torque) - 10-14%",
     "qTags": [
       "$numeric",
@@ -739,6 +919,66 @@
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
+    ]
+  },
+  {
+    "qName": "active_fault_code_id",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions_active"
+    ]
+  },
+  {
+    "qName": "active_fault_name",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions_active"
+    ]
+  },
+  {
+    "qName": "active_fault_severity",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions_active"
+    ]
+  },
+  {
+    "qName": "active_fault_status",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions_active"
+    ]
+  },
+  {
+    "qName": "actvie_fault_created",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_fault_sessions_active"
+    ]
+  },
+  {
+    "qName": "aggregate_hours_quad",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_utilization_aggregation"
     ]
   },
   {
@@ -1046,8 +1286,7 @@
   {
     "qName": "customer_description",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1056,8 +1295,7 @@
   {
     "qName": "customer_impact",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1183,8 +1421,7 @@
   {
     "qName": "description",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1286,16 +1523,6 @@
     ]
   },
   {
-    "qName": "end_ts",
-    "qTags": [
-      "$numeric",
-      "$timestamp"
-    ],
-    "qSrcTables": [
-      "iot_debounced_location_sessions"
-    ]
-  },
-  {
     "qName": "end_ts_loc",
     "qTags": [
       "$numeric",
@@ -1373,86 +1600,6 @@
     ]
   },
   {
-    "qName": "engine_coolant_temperature_binned1",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned7",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_coolant_temperature_binned8",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
     "qName": "engine_coolant_temperature_max",
     "qTags": [
       "$numeric",
@@ -1515,13 +1662,6 @@
   },
   {
     "qName": "engine_fuel_temperature_binned12",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "engine_fuel_temperature_binned13",
     "qTags": [],
     "qSrcTables": [
       "iot_equipment_usage_events"
@@ -1983,16 +2123,6 @@
     ]
   },
   {
-    "qName": "gps_fix_ts",
-    "qTags": [
-      "$numeric",
-      "$timestamp"
-    ],
-    "qSrcTables": [
-      "iot_location_events"
-    ]
-  },
-  {
     "qName": "gps_fix_ts_loc",
     "qTags": [
       "$numeric",
@@ -2108,134 +2238,6 @@
     ]
   },
   {
-    "qName": "hydraulic_oil_temperature_binned1",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned10",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned11",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned12",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned13",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned14",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned2",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned3",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned4",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned5",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned6",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned7",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned8",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "hydraulic_oil_temperature_binned9",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
     "qName": "hydraulic_oil_temperature_max",
     "qTags": [
       "$numeric",
@@ -2329,16 +2331,6 @@
     ],
     "qSrcTables": [
       "iot_fault_sessions"
-    ]
-  },
-  {
-    "qName": "last_update_ts",
-    "qTags": [
-      "$numeric",
-      "$timestamp"
-    ],
-    "qSrcTables": [
-      "iot_debounced_location_sessions"
     ]
   },
   {
@@ -3025,16 +3017,6 @@
     "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions"
-    ]
-  },
-  {
-    "qName": "start_ts",
-    "qTags": [
-      "$numeric",
-      "$timestamp"
-    ],
-    "qSrcTables": [
-      "iot_debounced_location_sessions"
     ]
   },
   {

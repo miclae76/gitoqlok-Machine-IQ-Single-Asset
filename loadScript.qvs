@@ -175,16 +175,10 @@ ENDSUB
 SUB GetLocationData
 
 [iot_debounced_location_sessions]:
-LOAD 
-	*, 
-	ConvertToLocalTime(start_ts, $(odag_TimeZone)) 				AS start_ts_loc,
-    ConvertToLocalTime(end_ts, $(odag_TimeZone)) 				AS end_ts_loc,
-    ConvertToLocalTime(last_update_ts, $(odag_TimeZone)) 		AS last_update_ts_loc
-;
 SELECT 
 	"location_id",
 	"asset_id",
-	"start_ts",
+	"start_ts" 			AS start_ts_loc,
 	"start_event_id" ,
 	"start_engine_hours",
 	"iot_debounced_location_sessions".latitude,
@@ -192,11 +186,11 @@ SELECT
 	--"s2_cell_id_12" ,
 	--"s2_cell_id_19",
 	--"s2_cell_id_20",
-	"end_ts",
+	"end_ts" 			AS end_ts_loc,
 	"end_event_id",
 	"end_engine_hours",
 	"session_state",
-	"last_update_ts",
+	"last_update_ts" 	AS last_update_ts_loc,
 	"debounce_distance",
     municipality,
 	region,
@@ -211,15 +205,10 @@ AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 
 [iot_location_events]:
-LOAD 
-	*, 
-	ConvertToLocalTime(sample_ts, $(odag_TimeZone)) 			AS sample_ts_loc,
-    ConvertToLocalTime(gps_fix_ts, $(odag_TimeZone)) 			AS gps_fix_ts_loc
-;
 SELECT 
 	"event_id" AS "event_id_loc",
-	"sample_ts",
-	"gps_fix_ts",
+	"sample_ts" AS sample_ts_loc,
+	"gps_fix_ts" AS gps_fix_ts_loc,
 	latitude AS "latitude_loc_event",
 	longitude AS "longitude_loc_event",
 	heading,
@@ -261,8 +250,8 @@ LOAD
 	//"event_id",
 	"asset_id",
 	"sample_ts",
-	 ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 						AS "sample_ts_run", 
-     Date(Floor(ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day",
+	 "sample_ts"					AS "sample_ts_run", 
+     Date(Floor("sample_ts")) 		AS "sample_ts_run_day",
 
      "auxiliary_binned"				AS "Auxiliary Enable Duration",
      
@@ -294,14 +283,14 @@ LOAD
     
 	"drive_state_on_count"		AS "Drive State On Duration",
     
-	"engine_coolant_temperature_binned1",
-	"engine_coolant_temperature_binned2",
-	"engine_coolant_temperature_binned3",
-	"engine_coolant_temperature_binned4",
-	"engine_coolant_temperature_binned5",
-	"engine_coolant_temperature_binned6",
-	"engine_coolant_temperature_binned7",
-	"engine_coolant_temperature_binned8",
+	"engine_coolant_temperature_binned1" AS "Engine Coolant Temp. (<83°C / <180°F)",
+	"engine_coolant_temperature_binned2" AS "Engine Coolant Temp. (83-88°C / 180-190°F)",
+	"engine_coolant_temperature_binned3" AS "Engine Coolant Temp. (89-93°C / 190-200°F)",
+	"engine_coolant_temperature_binned4" AS "Engine Coolant Temp. (94-99°C / 200-210°F)",
+	"engine_coolant_temperature_binned5" AS "Engine Coolant Temp. (100-104°C / 210-220°F)",
+	"engine_coolant_temperature_binned6" AS "Engine Coolant Temp. (105-110°C / 220-230°F)",
+	"engine_coolant_temperature_binned7" AS "Engine Coolant Temp. (111-115°C / 230-240°F)",
+	"engine_coolant_temperature_binned8" AS "Engine Coolant Temp. (116+°C / 240+°F)",
     
 	"engine_on_time"			AS "Engine On Time",
     
@@ -335,16 +324,21 @@ LOAD
 	"high_flow_binned"					AS "High Flow Duration",
 	"high_flow_solenoid_binned"			AS "High Flow Solenoid Duration",
     
-	"hydraulic_oil_temperature_binned1",
-	"hydraulic_oil_temperature_binned2",
-	"hydraulic_oil_temperature_binned3",
-	"hydraulic_oil_temperature_binned4",
-	"hydraulic_oil_temperature_binned5",
-	"hydraulic_oil_temperature_binned6",
-	"hydraulic_oil_temperature_binned7",
-	"hydraulic_oil_temperature_binned8",
-	"hydraulic_oil_temperature_binned9",
-    "hydraulic_oil_temperature_binned10",
+	"hydraulic_oil_temperature_binned1" AS "Hydraulic Oil Temp. (<37°C / <100°F)",
+	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
+	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
+	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
+	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
+	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
+	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
+	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
+	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+    "hydraulic_oil_temperature_binned10" AS "Hydraulic Oil Temp. (110+°C / 231+°F)",
+    
+//     "hydraulic_oil_temperature_binned11",
+//     "hydraulic_oil_temperature_binned12",
+//     "hydraulic_oil_temperature_binned13",
+//     "hydraulic_oil_temperature_binned14",
     
 	"load_duration_binned1"		AS "Load (Actual Engine - Pct Torque) - < 5%",
 	"load_duration_binned2"		AS "Load (Actual Engine - Pct Torque) - 5-9%",
@@ -391,38 +385,45 @@ LOAD
 	"engine_oil_pressure_average",
 	"engine_oil_pressure_max",
 	"engine_oil_pressure_min",
+    
 	"engine_oil_temperature_average",
 	"engine_oil_temperature_max",
 	"engine_oil_temperature_min",
+    
 	"fuel_consumption_average",
 	"fuel_consumption_max",
 	"fuel_consumption_min",
+    
 	"fuel_rail_pressure_average",
 	"fuel_rail_pressure_max",
 	"fuel_rail_pressure_min",
+    
 	"hydraulic_charge_pressure_average",
 	"hydraulic_charge_pressure_max",
 	"hydraulic_charge_pressure_min",
+    
 	"hydraulic_oil_temperature_average",
 	"hydraulic_oil_temperature_max",
 	"hydraulic_oil_temperature_min",
+    
 	"throttle_position_average",
 	"throttle_position_max",
 	"throttle_position_min",
+    
 	created,
 //	"ingested_ts",
 //	"persisted_ts",
 	"map_version",
 	"map_version_run_usage",
-	"hydraulic_oil_temperature_binned12",
+	
 	"engine_oil_temperature_binned2",
 	"engine_fuel_temperature_binned8",
 	"engine_fuel_temperature_binned7",
-	"hydraulic_oil_temperature_binned13",
+
 	"engine_oil_temperature_binned4",
 	"engine_fuel_temperature_binned6",
 	"engine_fuel_temperature_binned2",
-	"engine_fuel_temperature_binned13",
+
 	"engine_oil_temperature_binned3",
 	"engine_fuel_temperature_binned3",
 	"engine_fuel_temperature_binned4",
@@ -433,8 +434,7 @@ LOAD
 	"engine_fuel_temperature_binned5",
 	"load_duration_binned11",
 	"engine_oil_temperature_binned5",
-	"hydraulic_oil_temperature_binned11",
-	"hydraulic_oil_temperature_binned14",
+
 	"engine_fuel_temperature_binned12",
 	"engine_fuel_temperature_binned10"
 ;
@@ -472,13 +472,29 @@ EndSub
 ///$tab 50_SUB GetFaultSessions
 SUB GetFaultSessions
 
+
+[iot_fault_sessions_active]:
+SELECT 
+	"fault_code_id" as active_fault_code_id,
+	severity		as active_fault_severity,
+    status 			as active_fault_status,
+	"customer_name"	as active_fault_name,
+	created 		as actvie_fault_created
+FROM 
+	iotv3."iot_fault_sessions"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND status = 'ACTIVE';
+
+
+
 [iot_fault_sessions]:
 LOAD
 	*,
-	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
-    ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
-    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault",
-    Date(Floor("created_fault")) 		AS "created_fault_day"
+	"session_start_ts"				AS "session_start_ts_fault", 
+    "session_end_ts"				AS "session_end_ts_fault", 
+    Date(Floor("session_start_ts"))	AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 	AS "created_fault_day"
 ;
 SELECT 
 	"session_id",
@@ -517,7 +533,7 @@ AND created BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 LOAD //event_id, 
 	asset_id, 
-	ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 			AS "sample_ts_fault", 
+	"sample_ts"	AS "sample_ts_fault", 
 	//event_type, 
 	auxiliary, 
 	brake_switch, 
@@ -606,6 +622,10 @@ ENDSUB
 ///$tab 60_SUB GetUtilizationData
 SUB GetUtilizationData
 [iot_utilization_aggregation]:
+LOAD *, 
+	 if(aggregate_ts_hour <= 6, '0:00 - 06:00', 
+     	if(aggregate_ts_hour <= 12, '06:00 - 12:00',
+        	if(aggregate_ts_hour <= 18, '12:00 - 18:00', '18:00 - 24:00'))) AS aggregate_hours_quad;
 LOAD *, 
 	hour(aggregate_ts) AS aggregate_ts_hour,
     date(floor(aggregate_ts)) as aggregate_ts_day;
@@ -821,7 +841,7 @@ IF '$(odagActive)'='' THEN
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-14''';
+  SET odag_End_Date = '''2024-02-20''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp

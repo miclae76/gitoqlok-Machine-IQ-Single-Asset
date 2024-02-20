@@ -152,17 +152,6 @@
     {
       "qProperty": {
         "qInfo": {
-          "qId": "YJBWe",
-          "qType": "text-image"
-        },
-        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
           "qId": "jGCC",
           "qType": "text-image"
         },
@@ -178,6 +167,17 @@
           "qType": "filterpane"
         },
         "qExtendsId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "YJBWe",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
         "qMetaDef": {}
       },
       "qChildren": []

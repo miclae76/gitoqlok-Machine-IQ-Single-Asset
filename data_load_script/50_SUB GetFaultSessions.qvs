@@ -1,13 +1,29 @@
 ///$tab 50_SUB GetFaultSessions
 SUB GetFaultSessions
 
+
+[iot_fault_sessions_active]:
+SELECT 
+	"fault_code_id" as active_fault_code_id,
+	severity		as active_fault_severity,
+    status 			as active_fault_status,
+	"customer_name"	as active_fault_name,
+	created 		as actvie_fault_created
+FROM 
+	iotv3."iot_fault_sessions"
+WHERE 
+	asset_id = $(odag_asset_id) 
+AND status = 'ACTIVE';
+
+
+
 [iot_fault_sessions]:
 LOAD
 	*,
-	ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)') 			AS "session_start_ts_fault", 
-    ConvertToLocalTime("session_end_ts", '$(v_Bind_TimeZone)') 				AS "session_end_ts_fault", 
-    Date(Floor(ConvertToLocalTime("session_start_ts", '$(v_Bind_TimeZone)'))) 		AS "sample_ts_run_day_fault",
-    Date(Floor("created_fault")) 		AS "created_fault_day"
+	"session_start_ts"				AS "session_start_ts_fault", 
+    "session_end_ts"				AS "session_end_ts_fault", 
+    Date(Floor("session_start_ts"))	AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 	AS "created_fault_day"
 ;
 SELECT 
 	"session_id",
@@ -46,7 +62,7 @@ AND created BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
 
 LOAD //event_id, 
 	asset_id, 
-	ConvertToLocalTime("sample_ts", '$(v_Bind_TimeZone)') 			AS "sample_ts_fault", 
+	"sample_ts"	AS "sample_ts_fault", 
 	//event_type, 
 	auxiliary, 
 	brake_switch, 

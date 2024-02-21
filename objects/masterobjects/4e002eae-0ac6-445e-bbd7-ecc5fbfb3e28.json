@@ -16,7 +16,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Date($(odag_Start_Date), 'MMM d, YYYY')",
+            "qDef": "Date(trim('$(v_odag_Start_Date)'), 'MMM d, YYYY')",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -65,7 +65,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Date($(odag_End_Date), 'MMM d, YYYY')",
+            "qDef": "Date(trim('$(v_odag_End_Date)'), 'MMM d, YYYY')",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,

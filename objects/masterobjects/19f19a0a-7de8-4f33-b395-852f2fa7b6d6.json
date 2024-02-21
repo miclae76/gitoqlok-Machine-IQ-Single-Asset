@@ -259,7 +259,7 @@
       "minMax": "min",
       "min": {
         "qValueExpression": {
-          "qExpr": "=min({<sample_ts={\"$(=min(sample_ts))\"} >} cumulative_engine_hours)+12"
+          "qExpr": "=min({<sample_ts={\"$(=min(sample_ts))\"} >} cumulative_engine_hours)"
         }
       },
       "max": 10,

@@ -99,7 +99,7 @@ SELECT --"event_id",
 FROM iotv3."iot_software_version_soft_events"
 WHERE 
 asset_id = $(odag_asset_id) 
-AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 

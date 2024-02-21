@@ -881,14 +881,14 @@
     ]
   },
   {
+    "qIsHidden": true,
     "qName": "TimeZone",
     "qTags": [
+      "$hidden",
       "$text",
       "$ascii"
     ],
-    "qSrcTables": [
-      "TimeZoneTable"
-    ],
+    "qSrcTables": [],
     "qAlwaysOneSelected": true
   },
   {
@@ -1338,16 +1338,6 @@
     ],
     "qSrcTables": [
       "iot_software_sessions"
-    ]
-  },
-  {
-    "qName": "dataset",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
-    "qSrcTables": [
-      "OdagSectionTable"
     ]
   },
   {
@@ -2050,8 +2040,7 @@
   {
     "qName": "fuel_consumption_min",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$numeric"
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
@@ -2595,8 +2584,7 @@
   {
     "qName": "municipality",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2673,6 +2661,16 @@
     ]
   },
   {
+    "qName": "product_name",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_equipment"
+    ]
+  },
+  {
     "qName": "rear_base_solenoid",
     "qTags": [
       "$numeric",
@@ -2714,10 +2712,7 @@
   },
   {
     "qName": "region",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_debounced_location_sessions"
     ]

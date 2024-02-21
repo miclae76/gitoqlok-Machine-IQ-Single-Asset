@@ -1,15 +1,15 @@
 ///$tab 100_Odag_binding_Connect
 //Static Table to send param to trigger Subroutines in ODAG Template
-OdagSectionTable:
-LOAD * INLINE [
-dataset
-RUN_DATA
-RUN_USAGE_SUMMARY
-PERIODIC_DATA
-FAULT_DATA
-EQ_LOCATIONS
-FULL
-];
+// OdagSectionTable:
+// LOAD * INLINE [
+// dataset
+// RUN_DATA
+// RUN_USAGE_SUMMARY
+// PERIODIC_DATA
+// FAULT_DATA
+// EQ_LOCATIONS
+// FULL
+// ];
 
 //Static table to enable time zone selection for TS adjsuted 
 TimeZoneTable:
@@ -25,28 +25,31 @@ UTC
 WET
 ];
 
+tag field TimeZone with '$hidden';
+
 IF '$(odagActive)'='' THEN
   trace *** ODAG variables not inserted! Loading sample data.;
-  SET odag_asset_id = '''aljg30693''';
+  SET odag_asset_id = '''b4jb11086''';
   SET odag_TimeZone = '''UTC''';
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-20''';
+  SET odag_End_Date = '''2024-02-21''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp
 //Bind Time Zone
-LOAD $(odag_TimeZone) AS TimeZone 
-AutoGenerate 1;
+// LOAD $(odag_TimeZone) AS TimeZone 
+// AutoGenerate 1;
 
-LET v_Bind_TimeZone = $(odag_TimeZone);
+ LET v_odag_Start_Date = $(odag_Start_Date);
+ LET v_odag_End_Date = $(odag_End_Date);
 
 
 // Connect to MIQ Database
 LIB CONNECT TO 'Common DATA:Machine IQ';
 
-
+/*
 //Perform Micro Query depending of calling parameters
 IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
 	CALL GetPeriodicData
@@ -70,6 +73,7 @@ ENDIF;
 
 // Perform full set of queries 
 IF $(odag_dataset) = 'FULL' THEN 
+*/
 	CALL GetEquipmentInfo;
     CALL GetPeriodicData;
     CALL GetLocationData;
@@ -78,4 +82,4 @@ IF $(odag_dataset) = 'FULL' THEN
     CALL GetUtilizationData;
 	CALL GetSoftware;
     CALL GetMonitoringSessions;
-ENDIF
+//ENDIF

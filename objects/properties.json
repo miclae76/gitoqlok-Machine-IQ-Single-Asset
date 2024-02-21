@@ -1,7 +1,11 @@
 {
   "qTitle": "Machine IQ - Single Asset",
-  "qThumbnail": {},
+  "qThumbnail": {
+    "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/MIQ_Equipment_Single_Asset.png"
+  },
   "qUsage": "ANALYTICS",
+  "description": "This is the ODAG template use for MIQ Dashboard on a single equipment (asset).",
+  "dynamicColor": "hsla(13,18%,43%,1)",
   "encrypted": true,
   "id": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
   "published": false,

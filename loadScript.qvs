@@ -35,6 +35,7 @@ LOAD
 	servicing_dealer_id, 
 	product_category, 
 	product_model, 
+    name as product_name,
 	product_fault_category, 
 	product_equipment_type, 
 	test_machine, 
@@ -165,7 +166,9 @@ SELECT
 	"def_level",
     "engine_speed"
 FROM iotv3."iot_events"
-WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
+WHERE 
+	asset_id = $(odag_asset_id)  
+and sample_ts between $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 ENDSUB
  
@@ -201,7 +204,7 @@ INNER JOIN iotv3."iot_addresses"
 ON  "address_id" = "s2_cell_id_12"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 [iot_location_events]:
@@ -234,7 +237,7 @@ FROM
 	iotv3."iot_location_events"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND "sample_ts" BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND "sample_ts" BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 Drop field sample_ts from [iot_location_events];
 
@@ -443,7 +446,7 @@ FROM
 	iotv3."iot_equipment_usage_events"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 Drop field "sample_ts" from [iot_equipment_usage_events];
 
@@ -527,8 +530,8 @@ FROM
 	iotv3."iot_fault_sessions"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND session_start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date)
-AND created BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND session_start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) 
+AND created BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 LOAD //event_id, 
@@ -614,7 +617,7 @@ FROM
 	iotv3."iot_fault_events"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 
@@ -639,7 +642,7 @@ FROM
 	iotv3."iot_engine_hours_aggregation"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+AND aggregate_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 
@@ -656,7 +659,7 @@ FROM
 	iotv3."iot_fuel_consumption_aggregation"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND aggregate_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+AND aggregate_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 ENDSUB
@@ -761,7 +764,7 @@ SELECT --"event_id",
 FROM iotv3."iot_software_version_soft_events"
 WHERE 
 asset_id = $(odag_asset_id) 
-AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 
@@ -809,16 +812,16 @@ AND status = 'ACTIVE';
 ENDSUB
 ///$tab 100_Odag_binding_Connect
 //Static Table to send param to trigger Subroutines in ODAG Template
-OdagSectionTable:
-LOAD * INLINE [
-dataset
-RUN_DATA
-RUN_USAGE_SUMMARY
-PERIODIC_DATA
-FAULT_DATA
-EQ_LOCATIONS
-FULL
-];
+// OdagSectionTable:
+// LOAD * INLINE [
+// dataset
+// RUN_DATA
+// RUN_USAGE_SUMMARY
+// PERIODIC_DATA
+// FAULT_DATA
+// EQ_LOCATIONS
+// FULL
+// ];
 
 //Static table to enable time zone selection for TS adjsuted 
 TimeZoneTable:
@@ -834,28 +837,31 @@ UTC
 WET
 ];
 
+tag field TimeZone with '$hidden';
+
 IF '$(odagActive)'='' THEN
   trace *** ODAG variables not inserted! Loading sample data.;
-  SET odag_asset_id = '''aljg30693''';
+  SET odag_asset_id = '''b4jb11086''';
   SET odag_TimeZone = '''UTC''';
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
   SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-20''';
+  SET odag_End_Date = '''2024-02-21''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp
 //Bind Time Zone
-LOAD $(odag_TimeZone) AS TimeZone 
-AutoGenerate 1;
+// LOAD $(odag_TimeZone) AS TimeZone 
+// AutoGenerate 1;
 
-LET v_Bind_TimeZone = $(odag_TimeZone);
+ LET v_odag_Start_Date = $(odag_Start_Date);
+ LET v_odag_End_Date = $(odag_End_Date);
 
 
 // Connect to MIQ Database
 LIB CONNECT TO 'Common DATA:Machine IQ';
 
-
+/*
 //Perform Micro Query depending of calling parameters
 IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
 	CALL GetPeriodicData
@@ -879,6 +885,7 @@ ENDIF;
 
 // Perform full set of queries 
 IF $(odag_dataset) = 'FULL' THEN 
+*/
 	CALL GetEquipmentInfo;
     CALL GetPeriodicData;
     CALL GetLocationData;
@@ -887,7 +894,7 @@ IF $(odag_dataset) = 'FULL' THEN
     CALL GetUtilizationData;
 	CALL GetSoftware;
     CALL GetMonitoringSessions;
-ENDIF
+//ENDIF
 
 
 ///$tab 999_EXIT

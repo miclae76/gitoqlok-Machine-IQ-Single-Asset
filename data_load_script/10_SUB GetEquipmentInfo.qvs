@@ -9,6 +9,7 @@ LOAD
 	servicing_dealer_id, 
 	product_category, 
 	product_model, 
+    name as product_name,
 	product_fault_category, 
 	product_equipment_type, 
 	test_machine, 

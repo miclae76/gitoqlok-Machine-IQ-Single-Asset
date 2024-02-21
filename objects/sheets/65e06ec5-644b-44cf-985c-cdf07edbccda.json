@@ -1,0 +1,267 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "65e06ec5-644b-44cf-985c-cdf07edbccda",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Equipment Locations",
+      "description": ""
+    },
+    "rank": 1,
+    "thumbnail": {
+      "qStaticContentUrlDef": {
+        "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/sheet_thumb_65e06ec5-644b-44cf-985c-cdf07edbccda-0.5116751289599244.png"
+      }
+    },
+    "columns": 36,
+    "rows": 18,
+    "cells": [
+      {
+        "name": "DegkJA",
+        "type": "map",
+        "col": 0,
+        "row": 1,
+        "colspan": 24,
+        "rowspan": 8,
+        "bounds": {
+          "y": 5.555555555555555,
+          "x": 0,
+          "width": 66.66666666666666,
+          "height": 44.44444444444444
+        }
+      },
+      {
+        "name": "faMaRdN",
+        "type": "sn-layout-container",
+        "col": 24,
+        "row": 1,
+        "colspan": 12,
+        "rowspan": 8,
+        "bounds": {
+          "y": 5.555555555555555,
+          "x": 66.66666666666666,
+          "width": 33.33333333333333,
+          "height": 44.44444444444444
+        }
+      },
+      {
+        "name": "YJBWe",
+        "type": "text-image",
+        "col": 0,
+        "row": 0,
+        "colspan": 7,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 19.444444444444446,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "jGCC",
+        "type": "text-image",
+        "col": 18,
+        "row": 0,
+        "colspan": 14,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 38.88888888888889,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "qYxjW",
+        "type": "filterpane",
+        "col": 32,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 88.88888888888889,
+          "width": 11.11111111111111,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "STbUtkP",
+        "type": "container",
+        "col": 0,
+        "row": 9,
+        "colspan": 36,
+        "rowspan": 9,
+        "bounds": {
+          "y": 50,
+          "x": 0,
+          "width": 100,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "large",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit",
+    "labelExpression": "",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595959",
+            "alpha": 1
+          }
+        }
+      }
+    ]
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "DegkJA",
+          "qType": "map"
+        },
+        "qExtendsId": "146986a6-695d-4b3d-9e81-e979887e341d",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "faMaRdN",
+          "qType": "sn-layout-container"
+        },
+        "qExtendsId": "64937c1b-ca96-4b63-89b6-1b080f0b243b",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "jGCC",
+          "qType": "text-image"
+        },
+        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "qYxjW",
+          "qType": "filterpane"
+        },
+        "qExtendsId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "YJBWe",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "STbUtkP",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "1de01f66-6757-4dd3-8408-7272d34e9a17",
+            "label": "Debounced Location Data",
+            "isMaster": true,
+            "cId": "gAt"
+          },
+          {
+            "refId": "afac599e-7b94-4c21-a489-dbb5327cb79f",
+            "label": "Location Event Data",
+            "isMaster": true,
+            "cId": "fwXP"
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "borders": "border",
+        "showTabs": true,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": true,
+        "activeTab": "",
+        "defaultTab": "b7189167-5c92-44e9-902b-4bbb6d31ef80",
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "b7189167-5c92-44e9-902b-4bbb6d31ef80",
+              "qType": "sn-table"
+            },
+            "qExtendsId": "1de01f66-6757-4dd3-8408-7272d34e9a17",
+            "qMetaDef": {},
+            "visualization": "sn-table",
+            "enableChartExploration": false,
+            "insideContainer": true
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "c24f4175-f963-4c59-b986-b9bd75c6fead",
+              "qType": "sn-table"
+            },
+            "qExtendsId": "afac599e-7b94-4c21-a489-dbb5327cb79f",
+            "qMetaDef": {},
+            "visualization": "sn-table",
+            "enableChartExploration": false,
+            "insideContainer": true
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

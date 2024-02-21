@@ -199,7 +199,7 @@ FROM
 	iotv3."iot_equipment_usage_events"
 WHERE 
 	asset_id = $(odag_asset_id)  
-AND sample_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 Drop field "sample_ts" from [iot_equipment_usage_events];
 

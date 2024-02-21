@@ -1,14 +1,15 @@
 {
   "qInfo": {
-    "qId": "74db106d-be7d-4123-a12e-8a995ea0c287",
+    "qId": "2a3a3de8-4a14-401d-b24b-9d2e260b56b9",
     "qType": "variable"
   },
   "qMetaDef": {},
-  "qName": "v_Bind_TimeZone",
+  "qName": "v_odag_Start_Date",
   "qNumberPresentation": {
     "qType": "U",
     "qnDec": 10,
     "qUseThou": 0
   },
-  "qDefinition": "UTC"
+  "qDefinition": "2024-01-01",
+  "qIsScriptCreated": true
 }

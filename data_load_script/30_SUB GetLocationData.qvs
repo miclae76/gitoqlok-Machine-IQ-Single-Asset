@@ -28,7 +28,7 @@ INNER JOIN iotv3."iot_addresses"
 ON  "address_id" = "s2_cell_id_12"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND start_ts BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
 [iot_location_events]:
@@ -61,7 +61,7 @@ FROM
 	iotv3."iot_location_events"
 WHERE 
 	asset_id = $(odag_asset_id) 
-AND "sample_ts" BETWEEN $(odag_Start_Date) AND $(odag_End_Date);
+AND "sample_ts" BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 Drop field sample_ts from [iot_location_events];
 

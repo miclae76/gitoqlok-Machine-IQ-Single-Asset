@@ -242,7 +242,13 @@
           },
           "qTotalLabel": {},
           "qCalcCond": {},
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qExpression": "if(status = 'ACTIVE' , if(severity='CRITICAL', '#FF4631', if(severity = 'WARNING', '#FFBB43')))",
+              "qAttribute": true,
+              "id": "cellBackgroundColor"
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCondition": {
             "qCond": {},

@@ -1,0 +1,949 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "PcTPxt",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Fault Data",
+      "description": ""
+    },
+    "rank": 3,
+    "thumbnail": {
+      "qStaticContentUrlDef": {
+        "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/sheet_thumb_PcTPxt-0.846546296478794.png"
+      }
+    },
+    "columns": 36,
+    "rows": 18,
+    "cells": [
+      {
+        "name": "KJgJaZs",
+        "type": "barchart",
+        "col": 0,
+        "row": 1,
+        "colspan": 18,
+        "rowspan": 7,
+        "bounds": {
+          "y": 5.555555555555555,
+          "x": 0,
+          "width": 50,
+          "height": 38.88888888888889
+        }
+      },
+      {
+        "name": "LYkdrj",
+        "type": "barchart",
+        "col": 18,
+        "row": 1,
+        "colspan": 18,
+        "rowspan": 7,
+        "bounds": {
+          "y": 5.555555555555555,
+          "x": 50,
+          "width": 50,
+          "height": 38.88888888888889
+        }
+      },
+      {
+        "name": "vxkwXy",
+        "type": "text-image",
+        "col": 18,
+        "row": 0,
+        "colspan": 14,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 38.88888888888889,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "pZeMK",
+        "type": "text-image",
+        "col": 0,
+        "row": 0,
+        "colspan": 18,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 50,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "pPtVGpf",
+        "type": "filterpane",
+        "col": 32,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 88.88888888888889,
+          "width": 11.11111111111111,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "JFVg",
+        "type": "container",
+        "col": 0,
+        "row": 8,
+        "colspan": 36,
+        "rowspan": 10,
+        "bounds": {
+          "y": 44.44444444444444,
+          "x": 0,
+          "width": 100,
+          "height": 55.55555555555556
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "large",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595957",
+            "alpha": 1
+          }
+        }
+      }
+    ]
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "KJgJaZs",
+          "qType": "barchart"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "fault_code_id"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "crdTR",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "Count(fault_code_id)",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "kaZsAn",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            1,
+            0
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 17,
+              "qHeight": 500
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": [],
+          "dimRefLines": []
+        },
+        "showTitles": true,
+        "title": "Fault Sessions in Period",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "barGrouping": {
+          "grouping": "grouped"
+        },
+        "orientation": "vertical",
+        "scrollbar": "miniChart",
+        "scrollStartPos": 0,
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "showLabels": false,
+          "showSegmentLabels": false,
+          "showTotalLabels": true
+        },
+        "color": {
+          "auto": false,
+          "mode": "primary",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": -1,
+            "color": "#FF3600"
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": false,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10
+        },
+        "legend": {
+          "show": true,
+          "dock": "auto",
+          "showTitle": true
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "auto",
+          "dock": "near",
+          "axisDisplayMode": "auto",
+          "maxVisibleItems": 10
+        },
+        "preferContinuousAxis": true,
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": true,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "chart": {
+            "style": {
+              "size": "medium"
+            }
+          },
+          "data": {}
+        },
+        "visualization": "barchart",
+        "version": "1.34.7",
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontSize": "13px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "bar"
+          },
+          {
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "10px"
+              }
+            }
+          },
+          {
+            "key": "label",
+            "label": {
+              "value": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "legend",
+            "legend": {
+              "label": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "showMiniChartForContinuousAxis": true
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "pPtVGpf",
+          "qType": "filterpane"
+        },
+        "qExtendsId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "LYkdrj",
+          "qType": "barchart"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=date(floor(ConvertToLocalTime(created_fault, TimeZone)), 'MMM d, YYYY')"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "NAPGx",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "othersLabel": "Others"
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "fault_code_id"
+                ],
+                "qFieldLabels": [
+                  "Fault Code"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "crdTR",
+                "othersLabel": "Others",
+                "roles": [
+                  {
+                    "role": "color"
+                  }
+                ]
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "othersLabel": "Others"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qLabel": "Fault Code Occurence",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "Count(fault_code_id)",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "kaZsAn",
+                "numFormatFromTemplate": false,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            2,
+            1
+          ],
+          "qSuppressZero": true,
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 17,
+              "qHeight": 500
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "K",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 3000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1,
+            2
+          ],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "columnOrder": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "showTitles": true,
+        "title": "Fault Sessions in Period",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "barchart",
+        "version": "1.34.7",
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontSize": "13px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "bar"
+          },
+          {
+            "key": "axis",
+            "axis": {
+              "label": {
+                "name": {
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto, sans-serif"
+                }
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": "10px"
+              }
+            }
+          },
+          {
+            "key": "label",
+            "label": {
+              "value": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "legend",
+            "legend": {
+              "label": {
+                "fontSize": "10px",
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "title": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "appId": "e1a32c6c-6708-4c01-9fe1-72041a4e8875",
+            "cellColor": {
+              "mode": "auto",
+              "legend": {
+                "show": "auto",
+                "showTitle": true
+              }
+            },
+            "labels": {
+              "auto": false,
+              "headers": true,
+              "overlay": true,
+              "leaves": true,
+              "values": true
+            }
+          },
+          "quarantine": {
+            "conditionalShowHide": {
+              "measures": {},
+              "dimensions": {}
+            }
+          }
+        },
+        "showDisclaimer": true,
+        "color": {
+          "auto": true,
+          "mode": "primary",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": 6
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": true,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10
+        },
+        "legend": {
+          "show": true,
+          "dock": "right",
+          "showTitle": true
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "chart": {
+            "style": {
+              "size": "medium"
+            }
+          },
+          "title": "",
+          "description": "",
+          "data": {}
+        },
+        "refLine": {
+          "refLines": [],
+          "dimRefLines": []
+        },
+        "barGrouping": {
+          "grouping": "stacked"
+        },
+        "orientation": "vertical",
+        "scrollbar": "none",
+        "scrollStartPos": 0,
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "showLabels": false,
+          "showSegmentLabels": false,
+          "showTotalLabels": true
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "horizontal",
+          "dock": "near",
+          "axisDisplayMode": "auto",
+          "maxVisibleItems": 10
+        },
+        "preferContinuousAxis": false,
+        "measureAxis": {
+          "show": "all",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": true,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "showMiniChartForContinuousAxis": true
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "vxkwXy",
+          "qType": "text-image"
+        },
+        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "pZeMK",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "JFVg",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "2e8fb841-2451-46f1-880a-1f465792405c",
+            "label": "Fault Code Sessions",
+            "isMaster": true,
+            "cId": "pabSu"
+          },
+          {
+            "refId": "4abb7860-7a01-4e75-be39-e78bc0b895c5",
+            "label": "Fault Sessions by Day",
+            "isMaster": true,
+            "cId": "PFhNAj"
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "borders": "auto",
+        "showTabs": true,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": true,
+        "activeTab": "",
+        "defaultTab": "8c86f81f-ea57-40b7-9c35-72c80185cbce",
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "8c86f81f-ea57-40b7-9c35-72c80185cbce",
+              "qType": "sn-table"
+            },
+            "qExtendsId": "2e8fb841-2451-46f1-880a-1f465792405c",
+            "qMetaDef": {},
+            "visualization": "sn-table",
+            "enableChartExploration": false,
+            "insideContainer": true
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "f0e48c61-b469-447a-98b1-e65532d9bba8",
+              "qType": "sn-pivot-table"
+            },
+            "qExtendsId": "4abb7860-7a01-4e75-be39-e78bc0b895c5",
+            "qMetaDef": {},
+            "visualization": "sn-pivot-table"
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

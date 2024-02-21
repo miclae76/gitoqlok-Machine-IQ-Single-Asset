@@ -15,7 +15,6 @@ Monitoring Sessions|
 Fault Data|
 Equipment Overview|
 Service Intervals|
-Equipment Overview (1)|
 Run Data|
 Equipment Software|
 

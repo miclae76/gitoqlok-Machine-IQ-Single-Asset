@@ -43,6 +43,8 @@ SELECT
 	"def_level",
     "engine_speed"
 FROM iotv3."iot_events"
-WHERE asset_id = $(odag_asset_id)  and sample_ts between $(odag_Start_Date) and $(odag_End_Date);
+WHERE 
+	asset_id = $(odag_asset_id)  
+and sample_ts between $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 ENDSUB

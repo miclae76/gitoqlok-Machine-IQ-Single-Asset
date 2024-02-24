@@ -111,7 +111,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=if(start_ts_loc = max({1}total start_ts_loc), date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                  "=if(start_ts_loc = max(total{1} start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                 ],
                 "qFieldLabels": [
                   "Latest location"
@@ -146,38 +146,14 @@
               "qCalcCond": {},
               "qAttributeExpressions": [
                 {
-                  "qExpression": "Max(latitude)",
+                  "qExpression": "Date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmTtt')",
                   "qNumFormat": {
                     "qType": "U",
                     "qnDec": 10,
                     "qUseThou": 0
                   },
-                  "qLabel": "Latitude",
-                  "cId": "kXuqgS",
-                  "autoSort": true,
-                  "id": "customTooltipExpression"
-                },
-                {
-                  "qExpression": "Max(longitude)",
-                  "qNumFormat": {
-                    "qType": "U",
-                    "qnDec": 10,
-                    "qUseThou": 0
-                  },
-                  "qLabel": "Longitude",
-                  "cId": "Wupfujp",
-                  "autoSort": true,
-                  "id": "customTooltipExpression"
-                },
-                {
-                  "qExpression": "Max(altitude)",
-                  "qNumFormat": {
-                    "qType": "U",
-                    "qnDec": 10,
-                    "qUseThou": 0
-                  },
-                  "qLabel": "Altitude (m)",
-                  "cId": "aTmnBy",
+                  "qLabel": "Timestamp",
+                  "cId": "bAtJR",
                   "autoSort": true,
                   "id": "customTooltipExpression"
                 },
@@ -190,6 +166,48 @@
                   },
                   "qLabel": "Municipality",
                   "cId": "ccWHCx",
+                  "autoSort": true,
+                  "id": "customTooltipExpression"
+                },
+                {
+                  "qExpression": "Max(latitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabel": "Latitude",
+                  "cId": "kXuqgS",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                },
+                {
+                  "qExpression": "Max(longitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabel": "Longitude",
+                  "cId": "Wupfujp",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                },
+                {
+                  "qExpression": "Max(altitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qLabel": "Altitude (m)",
+                  "cId": "aTmnBy",
                   "autoSort": true,
                   "id": "customTooltipExpression"
                 }
@@ -253,7 +271,8 @@
         "tooltip": {
           "auto": true,
           "title": "",
-          "description": ""
+          "description": "",
+          "hideBasic": true
         },
         "size": {
           "radiusMin": 5,
@@ -388,11 +407,14 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "sLgNmH",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
+                "qFieldDefs": [
+                  "=location_id //date(ConvertToLocalTime(l, TimeZone), 'MMM D, YYYY h:mmtt')"
+                ],
+                "qFieldLabels": [
+                  "Prior Locations"
+                ],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -422,38 +444,14 @@
               "qCalcCond": {},
               "qAttributeExpressions": [
                 {
-                  "qExpression": "Max(latitude)",
+                  "qExpression": "Date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmTtt')",
                   "qNumFormat": {
                     "qType": "U",
                     "qnDec": 10,
                     "qUseThou": 0
                   },
-                  "qLabel": "Latitude",
-                  "cId": "TJTqGuK",
-                  "autoSort": true,
-                  "id": "customTooltipExpression"
-                },
-                {
-                  "qExpression": "Max(longitude)",
-                  "qNumFormat": {
-                    "qType": "U",
-                    "qnDec": 10,
-                    "qUseThou": 0
-                  },
-                  "qLabel": "Longitude",
-                  "cId": "UQAZ",
-                  "autoSort": true,
-                  "id": "customTooltipExpression"
-                },
-                {
-                  "qExpression": "Max(altitude)",
-                  "qNumFormat": {
-                    "qType": "U",
-                    "qnDec": 10,
-                    "qUseThou": 0
-                  },
-                  "qLabel": "Altitude",
-                  "cId": "FVazhzM",
+                  "qLabel": "Timestamp",
+                  "cId": "DKtBCs",
                   "autoSort": true,
                   "id": "customTooltipExpression"
                 },
@@ -466,6 +464,48 @@
                   },
                   "qLabel": "Municipality",
                   "cId": "CjnUtC",
+                  "autoSort": true,
+                  "id": "customTooltipExpression"
+                },
+                {
+                  "qExpression": "Max(latitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabel": "Latitude",
+                  "cId": "TJTqGuK",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                },
+                {
+                  "qExpression": "Max(longitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabel": "Longitude",
+                  "cId": "UQAZ",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                },
+                {
+                  "qExpression": "Max(altitude)",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qLabel": "Altitude",
+                  "cId": "FVazhzM",
                   "autoSort": true,
                   "id": "customTooltipExpression"
                 }
@@ -530,7 +570,7 @@
           "auto": true,
           "title": "",
           "description": "",
-          "hideBasic": false
+          "hideBasic": true
         },
         "size": {
           "radiusMin": 3,
@@ -604,12 +644,12 @@
       "zoomLimit": {
         "range": [
           7,
-          19
+          20
         ]
       },
       "panLimitSwitch": false,
       "panLimits": null,
-      "showDebugInfo": false,
+      "showDebugInfo": true,
       "labelColoring": "auto"
     },
     "autoZoomOnSelection": true,
@@ -629,7 +669,7 @@
     "gaVersion": 2,
     "layers": [],
     "qUndoExclude": {
-      "hashCode": 1835863936,
+      "hashCode": -1541631957,
       "gaLayers": [
         {
           "qHyperCubeDef": {
@@ -638,7 +678,7 @@
                 "qDef": {
                   "qGrouping": "N",
                   "qFieldDefs": [
-                    "=if(start_ts_loc = max({1}total start_ts_loc), date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                    "=if(start_ts_loc = max(total{1} start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                   ],
                   "qFieldLabels": [
                     "Latest location"
@@ -673,38 +713,14 @@
                 "qCalcCond": {},
                 "qAttributeExpressions": [
                   {
-                    "qExpression": "Max(latitude)",
+                    "qExpression": "Date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmTtt')",
                     "qNumFormat": {
                       "qType": "U",
                       "qnDec": 10,
                       "qUseThou": 0
                     },
-                    "qLabel": "Latitude",
-                    "cId": "kXuqgS",
-                    "autoSort": true,
-                    "id": "customTooltipExpression"
-                  },
-                  {
-                    "qExpression": "Max(longitude)",
-                    "qNumFormat": {
-                      "qType": "U",
-                      "qnDec": 10,
-                      "qUseThou": 0
-                    },
-                    "qLabel": "Longitude",
-                    "cId": "Wupfujp",
-                    "autoSort": true,
-                    "id": "customTooltipExpression"
-                  },
-                  {
-                    "qExpression": "Max(altitude)",
-                    "qNumFormat": {
-                      "qType": "U",
-                      "qnDec": 10,
-                      "qUseThou": 0
-                    },
-                    "qLabel": "Altitude (m)",
-                    "cId": "aTmnBy",
+                    "qLabel": "Timestamp",
+                    "cId": "bAtJR",
                     "autoSort": true,
                     "id": "customTooltipExpression"
                   },
@@ -717,6 +733,48 @@
                     },
                     "qLabel": "Municipality",
                     "cId": "ccWHCx",
+                    "autoSort": true,
+                    "id": "customTooltipExpression"
+                  },
+                  {
+                    "qExpression": "Max(latitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 2,
+                      "qUseThou": 0,
+                      "qDec": ".",
+                      "qThou": ","
+                    },
+                    "qLabel": "Latitude",
+                    "cId": "kXuqgS",
+                    "autoSort": true,
+                    "id": "customTooltipExpression",
+                    "isCustomFormatted": true
+                  },
+                  {
+                    "qExpression": "Max(longitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 2,
+                      "qUseThou": 0,
+                      "qDec": ".",
+                      "qThou": ","
+                    },
+                    "qLabel": "Longitude",
+                    "cId": "Wupfujp",
+                    "autoSort": true,
+                    "id": "customTooltipExpression",
+                    "isCustomFormatted": true
+                  },
+                  {
+                    "qExpression": "Max(altitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 10,
+                      "qUseThou": 0
+                    },
+                    "qLabel": "Altitude (m)",
+                    "cId": "aTmnBy",
                     "autoSort": true,
                     "id": "customTooltipExpression"
                   },
@@ -812,11 +870,14 @@
           "qHyperCubeDef": {
             "qDimensions": [
               {
-                "qLibraryId": "sLgNmH",
                 "qDef": {
                   "qGrouping": "N",
-                  "qFieldDefs": [],
-                  "qFieldLabels": [],
+                  "qFieldDefs": [
+                    "=location_id //date(ConvertToLocalTime(l, TimeZone), 'MMM D, YYYY h:mmtt')"
+                  ],
+                  "qFieldLabels": [
+                    "Prior Locations"
+                  ],
                   "qSortCriterias": [
                     {
                       "qSortByNumeric": 1,
@@ -846,38 +907,14 @@
                 "qCalcCond": {},
                 "qAttributeExpressions": [
                   {
-                    "qExpression": "Max(latitude)",
+                    "qExpression": "Date(ConvertToLocalTime(start_ts_loc, TimeZone), 'MMM d, YYYY h:mmTtt')",
                     "qNumFormat": {
                       "qType": "U",
                       "qnDec": 10,
                       "qUseThou": 0
                     },
-                    "qLabel": "Latitude",
-                    "cId": "TJTqGuK",
-                    "autoSort": true,
-                    "id": "customTooltipExpression"
-                  },
-                  {
-                    "qExpression": "Max(longitude)",
-                    "qNumFormat": {
-                      "qType": "U",
-                      "qnDec": 10,
-                      "qUseThou": 0
-                    },
-                    "qLabel": "Longitude",
-                    "cId": "UQAZ",
-                    "autoSort": true,
-                    "id": "customTooltipExpression"
-                  },
-                  {
-                    "qExpression": "Max(altitude)",
-                    "qNumFormat": {
-                      "qType": "U",
-                      "qnDec": 10,
-                      "qUseThou": 0
-                    },
-                    "qLabel": "Altitude",
-                    "cId": "FVazhzM",
+                    "qLabel": "Timestamp",
+                    "cId": "DKtBCs",
                     "autoSort": true,
                     "id": "customTooltipExpression"
                   },
@@ -890,6 +927,48 @@
                     },
                     "qLabel": "Municipality",
                     "cId": "CjnUtC",
+                    "autoSort": true,
+                    "id": "customTooltipExpression"
+                  },
+                  {
+                    "qExpression": "Max(latitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 2,
+                      "qUseThou": 0,
+                      "qDec": ".",
+                      "qThou": ","
+                    },
+                    "qLabel": "Latitude",
+                    "cId": "TJTqGuK",
+                    "autoSort": true,
+                    "id": "customTooltipExpression",
+                    "isCustomFormatted": true
+                  },
+                  {
+                    "qExpression": "Max(longitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 2,
+                      "qUseThou": 0,
+                      "qDec": ".",
+                      "qThou": ","
+                    },
+                    "qLabel": "Longitude",
+                    "cId": "UQAZ",
+                    "autoSort": true,
+                    "id": "customTooltipExpression",
+                    "isCustomFormatted": true
+                  },
+                  {
+                    "qExpression": "Max(altitude)",
+                    "qNumFormat": {
+                      "qType": "U",
+                      "qnDec": 10,
+                      "qUseThou": 0
+                    },
+                    "qLabel": "Altitude",
+                    "cId": "FVazhzM",
                     "autoSort": true,
                     "id": "customTooltipExpression"
                   },

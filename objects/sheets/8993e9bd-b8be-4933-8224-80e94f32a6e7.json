@@ -535,13 +535,11 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "guYBxr",
+              "qLibraryId": "4d065171-0b66-491e-938e-4d7b286294d4",
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [],
-                "qFieldLabels": [
-                  "sample_ts"
-                ],
+                "qFieldLabels": [],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -553,7 +551,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "dCjVp",
+                "cId": "DcBjf",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -942,7 +940,7 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "guYBxr",
+              "qLibraryId": "4d065171-0b66-491e-938e-4d7b286294d4",
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [],
@@ -958,7 +956,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "dSJpEz",
+                "cId": "dRLJA",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -1153,7 +1151,7 @@
           },
           "useDimColVal": true,
           "useMeasureGradient": true,
-          "persistent": false,
+          "persistent": true,
           "expressionIsColor": true,
           "expressionLabel": "",
           "measureScheme": "sg",
@@ -1263,7 +1261,8 @@
         "masterVersion": 0.96,
         "qLayoutExclude": {
           "quarantine": {}
-        }
+        },
+        "hash": 0.27989100640803666
       },
       "qChildren": []
     },
@@ -1277,7 +1276,7 @@
         "qHyperCubeDef": {
           "qDimensions": [
             {
-              "qLibraryId": "kmpr",
+              "qLibraryId": "4d065171-0b66-491e-938e-4d7b286294d4",
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [],
@@ -1293,7 +1292,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "YMKgrqW",
+                "cId": "DNFYJ",
                 "othersLabel": "Others",
                 "forecast": {
                   "stepSize": "days"
@@ -1485,7 +1484,7 @@
           },
           "useDimColVal": true,
           "useMeasureGradient": true,
-          "persistent": false,
+          "persistent": true,
           "expressionIsColor": true,
           "expressionLabel": "",
           "measureScheme": "sg",
@@ -1595,7 +1594,8 @@
         "masterVersion": 0.96,
         "qLayoutExclude": {
           "quarantine": {}
-        }
+        },
+        "hash": 0.44804265154397105
       },
       "qChildren": []
     },

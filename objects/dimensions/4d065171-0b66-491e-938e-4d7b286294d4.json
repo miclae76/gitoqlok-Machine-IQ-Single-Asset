@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "4d065171-0b66-491e-938e-4d7b286294d4",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(ConvertToLocalTime(sample_ts, TimeZone), sample_ts)"
+    ],
+    "qFieldLabels": [
+      "sample_ts_sec"
+    ],
+    "qLabelExpression": "='Sample TS'",
+    "title": "sample_ts_sec",
+    "coloring": {
+      "changeHash": "0.19268413323496847",
+      "hasValueColors": false,
+      "colorMapRef": "4d065171-0b66-491e-938e-4d7b286294d4"
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_sec",
+    "description": "",
+    "tags": []
+  }
+}

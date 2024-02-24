@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "XJpAnU",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(timestamp(round(ConvertToLocalTime(sample_ts_run, TimeZone),1/24)), sample_ts_run)"
+    ],
+    "qFieldLabels": [
+      "sample_ts_run_hour"
+    ],
+    "qLabelExpression": "='Sample TS (Hour)'",
+    "title": "sample_ts_run_hour",
+    "coloring": {
+      "changeHash": "0.058258531344850484",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_run_hour",
+    "description": "",
+    "tags": []
+  }
+}

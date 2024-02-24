@@ -212,7 +212,7 @@
         "disableNavMenu": false,
         "showDetails": true,
         "showDetailsExpression": false,
-        "borders": "border",
+        "borders": "auto",
         "showTabs": true,
         "useDropdown": true,
         "useScrollButton": true,

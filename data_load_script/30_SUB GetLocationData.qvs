@@ -6,7 +6,7 @@ SELECT
 	"location_id",
 	"asset_id",
 	"start_ts" 			AS start_ts_loc,
-	"start_event_id" ,
+	"asset_id"||"start_event_id" 	AS "%key_loc_event",
 	"start_engine_hours",
 	"iot_debounced_location_sessions".latitude,
 	"iot_debounced_location_sessions".longitude,
@@ -33,6 +33,7 @@ AND start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date
 
 [iot_location_events]:
 SELECT 
+	"asset_id"||"event_id" 	AS "%key_loc_event",
 	"event_id" AS "event_id_loc",
 	"sample_ts" AS sample_ts_loc,
 	"gps_fix_ts" AS gps_fix_ts_loc,
@@ -54,7 +55,7 @@ SELECT
 	"lmdirect_gps_tracking",
 	"lmdirect_gps_selftest_error",
 	"lmdirect_gps_antenna_error",
-	"asset_id",
+	--"asset_id",
 	"engine_hours",
 	altitude
 FROM 

@@ -6,21 +6,21 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=date(floor(ConvertToLocalTime(sample_ts_run, TimeZone)), 'MMM d, YYYY')"
+      "=aggr(date(floor(ConvertToLocalTime(sample_ts_run, TimeZone))), sample_ts_run)"
     ],
     "qFieldLabels": [
-      "time_zone_ajusted_sample_ts_run_"
+      "sample_ts_run_day"
     ],
     "qLabelExpression": "='Sample TS (Day)'",
-    "title": "time_zone_ajusted_sample_ts_run_",
+    "title": "sample_ts_run_day",
     "coloring": {
-      "changeHash": "0.6690113054410292",
+      "changeHash": "0.047813511716264356",
       "hasValueColors": false,
       "colorMapRef": "CvTehk"
     }
   },
   "qMetaDef": {
-    "title": "time_zone_ajusted_sample_ts_run_",
+    "title": "sample_ts_run_day",
     "description": "Time zone ajsuted sample ts for run data",
     "tags": []
   }

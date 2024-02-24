@@ -1,5 +1,17 @@
 [
   {
+    "qName": "%key_loc_event",
+    "qTags": [
+      "$key",
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_debounced_location_sessions",
+      "iot_location_events"
+    ]
+  },
+  {
     "qName": "Auxiliary Enable Duration",
     "qTags": [
       "$numeric",
@@ -888,7 +900,9 @@
       "$text",
       "$ascii"
     ],
-    "qSrcTables": [],
+    "qSrcTables": [
+      "TimeZoneTable"
+    ],
     "qAlwaysOneSelected": true
   },
   {
@@ -1102,7 +1116,6 @@
       "iot_equipment_status_archive",
       "iot_events",
       "iot_debounced_location_sessions",
-      "iot_location_events",
       "iot_equipment_usage_events",
       "iot_fault_sessions",
       "iot_fault_events",
@@ -1982,6 +1995,16 @@
     ]
   },
   {
+    "qName": "fault_code_id_list",
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
+    "qSrcTables": [
+      "iot_fault_events"
+    ]
+  },
+  {
     "qName": "front_base_solenoid",
     "qTags": [
       "$numeric",
@@ -2040,7 +2063,8 @@
   {
     "qName": "fuel_consumption_min",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
@@ -2584,7 +2608,8 @@
   {
     "qName": "municipality",
     "qTags": [
-      "$text"
+      "$text",
+      "$ascii"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2712,7 +2737,10 @@
   },
   {
     "qName": "region",
-    "qTags": [],
+    "qTags": [
+      "$text",
+      "$ascii"
+    ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
     ]
@@ -2988,16 +3016,6 @@
     ],
     "qSrcTables": [
       "iot_fault_sessions"
-    ]
-  },
-  {
-    "qName": "start_event_id",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
-    "qSrcTables": [
-      "iot_debounced_location_sessions"
     ]
   },
   {

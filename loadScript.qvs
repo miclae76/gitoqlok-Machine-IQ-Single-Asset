@@ -5,8 +5,9 @@ SET MoneyThousandSep=',';
 SET MoneyDecimalSep='.';
 SET MoneyFormat='$ ###0.00;-$ ###0.00';
 SET TimeFormat='h:mm:ss TT';
-SET DateFormat='M/D/YYYY';
-SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET DateFormat='MMM d, YYYY';
+//SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET TimestampFormat='MMM d, YYYY h:mm:ss[.fff] TT';
 SET FirstWeekDay=6;
 SET BrokenWeeks=1;
 SET ReferenceDay=0;
@@ -182,7 +183,7 @@ SELECT
 	"location_id",
 	"asset_id",
 	"start_ts" 			AS start_ts_loc,
-	"start_event_id" ,
+	"asset_id"||"start_event_id" 	AS "%key_loc_event",
 	"start_engine_hours",
 	"iot_debounced_location_sessions".latitude,
 	"iot_debounced_location_sessions".longitude,
@@ -209,6 +210,7 @@ AND start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date
 
 [iot_location_events]:
 SELECT 
+	"asset_id"||"event_id" 	AS "%key_loc_event",
 	"event_id" AS "event_id_loc",
 	"sample_ts" AS sample_ts_loc,
 	"gps_fix_ts" AS gps_fix_ts_loc,
@@ -230,7 +232,7 @@ SELECT
 	"lmdirect_gps_tracking",
 	"lmdirect_gps_selftest_error",
 	"lmdirect_gps_antenna_error",
-	"asset_id",
+	--"asset_id",
 	"engine_hours",
 	altitude
 FROM 
@@ -566,7 +568,7 @@ LOAD //event_id,
 	steering_drift_reverse, 
 	throttle_position, 
 	workgroup_state, 
-	//fault_code_id, 
+	fault_code_id AS fault_code_id_list, 
 	ingested_ts, 
 	persisted_ts, 
 	//map_version, 
@@ -841,12 +843,12 @@ tag field TimeZone with '$hidden';
 
 IF '$(odagActive)'='' THEN
   trace *** ODAG variables not inserted! Loading sample data.;
-  SET odag_asset_id = '''b4jb11086''';
+  SET odag_asset_id = '''aljg30693''';
   SET odag_TimeZone = '''UTC''';
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
-  SET odag_Start_Date = '''2024-01-01''';
-  SET odag_End_Date = '''2024-02-21''';
+  SET odag_Start_Date = '''2024-02-01''';
+  SET odag_End_Date = '''2024-02-23''';
 END IF;
 
 //Bind Time zone in varibale to convert timestamp

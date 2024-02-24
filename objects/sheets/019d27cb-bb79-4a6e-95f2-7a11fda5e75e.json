@@ -141,7 +141,7 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "jsUdm",
+                "cId": "LBxDp",
                 "othersLabel": "Others"
               },
               "qOtherTotalSpec": {
@@ -304,7 +304,57 @@
           "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
-              "qDimensions": [],
+              "qDimensions": [
+                {
+                  "qLibraryId": "XJpAnU",
+                  "qDef": {
+                    "qGrouping": "N",
+                    "qFieldDefs": [],
+                    "qFieldLabels": [
+                      "Sample TS (Hour)"
+                    ],
+                    "qSortCriterias": [
+                      {
+                        "qSortByNumeric": 1,
+                        "qSortByAscii": 1,
+                        "qSortByLoadOrder": 1,
+                        "qExpression": {}
+                      }
+                    ],
+                    "qNumberPresentations": [],
+                    "qActiveField": 0,
+                    "autoSort": true,
+                    "cId": "PtYJH",
+                    "othersLabel": "Others"
+                  },
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {
+                      "qv": "10"
+                    },
+                    "qOtherLimit": {
+                      "qv": "0"
+                    },
+                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qOtherLabel": {
+                    "qv": "Others"
+                  },
+                  "qTotalLabel": {},
+                  "qCalcCond": {},
+                  "qAttributeExpressions": [],
+                  "qAttributeDimensions": [],
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  }
+                }
+              ],
               "qMeasures": [],
               "qInterColumnSortOrder": [],
               "qInitialDataFetch": [],

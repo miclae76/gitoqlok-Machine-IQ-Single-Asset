@@ -1,0 +1,37 @@
+///$tab 90_Zuora_Subscriptions_QVD
+SUB GetZuoraSubscriptions
+
+TRACE ***Load zuora_subscriptions ***;
+
+
+Zuora_Subscriptions:
+LOAD
+    subscriptionnumber,
+    package__c,
+    channel__c,
+    subscription_version,
+    productid,
+    category__c,
+    subscription_id,
+    date(date#(subscriptionstartdate, 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptionstartdate,
+    autorenew,
+    customeracctnumber__c,
+    
+    zuora_subscription_status,
+    asset_id,
+    date(date#(subscriptionenddate, 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptionenddate,
+    currentterm,
+    accountid,
+    accountname,
+    accountbilltoid,
+    accountnumber,
+    amendmenttype,
+    //subscriptionupdateddate,
+    date(date#(left(subscriptioncreateddate, 10), 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptioncreateddate,
+    subscriptionproducttype__c
+FROM [lib://Common DATA:DataFiles/zuora_subscriptions.qvd]
+(qvd)
+WHERE EXISTS(asset_id) ;
+
+
+ENDSUB

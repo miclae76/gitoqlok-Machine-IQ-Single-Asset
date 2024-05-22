@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "jbyAruQ",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(timestamp(ConvertToLocalTime(sample_ts_run, TimeZone), 'MMM d, YYYY h:mmtt'), sample_ts_run)"
+    ],
+    "qFieldLabels": [
+      "Timestamp Run Data"
+    ],
+    "qLabelExpression": "='Timestamp ('&TimeZone&')'",
+    "title": "Timestamp Run Data",
+    "coloring": {
+      "changeHash": "0.13889512468502274",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Timestamp Run Data",
+    "description": "",
+    "tags": []
+  }
+}

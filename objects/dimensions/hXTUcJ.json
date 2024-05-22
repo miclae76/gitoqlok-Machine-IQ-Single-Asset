@@ -1,26 +1,26 @@
 {
   "qInfo": {
-    "qId": "XJpAnU",
+    "qId": "hXTUcJ",
     "qType": "dimension"
   },
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=aggr(timestamp(round(ConvertToLocalTime(sample_ts_run_hour, TimeZone),1/24)), sample_ts_run_hour)"
-    ],
-    "qFieldLabels": [
       "sample_ts_run_hour"
     ],
+    "qFieldLabels": [
+      "sample_ts_run_hour_"
+    ],
     "qLabelExpression": "='Sample TS (Hour)'",
-    "title": "sample_ts_run_hour",
+    "title": "sample_ts_run_hour_",
     "coloring": {
-      "changeHash": "0.291096209404587",
+      "changeHash": "0.04636352443784464",
       "hasValueColors": false,
-      "colorMapRef": "XJpAnU"
+      "colorMapRef": "hXTUcJ"
     }
   },
   "qMetaDef": {
-    "title": "sample_ts_run_hour",
+    "title": "sample_ts_run_hour_",
     "description": "",
     "tags": []
   }

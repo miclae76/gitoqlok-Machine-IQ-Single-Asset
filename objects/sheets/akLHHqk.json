@@ -1,0 +1,174 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "akLHHqk",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "RSSI",
+      "description": "RSSI, or “Received Signal Strength Indicator,” is a measurement of how well your device can hear a signal from an access point or router. It's a value that is useful for determining if you have enough signal to get a good wireless connection."
+    },
+    "creationDate": "2024-02-24T13:18:26.184Z",
+    "rank": 7,
+    "thumbnail": {
+      "qStaticContentUrlDef": {
+        "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/sheet_thumb_akLHHqk-0.1712067107842934.png"
+      }
+    },
+    "columns": 36,
+    "rows": 18,
+    "cells": [
+      {
+        "name": "knKyaEQ",
+        "type": "sn-table",
+        "col": 0,
+        "row": 1,
+        "colspan": 36,
+        "rowspan": 9,
+        "bounds": {
+          "y": 5.555555555555555,
+          "x": 0,
+          "width": 100,
+          "height": 50
+        }
+      },
+      {
+        "name": "nxHjkc",
+        "type": "barchart",
+        "col": 0,
+        "row": 10,
+        "colspan": 36,
+        "rowspan": 8,
+        "bounds": {
+          "y": 55.55555555555556,
+          "x": 0,
+          "width": 100,
+          "height": 44.44444444444444
+        }
+      },
+      {
+        "name": "jMbKt",
+        "type": "text-image",
+        "col": 0,
+        "row": 0,
+        "colspan": 15,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 41.66666666666667,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "cPmaXmG",
+        "type": "qlik-date-picker",
+        "col": 26,
+        "row": 0,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 72.22222222222221,
+          "width": 16.666666666666664,
+          "height": 5.555555555555555
+        }
+      },
+      {
+        "name": "yeZCSeY",
+        "type": "filterpane",
+        "col": 32,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 88.88888888888889,
+          "width": 11.11111111111111,
+          "height": 5.555555555555555
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "large",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit",
+    "components": [
+      {
+        "key": "general",
+        "auto": false,
+        "bgColor": {
+          "color": {
+            "index": -1,
+            "color": "#595957",
+            "alpha": 1
+          }
+        }
+      }
+    ]
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "knKyaEQ",
+          "qType": "sn-table"
+        },
+        "qExtendsId": "128e6991-5563-4dcf-b58b-c9428b6fa3da",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "nxHjkc",
+          "qType": "barchart"
+        },
+        "qExtendsId": "4c4f6490-cbc1-4fae-aafa-64ff419131ad",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "jMbKt",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "cPmaXmG",
+          "qType": "qlik-date-picker"
+        },
+        "qExtendsId": "a51123aa-c778-4231-a6de-3e0692f65db3",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "yeZCSeY",
+          "qType": "filterpane"
+        },
+        "qExtendsId": "94963573-7c5a-4746-a8cb-fe3573a22ed3",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

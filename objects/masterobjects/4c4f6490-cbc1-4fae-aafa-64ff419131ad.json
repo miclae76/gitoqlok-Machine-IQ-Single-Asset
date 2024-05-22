@@ -1,24 +1,22 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "65b50c85-a088-4bd6-880c-d47f5b82c860",
+      "qId": "4c4f6490-cbc1-4fae-aafa-64ff419131ad",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Battery Voltage Trend (V)",
+      "title": "RSSI over time",
       "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "guYBxr",
+          "qLibraryId": "4d065171-0b66-491e-938e-4d7b286294d4",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
-            "qFieldLabels": [
-              "sample_ts"
-            ],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -30,7 +28,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "dCjVp",
+            "cId": "ZDBqk",
             "othersLabel": "Others",
             "forecast": {
               "stepSize": "days"
@@ -56,31 +54,35 @@
           },
           "qTotalLabel": {},
           "qCalcCond": {},
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qLibraryId": "PgHvPLZ",
+              "qAttribute": true,
+              "id": "colorByAlternative",
+              "matchMeasure": 0,
+              "colorMapRef": "PgHvPLZ"
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "sample_ts_sec",
+          "othersLabel": "Others"
         }
       ],
       "qMeasures": [
         {
+          "qLibraryId": "PgHvPLZ",
           "qDef": {
-            "qLabel": "Machine Battery Voltage",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Median(machine_battery_voltage)",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "ZdVSH",
+            "cId": "eegUT",
             "numFormatFromTemplate": true,
             "styling": [],
             "forecast": {
@@ -95,71 +97,18 @@
               "lineCurve": "linear",
               "showConfidence": true,
               "confidence": 0.95
+            },
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": "",
+                "qThou": ""
+              },
+              "isCustomFormatted": false
             }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qDef": {
-            "qLabel": "Internal Battery Voltage",
-            "qTags": [],
-            "qGrouping": "N",
-            "qDef": "Median(internal_battery_voltage)",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "autoSort": true,
-            "numFormatFromTemplate": true,
-            "styling": [],
-            "forecast": {
-              "enabled": false,
-              "method": "ssa_forecast",
-              "paletteColor": {
-                "index": 0,
-                "color": "none"
-              },
-              "lineThickness": 1,
-              "lineType": "dashed",
-              "lineCurve": "linear",
-              "showConfidence": true,
-              "confidence": 0.95
-            },
-            "cId": "WEsjV"
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -195,10 +144,10 @@
         }
       ],
       "qInterColumnSortOrder": [
-        1,
-        2,
-        0
+        0,
+        1
       ],
+      "qSuppressZero": true,
       "qSuppressMissing": true,
       "qInitialDataFetch": [
         {
@@ -223,6 +172,7 @@
       "qColumnOrder": [],
       "qExpansionState": [],
       "qDynamicScript": [],
+      "columnOrder": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -252,35 +202,36 @@
       "dimRefLines": []
     },
     "showTitles": true,
-    "title": "Battery Voltage Trend (V)",
-    "subtitle": "",
+    "title": "RSSI over time",
+    "subtitle": ">-65dB : Excellent,  <-95 dB : Poor",
     "footnote": "",
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
     "showDisclaimer": true,
-    "lineType": "line",
-    "stackedArea": false,
-    "separateStacking": true,
-    "orientation": "horizontal",
-    "scrollbar": "none",
-    "scrollStartPos": 0,
-    "nullMode": "connect",
+    "orientation": "vertical",
+    "scrollbar": "miniChart",
+    "scrollStartPos": 1,
     "dataPoint": {
-      "show": true,
-      "showLabels": false
+      "show": false,
+      "showLabels": true,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
     },
-    "maxNumPoints": 2000,
-    "maxNumLines": 12,
     "gridLine": {
       "auto": true,
       "spacing": 2
     },
     "color": {
-      "auto": true,
-      "mode": "byExpression",
+      "auto": false,
+      "mode": "byMeasure",
       "formatting": {
-        "numFormatFromTemplate": true
+        "numFormatFromTemplate": true,
+        "quarantine": {
+          "qNumFormat": {},
+          "isCustomFormatted": false
+        },
+        "qNumFormat": null
       },
       "useBaseColors": "off",
       "paletteColor": {
@@ -297,20 +248,20 @@
       "autoMinMax": true,
       "measureMin": 0,
       "measureMax": 10,
-      "altLabel": "Machine Battery Voltage",
+      "altLabel": "PgHvPLZ",
       "byMeasureDef": {
-        "label": "Machine Battery Voltage",
-        "key": "Median(machine_battery_voltage)",
-        "type": "expression"
+        "label": "PgHvPLZ",
+        "key": "PgHvPLZ",
+        "type": "libraryItem"
       }
     },
     "legend": {
       "show": true,
       "dock": "auto",
-      "showTitle": false
+      "showTitle": true
     },
     "dimensionAxis": {
-      "continuousAuto": true,
+      "continuousAuto": false,
       "show": "labels",
       "label": "auto",
       "dock": "near",
@@ -322,10 +273,10 @@
       "show": "labels",
       "dock": "near",
       "spacing": 1,
-      "autoMinMax": true,
-      "minMax": "min",
-      "min": 0,
-      "max": 10,
+      "autoMinMax": false,
+      "minMax": "minMax",
+      "min": -120,
+      "max": -40,
       "logarithmic": false
     },
     "tooltip": {
@@ -337,36 +288,99 @@
         }
       },
       "title": "",
-      "description": ""
+      "description": "",
+      "data": {}
     },
-    "visualization": "linechart",
-    "version": "1.30.8",
+    "visualization": "barchart",
+    "version": "1.30.13",
     "components": [
       {
-        "key": "line",
-        "style": {
-          "dataPointSize": 4
+        "key": "general",
+        "title": {
+          "main": {
+            "fontSize": "13px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "subTitle": {
+            "fontSize": "11px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "footer": {
+            "fontFamily": "Roboto, sans-serif"
+          }
         }
       },
       {
-        "key": "axis"
+        "key": "bar",
+        "style": {
+          "strokeWidth": "small",
+          "width": 1,
+          "strokeColor": {
+            "index": 15,
+            "color": "#ffffff",
+            "alpha": 1
+          }
+        }
       },
       {
-        "key": "label"
+        "key": "axis",
+        "axis": {
+          "label": {
+            "name": {
+              "fontSize": "10px",
+              "fontFamily": "Roboto, sans-serif"
+            }
+          },
+          "title": {
+            "fontSize": "10px"
+          }
+        }
       },
       {
-        "key": "legend"
+        "key": "label",
+        "label": {
+          "value": {
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "10px"
+          }
+        }
       },
       {
-        "key": "general"
+        "key": "legend",
+        "legend": {
+          "label": {
+            "fontSize": "10px",
+            "fontFamily": "Roboto, sans-serif"
+          },
+          "title": {
+            "fontFamily": "Roboto, sans-serif"
+          }
+        }
       }
     ],
     "showMiniChartForContinuousAxis": true,
-    "hash": 0.43702858315880944,
-    "masterVersion": 0.96,
     "qLayoutExclude": {
-      "quarantine": {}
-    }
+      "disabled": {
+        "qExtendsId": "",
+        "lineType": "line",
+        "stackedArea": false,
+        "separateStacking": true,
+        "nullMode": "gap",
+        "maxNumPoints": 2000,
+        "maxNumLines": 12
+      },
+      "quarantine": {
+        "conditionalShowHide": {
+          "measures": {},
+          "dimensions": {}
+        }
+      }
+    },
+    "barGrouping": {
+      "grouping": "grouped"
+    },
+    "hash": 0.4400511665403113,
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

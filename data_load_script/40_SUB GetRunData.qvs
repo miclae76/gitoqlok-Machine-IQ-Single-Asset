@@ -1,13 +1,17 @@
 ///$tab 40_SUB GetRunData
 SUB GetRunData
 
+TRACE *** Load iot_equipment_usage_events ***;
+
 [iot_equipment_usage_events]:
 LOAD 
-	//"event_id",
+	"event_id" 						AS "event_id_run",
 	"asset_id",
 	"sample_ts",
 	 "sample_ts"					AS "sample_ts_run", 
+     Timestamp(Round("sample_ts", 1/24), 'MMM d, YYYY htt') 		AS "sample_ts_run_hour",
      Date(Floor("sample_ts")) 		AS "sample_ts_run_day",
+     Date(Floor("sample_ts"), 'YYYY-MM-DD') 		AS "master_calendar",
 
      "auxiliary_binned"				AS "Auxiliary Enable Duration",
      
@@ -81,14 +85,14 @@ LOAD
 	"high_flow_solenoid_binned"			AS "High Flow Solenoid Duration",
     
 	"hydraulic_oil_temperature_binned1" AS "Hydraulic Oil Temp. (<37°C / <100°F)",
-	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
-	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
-	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
-	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
-	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
-	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
-	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
-	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (38-60°C / 101-140°F)",
+	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (61-71°C / 141-160°F)",
+	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (72-82°C / 161-180°F)",
+	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (83_88°C / 181-190°F)",
+	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (89-93°C / 191-200°F)",
+	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (94-99°C / 201-210°F)",
+	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (100-104°C / 211-220°F)",
+	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (105-110°C / 221-230°F)",
     "hydraulic_oil_temperature_binned10" AS "Hydraulic Oil Temp. (110+°C / 231+°F)",
     
 //     "hydraulic_oil_temperature_binned11",
@@ -102,13 +106,13 @@ LOAD
 	"load_duration_binned4"		AS "Load (Actual Engine - Pct Torque) - 15-19%",
 	"load_duration_binned5"		AS "Load (Actual Engine - Pct Torque) - 20-24%",
 	"load_duration_binned6"		AS "Load (Actual Engine - Pct Torque) - 25-29%",
-	"load_duration_binned7"		AS "Load (Actual Engine - Pct Torque) - 30-34",
+	"load_duration_binned7"		AS "Load (Actual Engine - Pct Torque) - 30-34%",
 	"load_duration_binned8"		AS "Load (Actual Engine - Pct Torque) - 35-39%",
 	"load_duration_binned9"		AS "Load (Actual Engine - Pct Torque) - 40-50%",
 	"load_duration_binned10"	AS "Load (Actual Engine - Pct Torque) - 51%+",    
     
-	"rear_base_solenoid_binned" ,
-	"rear_rod_solenoid_binned",
+	"rear_base_solenoid_binned"  	AS "Rear Base Solenoid Duration",
+	"rear_rod_solenoid_binned" 		AS "Rear Rod Solenoid Duration",
 	"seatbar_open_count",
     
 	"throttle_position_binned1"		AS "Throttle Position - 0-25%",
@@ -214,14 +218,25 @@ while not IsNull(FieldValue('sample_ts_run_day',Iterno()));
 
 LET vStartDate = Peek('MinDate');
 LET vEndDate   = Peek('MaxDate');
+LET vDays = vEndDate - vStartDate ;
 
-MasterCalendar:
+MasterCalendar_Run:
 Load 
- Date(TempDate) AS "sample_ts_run_day",
+ Date(TempDate) 							AS "sample_ts_run_day",
+ Date(Weekstart(TempDate)) 					AS "sample_ts_run_week",
+ Date(MonthStart(TempDate), 'MMM YYYY') 	AS "sample_ts_run_month"
 ;
 LOAD Date($(vStartDate) + IterNo()-1) AS TempDate
 AutoGenerate 1
 While $(vStartDate) + IterNo()-1 <= $(vEndDate);
 ;
+
+MasterHourCalendar_Run:
+LOAD
+    Timestamp($(vStartDate) + (RecNo()-1)/24, 'MMM d, YYYY htt') as sample_ts_run_hour
+AUTOGENERATE 24 * $(vDays) + 1;
+
+Drop Table MinMaxDate;
+
 
 EndSub

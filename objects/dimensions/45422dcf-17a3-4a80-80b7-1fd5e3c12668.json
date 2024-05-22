@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "45422dcf-17a3-4a80-80b7-1fd5e3c12668",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(timestamp(round(ConvertToLocalTime(sample_ts_run, TimeZone),1/24/60), 'MMM d, YYYY h:mmtt'), sample_ts_run)"
+    ],
+    "qFieldLabels": [
+      "sample_ts_run_min"
+    ],
+    "qLabelExpression": "='Sample TS (Minute)'",
+    "title": "sample_ts_run_min",
+    "coloring": {
+      "changeHash": "0.5193823427955884",
+      "hasValueColors": false,
+      "colorMapRef": "45422dcf-17a3-4a80-80b7-1fd5e3c12668"
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_run_min",
+    "description": "",
+    "tags": []
+  }
+}

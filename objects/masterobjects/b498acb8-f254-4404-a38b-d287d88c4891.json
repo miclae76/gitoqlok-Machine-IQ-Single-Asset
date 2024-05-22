@@ -1,0 +1,611 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "b498acb8-f254-4404-a38b-d287d88c4891",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "Equipment Info",
+      "description": "",
+      "tags": []
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [],
+      "qMeasures": [
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Maxstring(esn)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "UqQvCj",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Maxstring(product_model)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "nkhpx",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "only(inventory_type)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "BAyjwR",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "only(servicing_dealer_id)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "Fnazkbz",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>}country)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "DGPRjR",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>}region)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "YPdmqA",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "=Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>}sub_region)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "pSHpH",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>} municipality)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "ZzWvaLV",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>} latitude) &' / '&Only({<start_ts_loc={\"$(=Max(Total start_ts_loc))\"}>} longitude)\r\n\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "BgqwTmN",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "only(product_name)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAggrFunc": "None",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "djpTuUZ",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        9
+      ],
+      "qSuppressMissing": true,
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 500,
+          "qHeight": 10
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [],
+      "qExpansionState": [],
+      "qDynamicScript": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
+      }
+    },
+    "script": "",
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": true,
+    "showDetails": true,
+    "showDetailsExpression": false,
+    "components": [
+      {
+        "key": "general"
+      }
+    ],
+    "visualization": "sn-text",
+    "version": "1.1.1",
+    "text": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":1,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"Equipment Info\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1},{\"children\":[{\"colWidths\":[\"48.06%\",\"51.61%\"],\"type\":\"TekColGroupNode\",\"version\":1},{\"colWidths\":[\"48.06%\",\"51.61%\"],\"type\":\"TEK_TABLE_RESIZE_NODE\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"ESN\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"UqQvCj\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"Product Model\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"nkhpx\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"Product Name\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"djpTuUZ\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"#26a0a7\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"Servicing Dealer ID\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"Fnazkbz\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-family: Roboto, sans-serif;font-size: 14px;\",\"text\":\"Inventory Type\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"BAyjwR\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekTableNode\",\"version\":1,\"hasBorders\":false,\"width\":\"100%\"},{\"children\":[{\"detail\":0,\"format\":1,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"Latest Location\",\"type\":\"text\",\"version\":1},{\"detail\":2,\"format\":1,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"\\t\",\"type\":\"tab\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1},{\"children\":[{\"colWidths\":[\"48.06%\",\"51.29%\"],\"type\":\"TekColGroupNode\",\"version\":1},{\"colWidths\":[\"48.06%\",\"51.29%\"],\"type\":\"TEK_TABLE_RESIZE_NODE\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"Country\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"DGPRjR\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"left\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"State\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"YPdmqA\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"Sub Region\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"pSHpH\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"Municipality\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"ZzWvaLV\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"rgb(38, 160, 167)\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1},{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"font-size: 14px;font-family: Roboto, sans-serif;\",\"text\":\"Lat. / Long.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false},{\"children\":[{\"children\":[{\"expressionId\":\"BgqwTmN\",\"formatStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"color\":\"#26a0a7\",\"fontSize\":\"14px\",\"fontFamily\":\"Roboto, sans-serif\"},\"type\":\"qlik.expression.node\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\" \",\"type\":\"text\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekCellNode\",\"version\":1,\"hasBorders\":false}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekRowNode\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"TekTableNode\",\"version\":1,\"hasBorders\":false,\"width\":\"100%\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+    "fontsUsed": [
+      "Roboto, sans-serif"
+    ],
+    "extensionMeta": {
+      "translationKey": "",
+      "icon": "text-object",
+      "iconChar": "puzzle",
+      "isLibraryItem": true,
+      "visible": true,
+      "IconDefinition": {},
+      "name": "Text",
+      "description": "Display text, links, and measures. Add tables with rows and columns. Format and color the text. Add background image and color.",
+      "template": "sn-text",
+      "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+      "isThirdParty": true,
+      "version": "1.1.1",
+      "author": "QlikTech International AB",
+      "type": "visualization",
+      "supernova": true,
+      "bundle": {
+        "id": "qlik-dashboard-bundle",
+        "name": "Qlik Dashboard bundle",
+        "description": "This is a set of supported objects that will facilitate dashboard creation in Qlik Sense. These can be used in addition to the objects found under \"Charts\".\n\nFor limitations and support conditions, see the documentation."
+      },
+      "installer": "QlikExtensionBundler",
+      "folder": "_dashboard-bundle"
+    },
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

@@ -1,15 +1,15 @@
 {
   "qInfo": {
-    "qId": "e5f290b7-66aa-4934-8e4a-bd58ce9da058",
+    "qId": "d19a16c0-e870-4c39-963e-df79275b555f",
     "qType": "variable"
   },
   "qMetaDef": {},
-  "qName": "odag_Start_Date",
+  "qName": "vDays",
   "qNumberPresentation": {
     "qType": "U",
     "qnDec": 10,
     "qUseThou": 0
   },
-  "qDefinition": "'2024-04-01'",
+  "qDefinition": "51",
   "qIsScriptCreated": true
 }

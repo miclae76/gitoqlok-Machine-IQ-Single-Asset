@@ -1,26 +1,26 @@
 {
   "qInfo": {
-    "qId": "guYBxr",
+    "qId": "fWNCfNZ",
     "qType": "dimension"
   },
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=date(ConvertToLocalTime(sample_ts_day, TimeZone), 'MMM d, YYYY')"
+      "sample_ts_run_day"
     ],
     "qFieldLabels": [
-      "sample_ts_day"
+      "sample_ts_run_day_"
     ],
     "qLabelExpression": "='Sample TS (Day)'",
-    "title": "sample_ts_day",
+    "title": "sample_ts_run_day_",
     "coloring": {
-      "changeHash": "0.509613153295114",
+      "changeHash": "0.14216125347235486",
       "hasValueColors": false,
-      "colorMapRef": "guYBxr"
+      "colorMapRef": "fWNCfNZ"
     }
   },
   "qMetaDef": {
-    "title": "sample_ts_day",
+    "title": "sample_ts_run_day_",
     "description": "",
     "tags": []
   }

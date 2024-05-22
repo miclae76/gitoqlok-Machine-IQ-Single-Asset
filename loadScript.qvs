@@ -67,7 +67,7 @@ FROM iotv3."iot_equipment"
 WHERE asset_id = $(odag_asset_id)  ;
 
 
-TRACE *** Load iot_equipment status ***;
+TRACE *** Load iot_equipment_status ***;
 
 [iot_equipment_status]:
 LOAD 
@@ -100,6 +100,8 @@ FROM
 WHERE 
 	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
 
+TRACE *** Load iot_equipment_status_archive ***;
+
 [iot_equipment_status_archive]:
 LOAD asset_id, 
 	connected_status As archive_connected_status, 
@@ -118,15 +120,20 @@ SELECT "asset_id",
 FROM 
 	iotv3."iot_equipment_status_archive"
 WHERE 
-	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
+	asset_id = $(odag_asset_id); 
 
 
 EndSub
 ///$tab 20_SUB GetPeriodicData
 SUB GetPeriodicData
 
+TRACE *** Load iot_events ***;
+
 [iot_events]:
-LOAD *, Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') AS "sample_ts_hour";
+LOAD *, 
+	Date(Floor(sample_ts), 'YYYY-MM-DD') 					AS "sample_ts_day",
+    Date(Floor(sample_ts), 'YYYY-MM-DD') 					AS "master_calendar",
+    Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') 	AS "sample_ts_hour";
 LOAD 
 	"esn",
 	"event_id",
@@ -179,6 +186,8 @@ ENDSUB
 SUB GetLocationData
 
 [iot_debounced_location_sessions]:
+LOAD *, 
+	Date(Floor(start_ts_loc), 'YYYY-MM-DD') 					AS "master_calendar";
 SELECT 
 	"location_id",
 	"asset_id",
@@ -250,13 +259,17 @@ ENDSUB
 ///$tab 40_SUB GetRunData
 SUB GetRunData
 
+TRACE *** Load iot_equipment_usage_events ***;
+
 [iot_equipment_usage_events]:
 LOAD 
-	//"event_id",
+	"event_id" 						AS "event_id_run",
 	"asset_id",
 	"sample_ts",
 	 "sample_ts"					AS "sample_ts_run", 
+     Timestamp(Round("sample_ts", 1/24), 'MMM d, YYYY htt') 		AS "sample_ts_run_hour",
      Date(Floor("sample_ts")) 		AS "sample_ts_run_day",
+     Date(Floor("sample_ts"), 'YYYY-MM-DD') 		AS "master_calendar",
 
      "auxiliary_binned"				AS "Auxiliary Enable Duration",
      
@@ -330,14 +343,14 @@ LOAD
 	"high_flow_solenoid_binned"			AS "High Flow Solenoid Duration",
     
 	"hydraulic_oil_temperature_binned1" AS "Hydraulic Oil Temp. (<37°C / <100°F)",
-	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
-	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
-	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
-	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
-	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
-	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
-	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
-	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+	"hydraulic_oil_temperature_binned2" AS "Hydraulic Oil Temp. (38-60°C / 101-140°F)",
+	"hydraulic_oil_temperature_binned3" AS "Hydraulic Oil Temp. (61-71°C / 141-160°F)",
+	"hydraulic_oil_temperature_binned4" AS "Hydraulic Oil Temp. (72-82°C / 161-180°F)",
+	"hydraulic_oil_temperature_binned5" AS "Hydraulic Oil Temp. (83_88°C / 181-190°F)",
+	"hydraulic_oil_temperature_binned6" AS "Hydraulic Oil Temp. (89-93°C / 191-200°F)",
+	"hydraulic_oil_temperature_binned7" AS "Hydraulic Oil Temp. (94-99°C / 201-210°F)",
+	"hydraulic_oil_temperature_binned8" AS "Hydraulic Oil Temp. (100-104°C / 211-220°F)",
+	"hydraulic_oil_temperature_binned9" AS "Hydraulic Oil Temp. (105-110°C / 221-230°F)",
     "hydraulic_oil_temperature_binned10" AS "Hydraulic Oil Temp. (110+°C / 231+°F)",
     
 //     "hydraulic_oil_temperature_binned11",
@@ -351,13 +364,13 @@ LOAD
 	"load_duration_binned4"		AS "Load (Actual Engine - Pct Torque) - 15-19%",
 	"load_duration_binned5"		AS "Load (Actual Engine - Pct Torque) - 20-24%",
 	"load_duration_binned6"		AS "Load (Actual Engine - Pct Torque) - 25-29%",
-	"load_duration_binned7"		AS "Load (Actual Engine - Pct Torque) - 30-34",
+	"load_duration_binned7"		AS "Load (Actual Engine - Pct Torque) - 30-34%",
 	"load_duration_binned8"		AS "Load (Actual Engine - Pct Torque) - 35-39%",
 	"load_duration_binned9"		AS "Load (Actual Engine - Pct Torque) - 40-50%",
 	"load_duration_binned10"	AS "Load (Actual Engine - Pct Torque) - 51%+",    
     
-	"rear_base_solenoid_binned" ,
-	"rear_rod_solenoid_binned",
+	"rear_base_solenoid_binned"  	AS "Rear Base Solenoid Duration",
+	"rear_rod_solenoid_binned" 		AS "Rear Rod Solenoid Duration",
 	"seatbar_open_count",
     
 	"throttle_position_binned1"		AS "Throttle Position - 0-25%",
@@ -463,23 +476,36 @@ while not IsNull(FieldValue('sample_ts_run_day',Iterno()));
 
 LET vStartDate = Peek('MinDate');
 LET vEndDate   = Peek('MaxDate');
+LET vDays = vEndDate - vStartDate ;
 
-MasterCalendar:
+MasterCalendar_Run:
 Load 
- Date(TempDate) AS "sample_ts_run_day",
+ Date(TempDate) 							AS "sample_ts_run_day",
+ Date(Weekstart(TempDate)) 					AS "sample_ts_run_week",
+ Date(MonthStart(TempDate), 'MMM YYYY') 	AS "sample_ts_run_month"
 ;
 LOAD Date($(vStartDate) + IterNo()-1) AS TempDate
 AutoGenerate 1
 While $(vStartDate) + IterNo()-1 <= $(vEndDate);
 ;
 
+MasterHourCalendar_Run:
+LOAD
+    Timestamp($(vStartDate) + (RecNo()-1)/24, 'MMM d, YYYY htt') as sample_ts_run_hour
+AUTOGENERATE 24 * $(vDays) + 1;
+
+Drop Table MinMaxDate;
+
+
 EndSub
 ///$tab 50_SUB GetFaultSessions
 SUB GetFaultSessions
 
+TRACE ***iot_fault_sessions with statua = ACTIVE ***;
 
 [iot_fault_sessions_active]:
-SELECT 
+SELECT
+	"asset_id",
 	"fault_code_id" as active_fault_code_id,
 	severity		as active_fault_severity,
     status 			as active_fault_status,
@@ -492,14 +518,15 @@ WHERE
 AND status = 'ACTIVE';
 
 
-
+TRACE ***iot_fault_sessions history***;
 [iot_fault_sessions]:
 LOAD
 	*,
-	"session_start_ts"				AS "session_start_ts_fault", 
-    "session_end_ts"				AS "session_end_ts_fault", 
-    Date(Floor("session_start_ts"))	AS "sample_ts_run_day_fault",
-    Date(Floor("created_fault")) 	AS "created_fault_day"
+	"session_start_ts"							AS "session_start_ts_fault", 
+    "session_end_ts"							AS "session_end_ts_fault", 
+    Date(Floor("session_start_ts"))				AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 				AS "created_fault_day",
+    Date(Floor("created_fault"), 'YYYY-MM-DD') 	AS "master_calendar"
 ;
 SELECT 
 	"session_id",
@@ -508,8 +535,8 @@ SELECT
 	"asset_id",
 	"session_start_ts",
 	"session_end_ts",
-	"start_location_id",
-	"end_location_id",
+	--"start_location_id",
+	--"end_location_id",
 	"fault_code_id",
 	"start_engine_hours" as start_engine_hours_fault,
 	"end_engine_hours"	as end_engine_hours_fault,
@@ -535,10 +562,13 @@ WHERE
 AND session_start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) 
 AND created BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
+TRACE ***iot_fault_events ***;
 
+[iot_fault_events]:
 LOAD //event_id, 
 	asset_id, 
 	"sample_ts"	AS "sample_ts_fault", 
+    Date(Floor("sample_ts"), 'YYYY-MM-DD') 	AS "master_calendar",
 	//event_type, 
 	auxiliary, 
 	brake_switch, 
@@ -574,8 +604,6 @@ LOAD //event_id,
 	//map_version, 
 	map_version_instant, 
 	delayed_match;
-
-[iot_fault_events]:
 SELECT 
 	"event_id",
 	"asset_id",
@@ -626,6 +654,10 @@ AND sample_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Dat
 ENDSUB
 ///$tab 60_SUB GetUtilizationData
 SUB GetUtilizationData
+
+TRACE ***Load iot_engine_hours_aggregation ***;
+
+// Get Engine Hours aggregated data
 [iot_utilization_aggregation]:
 LOAD *, 
 	 if(aggregate_ts_hour <= 6, '0:00 - 06:00', 
@@ -633,7 +665,8 @@ LOAD *,
         	if(aggregate_ts_hour <= 18, '12:00 - 18:00', '18:00 - 24:00'))) AS aggregate_hours_quad;
 LOAD *, 
 	hour(aggregate_ts) AS aggregate_ts_hour,
-    date(floor(aggregate_ts)) as aggregate_ts_day;
+    date(floor(aggregate_ts)) as aggregate_ts_day,
+    date(floor(aggregate_ts), 'YYYY-MM-DD') as "master_calendar";
 SELECT 
     "asset_id",
 	"aggregate_ts",
@@ -647,11 +680,18 @@ WHERE
 AND aggregate_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
+TRACE ***Load iot_fuel_consumption_aggregation ***;
 
+// Get  Fuel consumption aggregated data and append to utilization table
 Concatenate([iot_utilization_aggregation])
 LOAD *, 
+	 if(aggregate_ts_hour <= 6, '0:00 - 06:00', 
+     	if(aggregate_ts_hour <= 12, '06:00 - 12:00',
+        	if(aggregate_ts_hour <= 18, '12:00 - 18:00', '18:00 - 24:00'))) AS aggregate_hours_quad;
+LOAD *, 
 	hour(aggregate_ts) AS aggregate_ts_hour,
-    date(floor(aggregate_ts)) as aggregate_ts_day;
+     date(floor(aggregate_ts)) as aggregate_ts_day,
+    date(floor(aggregate_ts), 'YYYY-MM-DD') as "master_calendar";
 SELECT "asset_id",
 	"aggregate_ts",
 	"fuel_consumption" AS fuel_consumption_aggr
@@ -668,10 +708,12 @@ ENDSUB
 ///$tab 70_SUB GetSoftware
 SUB GetSoftware
 
+TRACE ***Load iot_software_sessions ***;
 
 [iot_software_sessions]:
 LOAD //software_version_id, 
-	asset_id, 
+	'CURRENT' AS sw_histo,
+    asset_id, 
 	start_ts AS start_ts_sw_session, 
 	end_ts AS end_ts_sw_session, 
 	//last_update_ts, 
@@ -704,8 +746,48 @@ FROM iotv3."iot_software_sessions"
 WHERE 
 asset_id = $(odag_asset_id) 
 ;
-//--AND start_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
 
+TRACE ***Load iot_software_sessions_archive ***;
+
+[iot_software_sessions_archive]:
+LOAD //software_version_id, 
+	'HISTORY' AS sw_histo,
+	asset_id, 
+	start_ts AS start_ts_sw_session, 
+	end_ts AS end_ts_sw_session, 
+	//last_update_ts, 
+	//start_message_id, 
+	//end_message_id, 
+	controller_key, 
+	module_id, 
+	application_software_version, 
+	database_version, 
+	option_mask; 
+	//created, 
+	//updated, 
+	//deleted;
+SELECT --"software_version_id",
+	"asset_id",
+	"start_ts",
+	"end_ts",
+	--"last_update_ts",
+	--"start_message_id",
+	--"end_message_id",
+	"controller_key",
+	"module_id",
+	"application_software_version",
+	"database_version",
+	"option_mask"
+	--created,
+	--updated,
+	--deleted
+FROM iotv3."iot_software_sessions_archive"
+WHERE 
+asset_id = $(odag_asset_id) ;
+// AND (  start_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date)
+// 	OR end_ts   BETWEEN $(odag_Start_Date) and $(odag_End_Date) );
+    
+TRACE ***Load iot_software_version_run_events ***;
 
 [iot_software_version_run_events]:
 LOAD 
@@ -714,7 +796,7 @@ LOAD
 	ingested_ts AS ingested_ts_sw_run, 
 	//persisted_ts, 
 	sample_ts AS sample_ts_sw_run, 
-	gateway_version, 
+	//gateway_version, 
 	aux_mx_secondary_version, 
 	standard_panel_version, 
 	drive_version, 
@@ -726,7 +808,7 @@ SELECT "event_id",
 	"ingested_ts",
 	--"persisted_ts",
 	"sample_ts",
-	"gateway_version",
+	--"gateway_version",
 	"aux_mx_secondary_version",
 	"standard_panel_version",
 	"drive_version",
@@ -737,6 +819,8 @@ FROM iotv3."iot_software_version_run_events"
 WHERE 
 asset_id = $(odag_asset_id) 
 AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+TRACE ***Load iot_software_version_soft_events ***;
 
 [iot_software_version_soft_events]:
 LOAD //event_id, 
@@ -750,8 +834,6 @@ LOAD //event_id,
 	auxiliary_soft, 
 	drive_soft, 
 	workgroup_soft;
-
-[iot_software_version_soft_events]:
 SELECT --"event_id",
 	"asset_id",
 	"ingested_ts",
@@ -777,6 +859,8 @@ ENDSUB
 
 ///$tab 80_SUB_GetMonitoring
 SUB GetMonitoringSessions
+
+TRACE ***Load iot_monitoring_sessions  with status ACTIVE ***;
 
 [iot_monitoring_sessions]:
 LOAD asset_id, 
@@ -812,19 +896,44 @@ asset_id = $(odag_asset_id)
 AND status = 'ACTIVE';
 
 ENDSUB
-///$tab 100_Odag_binding_Connect
-//Static Table to send param to trigger Subroutines in ODAG Template
-// OdagSectionTable:
-// LOAD * INLINE [
-// dataset
-// RUN_DATA
-// RUN_USAGE_SUMMARY
-// PERIODIC_DATA
-// FAULT_DATA
-// EQ_LOCATIONS
-// FULL
-// ];
+///$tab 90_Zuora_Subscriptions_QVD
+SUB GetZuoraSubscriptions
 
+TRACE ***Load zuora_subscriptions ***;
+
+
+Zuora_Subscriptions:
+LOAD
+    subscriptionnumber,
+    package__c,
+    channel__c,
+    subscription_version,
+    productid,
+    category__c,
+    subscription_id,
+    date(date#(subscriptionstartdate, 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptionstartdate,
+    autorenew,
+    customeracctnumber__c,
+    
+    zuora_subscription_status,
+    asset_id,
+    date(date#(subscriptionenddate, 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptionenddate,
+    currentterm,
+    accountid,
+    accountname,
+    accountbilltoid,
+    accountnumber,
+    amendmenttype,
+    //subscriptionupdateddate,
+    date(date#(left(subscriptioncreateddate, 10), 'YYYY-MM-DD'), 'MMM d, YYYY') as subscriptioncreateddate,
+    subscriptionproducttype__c
+FROM [lib://Common DATA:DataFiles/zuora_subscriptions.qvd]
+(qvd)
+WHERE EXISTS(asset_id) ;
+
+
+ENDSUB
+///$tab 100_Odag_binding_Connect
 //Static table to enable time zone selection for TS adjsuted 
 TimeZoneTable:
 LOAD * INLINE [
@@ -839,7 +948,6 @@ UTC
 WET
 ];
 
-tag field TimeZone with '$hidden';
 
 IF '$(odagActive)'='' THEN
   trace *** ODAG variables not inserted! Loading sample data.;
@@ -847,56 +955,30 @@ IF '$(odagActive)'='' THEN
   SET odag_TimeZone = '''UTC''';
   SET odag_TimeScope = '''Last 7 days''';
   SET odag_dataset = '''FULL''';
-  SET odag_Start_Date = '''2024-02-01''';
-  SET odag_End_Date = '''2024-02-23''';
+  SET odag_Start_Date = '''2024-04-01''';
+  SET odag_End_Date = '''2024-05-22''';
 END IF;
 
-//Bind Time zone in varibale to convert timestamp
-//Bind Time Zone
-// LOAD $(odag_TimeZone) AS TimeZone 
-// AutoGenerate 1;
 
- LET v_odag_Start_Date = $(odag_Start_Date);
- LET v_odag_End_Date = $(odag_End_Date);
+LET v_odag_Start_Date = $(odag_Start_Date);
+LET v_odag_End_Date = $(odag_End_Date);
 
 
 // Connect to MIQ Database
 LIB CONNECT TO 'Common DATA:Machine IQ';
 
-/*
-//Perform Micro Query depending of calling parameters
-IF $(odag_dataset) = 'PERIODIC_DATA' THEN  
-	CALL GetPeriodicData
-     exit Script;
-ENDIF;
+CALL GetEquipmentInfo;
+CALL GetPeriodicData;
+CALL GetLocationData;
+CALL GetRunData;
+CALL GetFaultSessions;
+CALL GetUtilizationData;
+CALL GetSoftware;
+CALL GetMonitoringSessions;
+CALL GetZuoraSubscriptions
 
-IF $(odag_dataset) = 'EQ_LOCATIONS' THEN  
-	CALL GetLocationData
-     exit Script;
-ENDIF;
-
-IF $(odag_dataset) = 'RUN_DATA' THEN  
-	CALL GetRunData
-     exit Script;
-ENDIF;
-
-IF $(odag_dataset) = 'FAULT_DATA' THEN  
-	CALL GetFaultSessions
-    exit Script;
-ENDIF;
-
-// Perform full set of queries 
-IF $(odag_dataset) = 'FULL' THEN 
-*/
-	CALL GetEquipmentInfo;
-    CALL GetPeriodicData;
-    CALL GetLocationData;
-    CALL GetRunData;
-    CALL GetFaultSessions;
-    CALL GetUtilizationData;
-	CALL GetSoftware;
-    CALL GetMonitoringSessions;
-//ENDIF
+//Hide field in selection bar
+tag field TimeZone with '$hidden';
 
 
 ///$tab 999_EXIT

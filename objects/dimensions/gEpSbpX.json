@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "gEpSbpX",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(ConvertToLocalTime(sample_ts_hour, TimeZone), 'MMM d, YYYY htt')"
+    ],
+    "qFieldLabels": [
+      "sample_ts_hour"
+    ],
+    "qLabelExpression": "='Sample TS (Hour)'",
+    "title": "sample_ts_hour",
+    "coloring": {
+      "changeHash": "0.18007886581946253",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_hour",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,6 +1,8 @@
 ///$tab 80_SUB_GetMonitoring
 SUB GetMonitoringSessions
 
+TRACE ***Load iot_monitoring_sessions  with status ACTIVE ***;
+
 [iot_monitoring_sessions]:
 LOAD asset_id, 
 	sort_key, 

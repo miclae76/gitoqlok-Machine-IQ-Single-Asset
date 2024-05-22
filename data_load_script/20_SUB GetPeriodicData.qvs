@@ -1,8 +1,13 @@
 ///$tab 20_SUB GetPeriodicData
 SUB GetPeriodicData
 
+TRACE *** Load iot_events ***;
+
 [iot_events]:
-LOAD *, Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') AS "sample_ts_hour";
+LOAD *, 
+	Date(Floor(sample_ts), 'YYYY-MM-DD') 					AS "sample_ts_day",
+    Date(Floor(sample_ts), 'YYYY-MM-DD') 					AS "master_calendar",
+    Timestamp(floor("sample_ts", 1/24), 'MMM d, YYYY Htt') 	AS "sample_ts_hour";
 LOAD 
 	"esn",
 	"event_id",

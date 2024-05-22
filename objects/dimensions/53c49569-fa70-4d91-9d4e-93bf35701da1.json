@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "53c49569-fa70-4d91-9d4e-93bf35701da1",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "sample_ts_run_week"
+    ],
+    "qFieldLabels": [
+      "sample_ts_run_week"
+    ],
+    "qLabelExpression": "='Sample TS (Week)'",
+    "title": "sample_ts_run_week",
+    "coloring": {
+      "colorMapRef": "fWNCfNZ",
+      "changeHash": "0.9439659930164326",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_run_week",
+    "description": "",
+    "tags": []
+  }
+}

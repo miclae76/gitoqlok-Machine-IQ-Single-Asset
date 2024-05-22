@@ -1,9 +1,11 @@
 ///$tab 50_SUB GetFaultSessions
 SUB GetFaultSessions
 
+TRACE ***iot_fault_sessions with statua = ACTIVE ***;
 
 [iot_fault_sessions_active]:
-SELECT 
+SELECT
+	"asset_id",
 	"fault_code_id" as active_fault_code_id,
 	severity		as active_fault_severity,
     status 			as active_fault_status,
@@ -16,14 +18,15 @@ WHERE
 AND status = 'ACTIVE';
 
 
-
+TRACE ***iot_fault_sessions history***;
 [iot_fault_sessions]:
 LOAD
 	*,
-	"session_start_ts"				AS "session_start_ts_fault", 
-    "session_end_ts"				AS "session_end_ts_fault", 
-    Date(Floor("session_start_ts"))	AS "sample_ts_run_day_fault",
-    Date(Floor("created_fault")) 	AS "created_fault_day"
+	"session_start_ts"							AS "session_start_ts_fault", 
+    "session_end_ts"							AS "session_end_ts_fault", 
+    Date(Floor("session_start_ts"))				AS "sample_ts_run_day_fault",
+    Date(Floor("created_fault")) 				AS "created_fault_day",
+    Date(Floor("created_fault"), 'YYYY-MM-DD') 	AS "master_calendar"
 ;
 SELECT 
 	"session_id",
@@ -32,8 +35,8 @@ SELECT
 	"asset_id",
 	"session_start_ts",
 	"session_end_ts",
-	"start_location_id",
-	"end_location_id",
+	--"start_location_id",
+	--"end_location_id",
 	"fault_code_id",
 	"start_engine_hours" as start_engine_hours_fault,
 	"end_engine_hours"	as end_engine_hours_fault,
@@ -59,10 +62,13 @@ WHERE
 AND session_start_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) 
 AND created BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
+TRACE ***iot_fault_events ***;
 
+[iot_fault_events]:
 LOAD //event_id, 
 	asset_id, 
 	"sample_ts"	AS "sample_ts_fault", 
+    Date(Floor("sample_ts"), 'YYYY-MM-DD') 	AS "master_calendar",
 	//event_type, 
 	auxiliary, 
 	brake_switch, 
@@ -98,8 +104,6 @@ LOAD //event_id,
 	//map_version, 
 	map_version_instant, 
 	delayed_match;
-
-[iot_fault_events]:
 SELECT 
 	"event_id",
 	"asset_id",

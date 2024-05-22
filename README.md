@@ -11,11 +11,13 @@ Sheet Title | Description
 Utilization|
 Equipment Locations|
 Periodic Data|
+Run Usage Summary|
 Monitoring Sessions|
 Fault Data|
 Equipment Overview|
 Service Intervals|
-RSSI|
+RSSI|RSSI, or “Received Signal Strength Indicator,” is a measurement of how well your device can hear a signal from an access point or router. It's a value that is useful for determining if you have enough signal to get a good wireless connection.
+Subscriptions Details|Zuora Subscriptions detailed information
 Run Data|
 Equipment Software|
 

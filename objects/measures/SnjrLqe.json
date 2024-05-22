@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "Average Fuel Level",
-    "qDef": "Avg(fuel_level)/100",
+    "qDef": "avg(fuel_level)/100",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,

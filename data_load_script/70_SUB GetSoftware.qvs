@@ -1,10 +1,12 @@
 ///$tab 70_SUB GetSoftware
 SUB GetSoftware
 
+TRACE ***Load iot_software_sessions ***;
 
 [iot_software_sessions]:
 LOAD //software_version_id, 
-	asset_id, 
+	'CURRENT' AS sw_histo,
+    asset_id, 
 	start_ts AS start_ts_sw_session, 
 	end_ts AS end_ts_sw_session, 
 	//last_update_ts, 
@@ -37,8 +39,48 @@ FROM iotv3."iot_software_sessions"
 WHERE 
 asset_id = $(odag_asset_id) 
 ;
-//--AND start_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
 
+TRACE ***Load iot_software_sessions_archive ***;
+
+[iot_software_sessions_archive]:
+LOAD //software_version_id, 
+	'HISTORY' AS sw_histo,
+	asset_id, 
+	start_ts AS start_ts_sw_session, 
+	end_ts AS end_ts_sw_session, 
+	//last_update_ts, 
+	//start_message_id, 
+	//end_message_id, 
+	controller_key, 
+	module_id, 
+	application_software_version, 
+	database_version, 
+	option_mask; 
+	//created, 
+	//updated, 
+	//deleted;
+SELECT --"software_version_id",
+	"asset_id",
+	"start_ts",
+	"end_ts",
+	--"last_update_ts",
+	--"start_message_id",
+	--"end_message_id",
+	"controller_key",
+	"module_id",
+	"application_software_version",
+	"database_version",
+	"option_mask"
+	--created,
+	--updated,
+	--deleted
+FROM iotv3."iot_software_sessions_archive"
+WHERE 
+asset_id = $(odag_asset_id) ;
+// AND (  start_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date)
+// 	OR end_ts   BETWEEN $(odag_Start_Date) and $(odag_End_Date) );
+    
+TRACE ***Load iot_software_version_run_events ***;
 
 [iot_software_version_run_events]:
 LOAD 
@@ -47,7 +89,7 @@ LOAD
 	ingested_ts AS ingested_ts_sw_run, 
 	//persisted_ts, 
 	sample_ts AS sample_ts_sw_run, 
-	gateway_version, 
+	//gateway_version, 
 	aux_mx_secondary_version, 
 	standard_panel_version, 
 	drive_version, 
@@ -59,7 +101,7 @@ SELECT "event_id",
 	"ingested_ts",
 	--"persisted_ts",
 	"sample_ts",
-	"gateway_version",
+	--"gateway_version",
 	"aux_mx_secondary_version",
 	"standard_panel_version",
 	"drive_version",
@@ -70,6 +112,8 @@ FROM iotv3."iot_software_version_run_events"
 WHERE 
 asset_id = $(odag_asset_id) 
 AND sample_ts BETWEEN $(odag_Start_Date) and $(odag_End_Date);
+
+TRACE ***Load iot_software_version_soft_events ***;
 
 [iot_software_version_soft_events]:
 LOAD //event_id, 
@@ -83,8 +127,6 @@ LOAD //event_id,
 	auxiliary_soft, 
 	drive_soft, 
 	workgroup_soft;
-
-[iot_software_version_soft_events]:
 SELECT --"event_id",
 	"asset_id",
 	"ingested_ts",

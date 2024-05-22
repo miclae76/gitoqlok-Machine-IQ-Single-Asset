@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "6940e2a6-e978-4829-ac48-bb4c60e68dbc",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "sample_ts_run_month"
+    ],
+    "qFieldLabels": [
+      "sample_ts_run_month"
+    ],
+    "qLabelExpression": "='Sample TS (Month)'",
+    "title": "sample_ts_run_month",
+    "coloring": {
+      "colorMapRef": "fWNCfNZ",
+      "changeHash": "0.6876147893850149",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "sample_ts_run_month",
+    "description": "",
+    "tags": []
+  }
+}

@@ -32,20 +32,6 @@
         }
       },
       {
-        "name": "vxkwXy",
-        "type": "text-image",
-        "col": 18,
-        "row": 0,
-        "colspan": 14,
-        "rowspan": 1,
-        "bounds": {
-          "y": 0,
-          "x": 50,
-          "width": 38.88888888888889,
-          "height": 5.555555555555555
-        }
-      },
-      {
         "name": "pZeMK",
         "type": "text-image",
         "col": 0,
@@ -99,6 +85,20 @@
           "x": 50,
           "width": 50,
           "height": 38.88888888888889
+        }
+      },
+      {
+        "name": "gpJYkuf",
+        "type": "qlik-date-picker",
+        "col": 26,
+        "row": 0,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 72.22222222222221,
+          "width": 16.666666666666664,
+          "height": 5.555555555555555
         }
       }
     ],
@@ -447,28 +447,6 @@
     {
       "qProperty": {
         "qInfo": {
-          "qId": "vxkwXy",
-          "qType": "text-image"
-        },
-        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "pZeMK",
-          "qType": "text-image"
-        },
-        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
           "qId": "JFVg",
           "qType": "container"
         },
@@ -538,6 +516,18 @@
         {
           "qProperty": {
             "qInfo": {
+              "qId": "9d11b59b-a87b-48d2-b989-6d46d6544ad8",
+              "qType": "barchart"
+            },
+            "qExtendsId": "2e7b59f9-fbfc-4432-9e6f-b5ccfa60f455",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
               "qId": "b36b3fd8-a8a2-494d-a8bb-a4a3a7be9152",
               "qType": "sn-table"
             },
@@ -546,18 +536,6 @@
             "visualization": "sn-table",
             "enableChartExploration": false,
             "insideContainer": true
-          },
-          "qChildren": []
-        },
-        {
-          "qProperty": {
-            "qInfo": {
-              "qId": "9d11b59b-a87b-48d2-b989-6d46d6544ad8",
-              "qType": "barchart"
-            },
-            "qExtendsId": "2e7b59f9-fbfc-4432-9e6f-b5ccfa60f455",
-            "qMetaDef": {},
-            "visualization": "barchart"
           },
           "qChildren": []
         }
@@ -570,6 +548,28 @@
           "qType": "sn-pivot-table"
         },
         "qExtendsId": "4abb7860-7a01-4e75-be39-e78bc0b895c5",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "pZeMK",
+          "qType": "text-image"
+        },
+        "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "gpJYkuf",
+          "qType": "qlik-date-picker"
+        },
+        "qExtendsId": "a51123aa-c778-4231-a6de-3e0692f65db3",
         "qMetaDef": {}
       },
       "qChildren": []

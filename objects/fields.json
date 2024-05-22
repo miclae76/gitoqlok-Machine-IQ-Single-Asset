@@ -2,9 +2,9 @@
   {
     "qName": "%key_loc_event",
     "qTags": [
-      "$key",
+      "$ascii",
       "$text",
-      "$ascii"
+      "$key"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions",
@@ -629,6 +629,26 @@
     ]
   },
   {
+    "qName": "Hydraulic Oil Temp. (100-104°C / 211-220°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (105-110°C / 221-230°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
     "qName": "Hydraulic Oil Temp. (110+°C / 231+°F)",
     "qTags": [
       "$numeric",
@@ -639,7 +659,7 @@
     ]
   },
   {
-    "qName": "Hydraulic Oil Temp. (<100-104°C / 211-220°F)",
+    "qName": "Hydraulic Oil Temp. (38-60°C / 101-140°F)",
     "qTags": [
       "$numeric",
       "$integer"
@@ -649,7 +669,47 @@
     ]
   },
   {
-    "qName": "Hydraulic Oil Temp. (<105-110°C / 221-230°F)",
+    "qName": "Hydraulic Oil Temp. (61-71°C / 141-160°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (72-82°C / 161-180°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (83_88°C / 181-190°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (89-93°C / 191-200°F)",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
+    "qName": "Hydraulic Oil Temp. (94-99°C / 201-210°F)",
     "qTags": [
       "$numeric",
       "$integer"
@@ -660,66 +720,6 @@
   },
   {
     "qName": "Hydraulic Oil Temp. (<37°C / <100°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<38-60°C / 101-140°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<61-71°C / 141-160°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<72-82°C / 161-180°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<83_88°C / 181-190°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<89-93°C / 191-200°F)",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
-    "qName": "Hydraulic Oil Temp. (<94-99°C / 201-210°F)",
     "qTags": [
       "$numeric",
       "$integer"
@@ -769,7 +769,7 @@
     ]
   },
   {
-    "qName": "Load (Actual Engine - Pct Torque) - 30-34",
+    "qName": "Load (Actual Engine - Pct Torque) - 30-34%",
     "qTags": [
       "$numeric",
       "$integer"
@@ -829,27 +829,23 @@
     ]
   },
   {
-    "qName": "MaxDate",
+    "qName": "Rear Base Solenoid Duration",
     "qTags": [
       "$numeric",
-      "$integer",
-      "$timestamp",
-      "$date"
+      "$integer"
     ],
     "qSrcTables": [
-      "MinMaxDate"
+      "iot_equipment_usage_events"
     ]
   },
   {
-    "qName": "MinDate",
+    "qName": "Rear Rod Solenoid Duration",
     "qTags": [
       "$numeric",
-      "$integer",
-      "$timestamp",
-      "$date"
+      "$integer"
     ],
     "qSrcTables": [
-      "MinMaxDate"
+      "iot_equipment_usage_events"
     ]
   },
   {
@@ -896,9 +892,9 @@
     "qIsHidden": true,
     "qName": "TimeZone",
     "qTags": [
-      "$hidden",
+      "$ascii",
       "$text",
-      "$ascii"
+      "$hidden"
     ],
     "qSrcTables": [
       "TimeZoneTable"
@@ -926,10 +922,50 @@
     ]
   },
   {
+    "qName": "accountbilltoid",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "accountid",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "accountname",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "accountnumber",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "acd_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
@@ -937,50 +973,35 @@
   },
   {
     "qName": "active_fault_code_id",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions_active"
     ]
   },
   {
     "qName": "active_fault_name",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions_active"
     ]
   },
   {
     "qName": "active_fault_severity",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions_active"
     ]
   },
   {
     "qName": "active_fault_status",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions_active"
     ]
   },
   {
     "qName": "actvie_fault_created",
-    "qTags": [
-      "$numeric",
-      "$timestamp"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "iot_fault_sessions_active"
     ]
@@ -988,8 +1009,8 @@
   {
     "qName": "aggregate_hours_quad",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_utilization_aggregation"
@@ -1037,10 +1058,20 @@
     ]
   },
   {
+    "qName": "amendmenttype",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "application_software_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_sessions"
@@ -1049,8 +1080,8 @@
   {
     "qName": "archive_connected_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status_archive"
@@ -1076,8 +1107,8 @@
   {
     "qName": "archive_health_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status_archive"
@@ -1086,8 +1117,8 @@
   {
     "qName": "archive_service_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status_archive"
@@ -1106,9 +1137,9 @@
   {
     "qName": "asset_id",
     "qTags": [
-      "$key",
+      "$ascii",
       "$text",
-      "$ascii"
+      "$key"
     ],
     "qSrcTables": [
       "iot_equipment",
@@ -1117,30 +1148,42 @@
       "iot_events",
       "iot_debounced_location_sessions",
       "iot_equipment_usage_events",
+      "iot_fault_sessions_active",
       "iot_fault_sessions",
       "iot_fault_events",
       "iot_utilization_aggregation",
       "iot_software_sessions",
       "iot_software_version_run_events",
       "iot_software_version_soft_events",
-      "iot_monitoring_sessions"
+      "iot_monitoring_sessions",
+      "Zuora_Subscriptions"
     ]
   },
   {
     "qName": "attachment_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
     ]
   },
   {
+    "qName": "autorenew",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "aux_mx_secondary_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
@@ -1159,8 +1202,8 @@
   {
     "qName": "auxiliary_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
@@ -1177,10 +1220,30 @@
     ]
   },
   {
+    "qName": "category__c",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "channel__c",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "code_name_customer",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1189,8 +1252,8 @@
   {
     "qName": "connected_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status"
@@ -1199,8 +1262,8 @@
   {
     "qName": "controller",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1209,8 +1272,8 @@
   {
     "qName": "controller_key",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_sessions"
@@ -1219,8 +1282,8 @@
   {
     "qName": "country",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -1287,10 +1350,20 @@
     ]
   },
   {
+    "qName": "currentterm",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "customer_account_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -1299,6 +1372,7 @@
   {
     "qName": "customer_description",
     "qTags": [
+      "$ascii",
       "$text"
     ],
     "qSrcTables": [
@@ -1308,6 +1382,7 @@
   {
     "qName": "customer_impact",
     "qTags": [
+      "$ascii",
       "$text"
     ],
     "qSrcTables": [
@@ -1317,8 +1392,8 @@
   {
     "qName": "customer_name",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1334,6 +1409,16 @@
     ]
   },
   {
+    "qName": "customeracctnumber__c",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
     "qName": "data_service_status",
     "qTags": [
       "$numeric",
@@ -1346,8 +1431,8 @@
   {
     "qName": "database_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_sessions"
@@ -1356,8 +1441,8 @@
   {
     "qName": "dcu_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
@@ -1414,8 +1499,8 @@
   {
     "qName": "deluxe_panel_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
@@ -1424,6 +1509,7 @@
   {
     "qName": "description",
     "qTags": [
+      "$ascii",
       "$text"
     ],
     "qSrcTables": [
@@ -1453,8 +1539,8 @@
   {
     "qName": "drive_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
@@ -1473,8 +1559,8 @@
   {
     "qName": "drive_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
@@ -1483,8 +1569,8 @@
   {
     "qName": "ecu_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
@@ -1511,18 +1597,11 @@
   {
     "qName": "end_event_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
-    ]
-  },
-  {
-    "qName": "end_location_id",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_fault_sessions"
     ]
   },
   {
@@ -1907,8 +1986,8 @@
   {
     "qName": "equipment_latest_delete_ts",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status"
@@ -1927,8 +2006,8 @@
   {
     "qName": "esn",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1937,8 +2016,8 @@
   {
     "qName": "event_code",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1947,8 +2026,8 @@
   {
     "qName": "event_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1957,18 +2036,28 @@
   {
     "qName": "event_id_loc",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_location_events"
     ]
   },
   {
+    "qName": "event_id_run",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events"
+    ]
+  },
+  {
     "qName": "event_type",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
@@ -1977,8 +2066,8 @@
   {
     "qName": "fault_category",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1987,8 +2076,8 @@
   {
     "qName": "fault_code_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -1997,8 +2086,8 @@
   {
     "qName": "fault_code_id_list",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_events"
@@ -2063,8 +2152,7 @@
   {
     "qName": "fuel_consumption_min",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$numeric"
     ],
     "qSrcTables": [
       "iot_equipment_usage_events"
@@ -2118,21 +2206,11 @@
   {
     "qName": "gateway_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
-    ]
-  },
-  {
-    "qName": "gateway_version",
-    "qTags": [
-      "$text",
-      "$ascii"
-    ],
-    "qSrcTables": [
-      "iot_software_version_run_events"
     ]
   },
   {
@@ -2167,8 +2245,8 @@
   {
     "qName": "health_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status"
@@ -2312,8 +2390,8 @@
   {
     "qName": "inventory_condition",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2322,8 +2400,8 @@
   {
     "qName": "inventory_type",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2339,8 +2417,8 @@
   {
     "qName": "last_update_event_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -2494,8 +2572,8 @@
   {
     "qName": "location_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2566,10 +2644,28 @@
     ]
   },
   {
+    "qName": "master_calendar",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date",
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "iot_events",
+      "iot_debounced_location_sessions",
+      "iot_equipment_usage_events",
+      "iot_fault_sessions",
+      "iot_fault_events",
+      "iot_utilization_aggregation"
+    ]
+  },
+  {
     "qName": "message_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_events"
@@ -2578,8 +2674,8 @@
   {
     "qName": "module_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_sessions"
@@ -2588,8 +2684,8 @@
   {
     "qName": "monitor_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_monitoring_sessions"
@@ -2598,8 +2694,8 @@
   {
     "qName": "monitor_type",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_monitoring_sessions"
@@ -2608,8 +2704,8 @@
   {
     "qName": "municipality",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2628,11 +2724,21 @@
   {
     "qName": "option_mask",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_sessions"
+    ]
+  },
+  {
+    "qName": "package__c",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
     ]
   },
   {
@@ -2648,8 +2754,8 @@
   {
     "qName": "product_category",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2658,8 +2764,8 @@
   {
     "qName": "product_equipment_type",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2668,8 +2774,8 @@
   {
     "qName": "product_fault_category",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2678,8 +2784,8 @@
   {
     "qName": "product_model",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2688,11 +2794,21 @@
   {
     "qName": "product_name",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
+    ]
+  },
+  {
+    "qName": "productid",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
     ]
   },
   {
@@ -2706,16 +2822,6 @@
     ]
   },
   {
-    "qName": "rear_base_solenoid_binned",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
     "qName": "rear_rod_solenoid",
     "qTags": [
       "$numeric",
@@ -2726,20 +2832,10 @@
     ]
   },
   {
-    "qName": "rear_rod_solenoid_binned",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "iot_equipment_usage_events"
-    ]
-  },
-  {
     "qName": "region",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2760,6 +2856,18 @@
     "qTags": [
       "$numeric",
       "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_events"
+    ]
+  },
+  {
+    "qName": "sample_ts_day",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
     ],
     "qSrcTables": [
       "iot_events"
@@ -2808,15 +2916,15 @@
   {
     "qName": "sample_ts_run_day",
     "qTags": [
-      "$key",
       "$numeric",
       "$integer",
+      "$key",
       "$timestamp",
       "$date"
     ],
     "qSrcTables": [
       "iot_equipment_usage_events",
-      "MasterCalendar"
+      "MasterCalendar_Run"
     ]
   },
   {
@@ -2829,6 +2937,42 @@
     ],
     "qSrcTables": [
       "iot_fault_sessions"
+    ]
+  },
+  {
+    "qName": "sample_ts_run_hour",
+    "qTags": [
+      "$numeric",
+      "$key",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "iot_equipment_usage_events",
+      "MasterHourCalendar_Run"
+    ]
+  },
+  {
+    "qName": "sample_ts_run_month",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MasterCalendar_Run"
+    ]
+  },
+  {
+    "qName": "sample_ts_run_week",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MasterCalendar_Run"
     ]
   },
   {
@@ -2874,8 +3018,8 @@
   {
     "qName": "service_status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment_status"
@@ -2884,8 +3028,8 @@
   {
     "qName": "servicing_dealer_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_equipment"
@@ -2914,8 +3058,8 @@
   {
     "qName": "session_id",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -2924,8 +3068,8 @@
   {
     "qName": "session_id_monitor",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_monitoring_sessions"
@@ -2954,8 +3098,8 @@
   {
     "qName": "session_state",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
@@ -2964,8 +3108,8 @@
   {
     "qName": "severity",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -2974,8 +3118,8 @@
   {
     "qName": "sort_key",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_monitoring_sessions"
@@ -2993,8 +3137,8 @@
   {
     "qName": "standard_panel_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
@@ -3023,13 +3167,6 @@
     "qTags": [],
     "qSrcTables": [
       "iot_monitoring_sessions"
-    ]
-  },
-  {
-    "qName": "start_location_id",
-    "qTags": [],
-    "qSrcTables": [
-      "iot_fault_sessions"
     ]
   },
   {
@@ -3065,8 +3202,8 @@
   {
     "qName": "status",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_fault_sessions"
@@ -3075,8 +3212,8 @@
   {
     "qName": "status_monitor",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_monitoring_sessions"
@@ -3105,11 +3242,97 @@
   {
     "qName": "sub_region",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_debounced_location_sessions"
+    ]
+  },
+  {
+    "qName": "subscription_id",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscription_version",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscriptioncreateddate",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscriptionenddate",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscriptionnumber",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscriptionproducttype__c",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "subscriptionstartdate",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
+    ]
+  },
+  {
+    "qName": "sw_histo",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "iot_software_sessions"
     ]
   },
   {
@@ -3169,8 +3392,8 @@
   {
     "qName": "workgroup_soft",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_soft_events"
@@ -3189,11 +3412,21 @@
   {
     "qName": "workgroup_throttle_version",
     "qTags": [
-      "$text",
-      "$ascii"
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "iot_software_version_run_events"
+    ]
+  },
+  {
+    "qName": "zuora_subscription_status",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Zuora_Subscriptions"
     ]
   }
 ]

@@ -111,7 +111,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=if(start_ts_loc = max(total{1} start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                  "=if(start_ts_loc = max(total start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                 ],
                 "qFieldLabels": [
                   "Latest location"
@@ -649,7 +649,7 @@
       },
       "panLimitSwitch": false,
       "panLimits": null,
-      "showDebugInfo": true,
+      "showDebugInfo": false,
       "labelColoring": "auto"
     },
     "autoZoomOnSelection": true,
@@ -669,7 +669,7 @@
     "gaVersion": 2,
     "layers": [],
     "qUndoExclude": {
-      "hashCode": -1541631957,
+      "hashCode": -2053593122,
       "gaLayers": [
         {
           "qHyperCubeDef": {
@@ -678,7 +678,7 @@
                 "qDef": {
                   "qGrouping": "N",
                   "qFieldDefs": [
-                    "=if(start_ts_loc = max(total{1} start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
+                    "=if(start_ts_loc = max(total start_ts_loc), location_id )//date(ConvertToLocalTime(location_id, TimeZone), 'MMM d, YYYY h:mmtt'))\r\n//aggr(only({<start_ts={\"$(=max(total start_ts))}\"}>} start_ts), start_ts)"
                   ],
                   "qFieldLabels": [
                     "Latest location"

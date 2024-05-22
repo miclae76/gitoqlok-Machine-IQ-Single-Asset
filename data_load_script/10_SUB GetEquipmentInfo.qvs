@@ -40,7 +40,7 @@ FROM iotv3."iot_equipment"
 WHERE asset_id = $(odag_asset_id)  ;
 
 
-TRACE *** Load iot_equipment status ***;
+TRACE *** Load iot_equipment_status ***;
 
 [iot_equipment_status]:
 LOAD 
@@ -73,6 +73,8 @@ FROM
 WHERE 
 	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
 
+TRACE *** Load iot_equipment_status_archive ***;
+
 [iot_equipment_status_archive]:
 LOAD asset_id, 
 	connected_status As archive_connected_status, 
@@ -91,7 +93,7 @@ SELECT "asset_id",
 FROM 
 	iotv3."iot_equipment_status_archive"
 WHERE 
-	asset_id = $(odag_asset_id) and created >= $(odag_Start_Date);
+	asset_id = $(odag_asset_id); 
 
 
 EndSub

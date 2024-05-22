@@ -1,5 +1,9 @@
 ///$tab 60_SUB GetUtilizationData
 SUB GetUtilizationData
+
+TRACE ***Load iot_engine_hours_aggregation ***;
+
+// Get Engine Hours aggregated data
 [iot_utilization_aggregation]:
 LOAD *, 
 	 if(aggregate_ts_hour <= 6, '0:00 - 06:00', 
@@ -7,7 +11,8 @@ LOAD *,
         	if(aggregate_ts_hour <= 18, '12:00 - 18:00', '18:00 - 24:00'))) AS aggregate_hours_quad;
 LOAD *, 
 	hour(aggregate_ts) AS aggregate_ts_hour,
-    date(floor(aggregate_ts)) as aggregate_ts_day;
+    date(floor(aggregate_ts)) as aggregate_ts_day,
+    date(floor(aggregate_ts), 'YYYY-MM-DD') as "master_calendar";
 SELECT 
     "asset_id",
 	"aggregate_ts",
@@ -21,11 +26,18 @@ WHERE
 AND aggregate_ts BETWEEN $(odag_Start_Date) AND DATE(dateadd(DAY,1,  $(odag_End_Date))) ;
 
 
+TRACE ***Load iot_fuel_consumption_aggregation ***;
 
+// Get  Fuel consumption aggregated data and append to utilization table
 Concatenate([iot_utilization_aggregation])
 LOAD *, 
+	 if(aggregate_ts_hour <= 6, '0:00 - 06:00', 
+     	if(aggregate_ts_hour <= 12, '06:00 - 12:00',
+        	if(aggregate_ts_hour <= 18, '12:00 - 18:00', '18:00 - 24:00'))) AS aggregate_hours_quad;
+LOAD *, 
 	hour(aggregate_ts) AS aggregate_ts_hour,
-    date(floor(aggregate_ts)) as aggregate_ts_day;
+     date(floor(aggregate_ts)) as aggregate_ts_day,
+    date(floor(aggregate_ts), 'YYYY-MM-DD') as "master_calendar";
 SELECT "asset_id",
 	"aggregate_ts",
 	"fuel_consumption" AS fuel_consumption_aggr

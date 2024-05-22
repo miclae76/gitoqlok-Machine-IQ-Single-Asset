@@ -47,20 +47,6 @@
         }
       },
       {
-        "name": "PpqJvbq",
-        "type": "text-image",
-        "col": 18,
-        "row": 0,
-        "colspan": 18,
-        "rowspan": 1,
-        "bounds": {
-          "y": 0,
-          "x": 50,
-          "width": 50,
-          "height": 5.555555555555555
-        }
-      },
-      {
         "name": "rPmpwN",
         "type": "sn-table",
         "col": 0,
@@ -646,17 +632,6 @@
           "qType": "text-image"
         },
         "qExtendsId": "dfb34d14-e9a4-42cb-b7df-443c5db3cf8a",
-        "qMetaDef": {}
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "PpqJvbq",
-          "qType": "text-image"
-        },
-        "qExtendsId": "4e002eae-0ac6-445e-bbd7-ecc5fbfb3e28",
         "qMetaDef": {}
       },
       "qChildren": []

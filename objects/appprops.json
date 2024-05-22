@@ -13,7 +13,9 @@
       "sheetTitleGradientColor": "",
       "sheetTitleColor": "#ffffff",
       "sheetLogoThumbnail": {
-        "qStaticContentUrlDef": {}
+        "qStaticContentUrlDef": {
+          "qUrl": "/api/v1/apps/e1a32c6c-6708-4c01-9fe1-72041a4e8875/media/files/bobcat_logo_red.png"
+        }
       },
       "sheetLogoPosition": "right",
       "rtl": false,

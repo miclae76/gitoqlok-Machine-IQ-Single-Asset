@@ -2,6 +2,8 @@
 SUB GetLocationData
 
 [iot_debounced_location_sessions]:
+LOAD *, 
+	Date(Floor(start_ts_loc), 'YYYY-MM-DD') 					AS "master_calendar";
 SELECT 
 	"location_id",
 	"asset_id",

@@ -1,0 +1,64 @@
+{
+  "qInfo": {
+    "qId": "PgHvPLZ",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Avg(rssi)",
+    "qDef": "Avg(rssi)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='RSSI'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "gradient": {
+        "colors": [
+          {
+            "color": "#a54343",
+            "index": 3
+          },
+          {
+            "color": "#ec983d",
+            "index": 5
+          },
+          {
+            "color": "#ecc43d",
+            "index": 6
+          },
+          {
+            "color": "#70ba6e",
+            "index": 9
+          },
+          {
+            "color": "#578b60",
+            "index": 10
+          }
+        ],
+        "breakTypes": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "limits": [
+          -95,
+          -83.552,
+          -75,
+          -65
+        ],
+        "limitType": "absolute"
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Avg(rssi)",
+    "description": "",
+    "tags": []
+  }
+}
